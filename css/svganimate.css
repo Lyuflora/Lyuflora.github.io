@@ -1,0 +1,55 @@
+/* Basic styling */
+svg {
+    width: 100%;
+}
+.filled-heading {
+    text-transform: uppercase;
+    font-family: 'Berlin Sans FB Demi', sans-serif;
+    font-size: 4em;
+    line-height: 0.9;
+    font-weight: bold;
+}
+
+/* Animate the background shapes */
+#background path {
+    animation: pulse 4s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite;
+
+    /* Necessary to keep the SVG objects in place while scaling */
+    transform-origin: 50% 50%;
+    transform-box: fill-box;
+}
+
+/* Reveal the desired lines of text in the desired order */
+#textClip text:nth-of-type(n + 1):nth-of-type(-n + 3) {
+    animation: showFirst 12s infinite;
+}
+#textClip text:nth-of-type(n + 4):nth-of-type(-n + 6) {
+    animation: showSecond 12s infinite;
+}
+#textClip text:nth-of-type(n + 7):nth-of-type(-n + 9) {
+    animation: showThird 12s infinite;
+}
+
+@keyframes pulse {
+    /* Rotating it along with the scale makes it a little bit more fancy */
+    0%, 100% { transform: scale(0) rotate(33deg); }
+    35%, 65% { transform: scale(1) rotate(0deg); }
+}
+@keyframes showFirst {
+    0%, 33% {
+        opacity: 1;
+    }
+    33.0001%, 100% { opacity: 0; }
+}
+@keyframes showSecond {
+    33.0001%, 66% {
+        opacity: 1;
+    }
+    0%, 33%, 66.0001%, 100% { opacity: 0; }
+}
+@keyframes showThird {
+    66.0001%, 99.999% {
+        opacity: 1;
+    }
+    0%, 66%, 100% { opacity: 0; }
+}
