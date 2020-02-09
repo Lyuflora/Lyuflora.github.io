@@ -2,6 +2,11 @@
 svg {
     width: 100%;
 }
+
+@font-face{
+     font-family: 'BenchNine-Bold';
+     src: url('../fonts/benchnine/BenchNine-Bold.ttf');
+}
 .filled-heading {
     text-transform: uppercase;
     font-family: 'Berlin Sans FB Demi', sans-serif;
@@ -9,6 +14,16 @@ svg {
     line-height: 0.9;
     font-weight: bold;
 }
+/*.filled-heading {*/
+/*    display:block;*/
+/*  text-align:justify;*/
+/*    font-size:6.9em;*/
+/*    color:#6B7B8A;*/
+/*  font-family: "BenchNine-Bold";*/
+/*  line-height:0.8;*/
+/*  text-transform:uppercase;*/
+/*  letter-spacing:0px;*/
+/*}*/
 
 /* Animate the background shapes */
 #background path {
