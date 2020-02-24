@@ -48,6 +48,11 @@
      font-family: 'BenchNine-Bold';
      src: url('../fonts/benchnine/BenchNine-Bold.ttf');
 }
+@font-face{
+     font-family: 'delightious';
+     src:url('../fonts/delightious/Delightious.otf');
+
+}
 
 html {
     -webkit-font-smoothing: antialiased;
@@ -3139,7 +3144,8 @@ a img.aligncenter {
 .bigwords {
   display:block;
   text-align:justify;
-  font-family: "BenchNine-Bold";
+  /*font-family: "delightious, BenchNine-Bold, serif";*/
+    font-family: delightious, monospace;
   line-height:0.8;
   text-transform:uppercase;
   letter-spacing:0px;
@@ -3166,7 +3172,7 @@ a img.aligncenter {
 .bigwords4{font-size:6.9em}
 .bigwords4{line-height:0.8;}
 .wrapper{
-  width:270px;
+  width:300px;
   margin:30px 10px;
   position:Relative;
 }
