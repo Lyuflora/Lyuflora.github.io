@@ -2617,6 +2617,9 @@ ul.social-buttons li {
 }
 .full-blog-content {
     margin-top: 30px;
+    /*margin-right: 90px;*/
+    /*margin-left: 90px;*/
+
 }
 .full-blog-content p:first-of-type:first-letter {
     float: left;
@@ -3175,4 +3178,7 @@ a img.aligncenter {
   width:300px;
   margin:30px 10px;
   position:Relative;
+}
+p {
+    margin-bottom: 1.2rem;
 }

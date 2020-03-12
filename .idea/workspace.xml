@@ -4,7 +4,10 @@
     <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/single-project-ball/game_ball_3.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/single-project-MUD.html" beforeDir="false" afterPath="$PROJECT_DIR$/single-project-MUD.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/single-project-ball.html" beforeDir="false" afterPath="$PROJECT_DIR$/single-project-ball.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +45,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="D:/Game Design/long tern/peofile/first class/steve-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TimeLine" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
@@ -63,6 +66,35 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="oak-master" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="D:/Program File/Tencent Files/评比/14/code" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:/Program File/Tencent Files/评比/14/code/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.app" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -80,7 +112,13 @@
       <workItem from="1581858835341" duration="8561000" />
       <workItem from="1581954392997" duration="2859000" />
       <workItem from="1582091844968" duration="4570000" />
-      <workItem from="1582514768315" duration="1698000" />
+      <workItem from="1582514768315" duration="1790000" />
+      <workItem from="1582779006570" duration="44000" />
+      <workItem from="1582787920920" duration="415000" />
+      <workItem from="1582789167285" duration="42000" />
+      <workItem from="1583802071493" duration="1162000" />
+      <workItem from="1583931436435" duration="29000" />
+      <workItem from="1583997830439" duration="3503000" />
     </task>
     <servers />
   </component>
@@ -99,5 +137,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Lyuflora_github_io$app.coverage" NAME="app Coverage Results" MODIFIED="1582779028369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/Program File/Tencent Files/评比/14/code" />
   </component>
 </project>
