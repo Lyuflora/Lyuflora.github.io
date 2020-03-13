@@ -9,7 +9,7 @@
             zoom: 14,
 
             // The latitude and longitude to center the map (always required)
-            center: new google.maps.LatLng(42.6610638, 21.1986866), // New York
+            center: new google.maps.LatLng(30.269718, 120.124792), // New York
 
 
             mapTypeControl: true,
@@ -172,13 +172,13 @@
         var map = new google.maps.Map(mapElement, mapOptions);
 
         // Icon Map 
-        var image = 'img/map-pin.png';
+        var image = 'img/map-pin-ari.png';
 
         // Let's also add a marker while we're at it
         var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(42.6610638, 21.1986866),
+            position: new google.maps.LatLng(30.269718, 120.124792),
             map: map,
             icon: image,
-            title: 'OAK Theme'
+            title: 'Aris'
         });
     }
