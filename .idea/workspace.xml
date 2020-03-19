@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/game.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/blog-header.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/blog-header.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/single-project-MUD.html" beforeDir="false" afterPath="$PROJECT_DIR$/single-project-MUD.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/single-project-ball/game_ball_post-576.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/single-project-ball.html" beforeDir="false" afterPath="$PROJECT_DIR$/single-project-ball.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/single-project-hahacoco.html" beforeDir="false" afterPath="$PROJECT_DIR$/single-project-hahacoco.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writing.html" beforeDir="false" afterPath="$PROJECT_DIR$/writing.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -123,7 +119,8 @@
       <workItem from="1583802071493" duration="1162000" />
       <workItem from="1583931436435" duration="29000" />
       <workItem from="1583997830439" duration="15139000" />
-      <workItem from="1584579152064" duration="8077000" />
+      <workItem from="1584579152064" duration="8705000" />
+      <workItem from="1584635171566" duration="683000" />
     </task>
     <servers />
   </component>
