@@ -2,9 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/pages/testvideo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/single-project-ball/game_ball_diffuse.psd" beforeDir="false" afterPath="$PROJECT_DIR$/img/single-project-ball/game_ball_diffuse.psd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/single-project-MUD.html" beforeDir="false" afterPath="$PROJECT_DIR$/single-project-MUD.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/about - 副本.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/about - 副本.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-EngChn.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/blog-EngChn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-braid.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/blog-braid.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-timeline.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/blog-timeline.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/game.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/icon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/pages/icon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/home-portfolio/game_mud.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index - 副本.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index - 副本.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-architecture.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index-architecture.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-full-slider.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index-full-slider.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/models.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-2column.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/portfolio-2column.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-3column.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/portfolio-3column.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-dribbble.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/portfolio-dribbble.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-masonry.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/portfolio-masonry.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/single-blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/single-blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/single-project-MUD.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/single-project-MUD.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/single-project-ball.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/single-project-ball.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/single-project-hahacoco.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/single-project-hahacoco.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/single-project-sEMGmyo.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/single-project-sEMGmyo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/single-project-spideroar.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/single-project-spideroar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/single-project.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/single-project.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/typography.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/typography.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/writing.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/writing.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +59,7 @@
       <list>
         <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -40,9 +69,10 @@
   <component name="ProjectId" id="1XK6OqN8tKXcEzmTThwLfmnOpJf" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="F:/Code/Github/flowchart.js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pages" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -50,6 +80,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GitHub\Lyuflora.github.io\pages" />
       <recent name="D:\GitHub\Lyuflora.github.io\img\SIMILAR PROJECTS" />
       <recent name="D:\GitHub\Lyuflora.github.io" />
     </key>
@@ -121,7 +152,12 @@
       <workItem from="1583997830439" duration="15139000" />
       <workItem from="1584579152064" duration="8705000" />
       <workItem from="1584635171566" duration="1390000" />
-      <workItem from="1584672926897" duration="683000" />
+      <workItem from="1584672926897" duration="15177000" />
+      <workItem from="1586508807745" duration="1405000" />
+      <workItem from="1588243085035" duration="1810000" />
+      <workItem from="1588387180177" duration="601000" />
+      <workItem from="1588397013377" duration="624000" />
+      <workItem from="1588427413156" duration="5066000" />
     </task>
     <servers />
   </component>
