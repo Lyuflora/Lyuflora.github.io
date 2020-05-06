@@ -3,12 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/game.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/SIMILAR PROJECTS/project_hahacoco.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/SIMILAR-PROJECTS/project_hahacoco.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/SIMILAR PROJECTS/project_spideroar.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/SIMILAR-PROJECTS/project_spideroar.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/single-project-MUD.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/single-project-MUD.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/single-project-hahacoco.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/single-project-hahacoco.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/single-project-sEMGmyo.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/single-project-sEMGmyo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/single-project-sounderplayer.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/single-project-sounderplayer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/testvideo.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/testvideo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/single-project-spideroar.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/single-project-spideroar.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -133,7 +134,8 @@
       <workItem from="1588243085035" duration="1810000" />
       <workItem from="1588387180177" duration="601000" />
       <workItem from="1588397013377" duration="624000" />
-      <workItem from="1588427413156" duration="8386000" />
+      <workItem from="1588427413156" duration="9023000" />
+      <workItem from="1588741130449" duration="1984000" />
     </task>
     <servers />
   </component>
