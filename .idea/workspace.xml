@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="" />
+    <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,9 +51,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GitHub\Lyuflora.github.io" />
       <recent name="D:\GitHub\Lyuflora.github.io\pages" />
       <recent name="D:\GitHub\Lyuflora.github.io\img\SIMILAR PROJECTS" />
-      <recent name="D:\GitHub\Lyuflora.github.io" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -129,7 +132,7 @@
       <workItem from="1588741130449" duration="1984000" />
       <workItem from="1588756384330" duration="171000" />
       <workItem from="1588842693201" duration="770000" />
-      <workItem from="1589263637560" duration="600000" />
+      <workItem from="1589263637560" duration="1442000" />
     </task>
     <servers />
   </component>
