@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/pages/blog-Houdini.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/blog-UnityShader.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/single-project-sounderplayer.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/single-project-sounderplayer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/writing.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/writing.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +52,9 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitHub\Lyuflora.github.io\pages" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\GitHub\Lyuflora.github.io" />
       <recent name="D:\GitHub\Lyuflora.github.io\pages" />
@@ -134,7 +138,10 @@
       <workItem from="1588756384330" duration="171000" />
       <workItem from="1588842693201" duration="770000" />
       <workItem from="1589263637560" duration="1609000" />
-      <workItem from="1591523941704" duration="2522000" />
+      <workItem from="1591523941704" duration="3122000" />
+      <workItem from="1592149835841" duration="737000" />
+      <workItem from="1595417049272" duration="1325000" />
+      <workItem from="1596624491496" duration="1878000" />
     </task>
     <servers />
   </component>
