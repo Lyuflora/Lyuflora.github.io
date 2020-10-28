@@ -8855,7 +8855,7 @@ function defaultDisplay( nodeName ) {
 			body.appendChild( iframe );
 
 			// Create a cacheable copy of the iframe document on first call.
-			// IE and Opera will allow us to reuse the iframeDoc without re-writing the fake HTML
+			// IE and Opera will allow us to reuse the iframeDoc without re-essays the fake HTML
 			// document to it; WebKit & Firefox won't allow reusing the iframe document.
 			if ( !iframeDoc || !iframe.createElement ) {
 				iframeDoc = ( iframe.contentWindow || iframe.contentDocument ).document;
