@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/blog-Houdini.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/blog-UnityShader.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/writing.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/writing.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,13 +49,13 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\GitHub\Lyuflora.github.io\pages" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\GitHub\Lyuflora.github.io" />
       <recent name="D:\GitHub\Lyuflora.github.io\pages" />
       <recent name="D:\GitHub\Lyuflora.github.io\img\SIMILAR PROJECTS" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitHub\Lyuflora.github.io\pages" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -141,7 +138,12 @@
       <workItem from="1591523941704" duration="3122000" />
       <workItem from="1592149835841" duration="737000" />
       <workItem from="1595417049272" duration="1325000" />
-      <workItem from="1596624491496" duration="1878000" />
+      <workItem from="1596624491496" duration="2526000" />
+      <workItem from="1597937535631" duration="226000" />
+      <workItem from="1598024898584" duration="1232000" />
+      <workItem from="1600324915758" duration="49000" />
+      <workItem from="1601440351914" duration="1010000" />
+      <workItem from="1603861775927" duration="2880000" />
     </task>
     <servers />
   </component>

@@ -39,21 +39,17 @@
     <link rel="stylesheet" type="text/css" href="../css/tabstyles.css" />
 
     <!-- Loader Style -->
-    <link rel="stylesheet" href="../css/loader-3.css">
+    <link rel="stylesheet" href="../css/loader-1.css">
 
     <!-- Costum Styles -->
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/responsive.css">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/ico" href="icon.ico">
+    <link rel="icon" type="image/ico" href="favicon.ico">
 
     <!-- Modernizer & Respond js -->
     <script src="../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-
-<!--     afterglow Video Player js-->
-    <script type="text/javascript" src="../js/afterglow.min.js"></script>
-
 </head>
 
 <body>
@@ -69,181 +65,118 @@
                 </a>
             </div>
 
-            <!-- Menu Inline -->
-            <button class="main-menu-indicator visible-xs" id="open-mobile-menu">
-                <span></span>
+            <!-- Menu Hamburger (Default) -->
+            <button class="main-menu-indicator" id="open-button">
+                <span class="line"></span>
             </button>
-            <div class="menu-wrap-2">
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="game.html">Game</a></li>
-                    <li><a href="projects.html">Modeling</a></li>
-                    <li><a href="essays.html">Writing</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+
+            <div class="menu-wrap" style="background-image: url(../img/nav_bg.jpg)">
+                <div class="menu-content">
+                    <div class="navigation">
+                        <span class="pe-7s-close close-menu" id="close-button"></span>
+                        <div class="search-wrap js-ui-search">
+                            <input class="js-ui-text" type="text" placeholder="Search Here...">
+                            <span class="eks js-ui-close"></span>
+                        </div>
+                    </div>
+                    <nav class="menu">
+                        <div class="menu-list">
+                            <ul>
+                                <li class="menu-item-has-children"><a href="#">Home</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="../index.html">- Default</a></li>
+                                        <li><a href="index-architecture.html">- Architecture</a></li>
+                                        <li><a href="index-full-slider.html">- Slider Full Width</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="about.html">About</a></li>
+                                <li class="menu-item-has-children"><a href="#">Portfolio</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="portfolio-2column.html">-Portfolio 2 Column</a></li>
+                                        <li><a href="portfolio-3column.html">-Portfolio 3 Column</a></li>
+                                        <li><a href="portfolio-masonry.html">-Portfolio Masonry</a></li>
+                                        <li><a href="portfolio-dribbble.html">-Portfolio Dribbble</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children"><a href="#">Blog</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="blog.html">Blog Default</a></li>
+                                        <li><a href="blog-timeline.html">Blog Timeline</a></li>
+                                        <li><a href="single-blog.html">Blog Single</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+
+                    <div class="hidden-xs">
+                        <div class="menu-social-media">
+                            <ul>
+                                <li><a href="#"><i class="iconmoon-facebook"></i></a></li>
+                                <li><a href="#"><i class="iconmoon-twitter"></i></a></li>
+                                <li><a href="#"><i class="iconmoon-dribbble3"></i></a></li>
+                                <li><a href="#"><i class="iconmoon-pinterest"></i></a></li>
+                                <li><a href="#"><i class="iconmoon-linkedin2"></i></a></li>
+                            </ul>
+                        </div>
+
+                        <div class="menu-information">
+                            <ul>
+                                <li><span>T:</span> 003 124 115</li>
+                                <li><span>E:</span> info@mail.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- End of Menu Inline -->
+            <!-- End of Menu Hamburger (Default) -->
 
         </div>
     </div>
     <div class="container">
         <div class="single-project-slider">
-<!--            <div class="owl-carousel single-slider">-->
-<!--                <div><img class="img-responsive center-block" src="img/single-project-ball/game_ball_1.png" alt="slider"></div>-->
-<!--                <div><img class="img-responsive center-block" src=" " alt="slider"></div>-->
-<!--            </div>-->
-<!--            <div class="single-controls">-->
-<!--                <span class="arrow-left"><a class="prev-slide" href="javascript:void(0)"><i class="pe-7s-angle-left"></i></a></span>-->
-<!--                <span class="arrow-right"><a class="next-slide" href="javascript:void(0)"><i class="pe-7s-angle-right"></i></a></span>-->
-<!--            </div>-->
-        </div>
-    </div>
-<div class="container"  style="text-align:center">
-        <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.10s">
-        <div class="blog-thumb">
-            <img src="../img/single-project-MUD/game_mud_cover.png" alt="Blog Image">
-            <div class="icon-video-blog">
-                <a href="../video/MUD_video1.mp4" class="popup-video playBut">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="69px" height="69px" viewBox="0 0 213.7 213.7" enable-background="new 0 0 213.7 213.7" xml:space="preserve">
-                        <polygon class="triangle" id="XMLID_18_" fill="none" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
-                    73.5,62.5 148.5,105.8 73.5,149.1 " />
-                        <circle class="circle" id="XMLID_17_" fill="none" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="106.8" cy="106.8" r="103.3" />
-                    </svg>
-                </a>
+            <div class="owl-carousel single-slider">
+                <div><img class="img-responsive center-block" src="../img/single-project/img_1.jpg" alt="slider"></div>
+                <div><img class="img-responsive center-block" src="../img/single-project/img_1.jpg" alt="slider"></div>
+            </div>
+            <div class="single-controls">
+                <span class="arrow-left"><a class="prev-slide" href="javascript:void(0)"><i class="pe-7s-angle-left"></i></a></span>
+                <span class="arrow-right"><a class="next-slide" href="javascript:void(0)"><i class="pe-7s-angle-right"></i></a></span>
             </div>
         </div>
     </div>
-</div>
     <div class="container">
         <div class="single-portfolio-wrapper">
             <div class="row">
                 <div class="col-md-8 col-sm-8">
-                    <h1>MUD-Castle Adventure</h1>
-                    <span class="info">Rescue the Princess in a Castle</span>
+                    <h1>Safety-EDU Playset</h1>
+                    <span class="info">A Educational Helper of Children's Safety</span>
                     <p>
-                        This is a simple game build with C++(when I was learning OOP).
-                    </p>
+                        Recently, in
 
-                    <h1>
-                        STORY
-                    </h1>
-                    <p>
-                        <blockquote>
-                            Adventure is a CLI game.The player has to explore in the castle with many levels and a
-                            lot of rooms.The task of the player is to find a room where the princess is prinsoned
-                            and take her leave the castle.There are many types of rooms, and each type of room has
-                            different types of exits.Note that there's a monster in one of the rooms, which the exact
-                            location is not able to be aware. But once the player meets a monster, the game is over.
-                        </blockquote>
                     </p>
-                    <h1>
-                        RULE
-                    </h1>
-                    <p>
-                        When the game starts, the player is at the lobby of the castle.Then the program shows
-                        information about the lobby：name of the room, how many exits are there, and names of
-                        all exits(e.g.: "east", "south", "up"), like:<br>
-                        <blockquote>
-
-                        Welcome to the lobby.There are 3 exits as : east, west and up.
-                        Enter your command :<br>
-                        </blockquote>
-                        <br><br>
-                        The player then can input "go" followed by the name of one exit to enter the room connected with that door, like :
-                        <blockquote>
-                        go east
-                        </blockquote>
-                    <br>
-                        The player goes into the room to the east.The program shows the information about that room,
-                        like what happened in the lobby just now.And the player may input command to choose another room.
-
-                        Once the player enters a room with a monster, the program shows a message and game over.Once the
-                        player enters the room of princess, the program shows a message about the princess, and the process
-                        is going to leave with the player.The player then has to find their way out the castle.The only way
-                        to leave the castle is via the lobby.
-
-                    </p><br>
-                    <h1>
-                        Flowchart
-                    </h1>
-                    <p>
-                        <div class="img">
-                            <img src="../img/single-project-MUD/MUD_flowchart.png" alt="Portfolio Item">
-                        </div>
-                    </p>
-                <h1>
-                    File Structure
-                </h1>
-
-                    <ul>
-                    <li>main.cpp</li>
-                    <li>Room.h</li>
-                    <li>Game.h</li>
-                    <li>Room.cpp</li>
-                    <li>Game.cpp</li>
-                    </ul>
-                    <p>
-                    There are two classes in this program: class <b>Room</b>, class <b>Game</b>.
-                </p>
-                <h1>
-                    Example
-                </h1>
-                    <p>
-                         Game initial interface.
-                    </p>
-                     <div>
-                        <img src="../img/single-project-MUD/Startpage.png" style="width: 450px" alt="Single Project">
-                    </div>
-                    <p>
-                         Enter "help" to get room information.
-                    </p>
-                    <div>
-                        <img src="../img/single-project-MUD/Enterorder.png" style="width: 450px" alt="Single Project">
-                    </div>
-                    <p>
-                         Enter the next room and receive a hint: Nothing happened.
-                    </p>
-                    <div>
-                        <img src="../img/single-project-MUD/NextRoom.png" style="width: 400px" alt="Single Project">
-                    </div>
-                    <p>
-                        Find the Princess and take her to the Lobby room, and the Player wins.
-                    </p>
-                    <div>
-                        <img src="../img/single-project-MUD/FindPrincess.png" style="width: 350px" alt="Single Project">
-                    </div>
-                    <p>
-                        Encounter the Monster, and the game is over.
-                    </p>
-                    <div>
-                        <img src="../img/single-project-MUD/MeetMonster.png" style="width: 350px" alt="Single Project">
-                    </div>
-                </div><br>
-                <br><br>
-
+                </div>
                 <div class="col-md-3 col-md-offset-1 col-sm-4">
                     <div class="project-information">
                         <table class="table">
                             <tbody>
                                 <tr>
                                     <td>Date:</td>
-                                    <td>12.2018</td>
+                                    <td>01.09.2015</td>
                                 </tr>
                                 <tr>
-                                    <td>Team:</td>
-                                    <td>Aris</td>
+                                    <td>Client:</td>
+                                    <td>Envato</td>
                                 </tr>
                                 <tr>
-                                    <td>Platforms:</td>
-                                    <td>MS Windows</td>
+                                    <td>Category:</td>
+                                    <td>Fashion Design</td>
                                 </tr>
                                 <tr>
-                                    <td>Tools:</td>
-                                    <td>Eclipse, Visual Studio 2017</td>
+                                    <td>Visit:</td>
+                                    <td><a href="http://www.envato.com" target="_blank">envato.com</a></td>
                                 </tr>
-                                <tr>
-
                                 <tr>
                                     <td>Share:</td>
                                     <td>
@@ -264,9 +197,27 @@
             </div>
         </div>
     </div>
-    <br><br>
-    <br>
-
+    <div class="container">
+        <div class="single-project-details">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="single-project-images">
+                        <img src="../img/single-project/img_1b.jpg" alt="Single Project">
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="single-project-images">
+                        <img src="../img/single-project/img_2b.jpg" alt="Single Project">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="single-project-images">
+                        <img src="../img/single-project/img_3b.jpg" alt="Single Project">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="portfolio-controls">
             <div class="btn-project home-btn">
@@ -292,39 +243,39 @@
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="img">
-                        <img src="../img/SIMILAR%20PROJECTS/project_hahacoco.png" alt="Portfolio Item">
+                        <img src="../img/home-portfolio/img_6.jpg" alt="Portfolio Item">
                         <div class="overlay-thumb">
                             <a href="javascript:void(0)" class="like-product">
                                 <i class="ion-ios-heart-outline"></i>
                                 <span class="like-product">Liked</span>
-                                <span class="output">60</span>
+                                <span class="output">256</span>
                             </a>
                             <div class="details">
-                                <span class="title">HAHA & COCO</span>
-                                <span class="info">A 2D PLATFORM GAME</span>
+                                <span class="title">STYLE FASHION</span>
+                                <span class="info">NEW BAG & STYLE FASHION</span>
                             </div>
                             <span class="btnBefore"></span>
                             <span class="btnAfter"></span>
-                            <a class="main-portfolio-link" href="single-project-spideroar.html"></a>
+                            <a class="main-portfolio-link" href="single-project.html"></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="img">
-                        <img src="../img/SIMILAR%20PROJECTS/project_spideroar.png" alt="Portfolio Item">
+                        <img src="../img/home-portfolio/img_7.jpg" alt="Portfolio Item">
                         <div class="overlay-thumb">
                             <a href="javascript:void(0)" class="like-product">
                                 <i class="ion-ios-heart-outline"></i>
                                 <span class="like-product">Liked</span>
-                                <span class="output">50</span>
+                                <span class="output">256</span>
                             </a>
                             <div class="details">
-                                    <span class="title">SPIDEROAR</span>
-                                    <span class="info">Global Game Jam 2020</span>
+                                <span class="title">STYLE FASHION</span>
+                                <span class="info">NEW BAG & STYLE FASHION</span>
                             </div>
                             <span class="btnBefore"></span>
                             <span class="btnAfter"></span>
-                            <a class="main-portfolio-link" href="single-project-spideroar.html"></a>
+                            <a class="main-portfolio-link" href="single-project.html"></a>
                         </div>
                     </div>
                 </div>
@@ -357,8 +308,8 @@
                 <div class="col-md-2 col-sm-4 col-xs-12">
                     <div class="footer-inner">
                         <div class="footer-content">
-                            <h4>L KY</h4>
-                            <address><br>ZJU<br>China</address>
+                            <h4>O.A.K THEME</h4>
+                            <address>City 35 AM <br>Street 1395 p.n <br>your Country</address>
                         </div>
                     </div>
                 </div>
@@ -367,8 +318,10 @@
                     <div class="footer-inner">
                         <div class="footer-content">
                             <h4>CONTACT INFO</h4>
-                                <p> E: Ariskid@outlook.com
-                                <br> W: lyuflora.github.io
+                            <p>
+                                T:003 124 115
+                                <br> E:info@mail.com
+                                <br> W:www.website.com
                             </p>
                         </div>
                     </div>
@@ -385,7 +338,7 @@
                                 <li><a href="#"><i class="iconmoon-pinterest"></i></a></li>
                                 <li><a href="#"><i class="iconmoon-linkedin2"></i></a></li>
                             </ul>
-<!--                            <span class="copyright-mark">&copy; 2015 OAK, ALL RIGHTS RESERVED</span>-->
+                            <span class="copyright-mark">&copy; 2015 OAK, ALL RIGHTS RESERVED</span>
                         </div>
                     </div>
                 </div>
