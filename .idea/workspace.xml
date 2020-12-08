@@ -55,13 +55,15 @@
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/pages/single-project.html" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\GitHub\Lyuflora.github.io" />
-      <recent name="D:\GitHub\Lyuflora.github.io\pages" />
-      <recent name="D:\GitHub\Lyuflora.github.io\img\SIMILAR PROJECTS" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages" />
+      <recent name="D:\GitHub\Lyuflora.github.io\pages" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages\projects" />
+      <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages\games" />
+      <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages\essays" />
+      <recent name="D:\GitHub\Lyuflora.github.io" />
       <recent name="D:\GitHub\Lyuflora.github.io\pages" />
     </key>
   </component>
@@ -150,6 +152,7 @@
       <workItem from="1606749964409" duration="5788000" />
       <workItem from="1607161278761" duration="604000" />
       <workItem from="1607353296955" duration="3636000" />
+      <workItem from="1607396816381" duration="407000" />
     </task>
     <servers />
   </component>
@@ -169,6 +172,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="704" y="320" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607396866877">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="704" y="320" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1607396866877" />
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606226626857">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
