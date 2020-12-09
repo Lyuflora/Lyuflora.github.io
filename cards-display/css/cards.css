@@ -138,8 +138,9 @@ li:hover .back {
 }
 
 .title {
-      position: fixed;
-  margin-left: 20px;
+  position: fixed;
+    margin-left: 20px;
+    top: 20px;
 }
 .icons {
     position: fixed;
