@@ -2526,6 +2526,7 @@ ul.social-buttons li {
 .blog-front-content {
     position: absolute;
     right: 0;
+    opacity: 0.6;
     background: #383838;
     width: 100%;
     padding: 40px;
