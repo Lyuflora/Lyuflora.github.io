@@ -3145,12 +3145,27 @@ a img.aligncenter {
   color: #d2d2d2;
 }
 
+@font-face {
+  font-family: "Baloo";
+  src: url("../fonts/round/Baloo-Regular.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Riffic";
+  src: url("../fonts/round/riffic.otf") format("otf");
+}
+
+@font-face {
+  font-family: "Berkshire";
+  src: url("../fonts/round/BerkshireSwash-Regular.ttf") format("ttf");
+}
+
 .bigwords {
   display:block;
   text-align:justify;
   /*font-family: "delightious, BenchNine-Bold, serif";*/
-    font-family: delightious, monospace;
-  line-height:0.8;
+  /*  font-family: delightious, monospace;*/
+    font-family: Baloo, monospace;
+  line-height:0.7;
   text-transform:uppercase;
   letter-spacing:0px;
 }
@@ -3172,7 +3187,7 @@ a img.aligncenter {
 .bigwords1{font-size:4.8em}
 .smallwords1{font-size:3.8em}
 .bigwords2{font-size:8.6em}
-.bigwords3{font-size:5.3em}
+.bigwords3{font-size:6.0em}
 .bigwords4{font-size:6.9em}
 .bigwords4{line-height:0.8;}
 .wrapper{
@@ -3182,4 +3197,14 @@ a img.aligncenter {
 }
 p {
     margin-bottom: 1.2rem;
+}
+
+.big-title
+{
+    margin-top: 0px;
+    margin-bottom: 12px;
+    font-family: 'Circular Std Medium', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    color: rgb(85 85 85);
 }
