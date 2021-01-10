@@ -3229,3 +3229,39 @@ p {
     color: rgb(85 85 85);
 }
 
+.highlight.shown {
+    position: relative;
+    background-origin: 0;
+    background-size: 200% 100%;
+    background-repeat: repeat-x;
+    background-position: -100% 100%;
+    transition: background-position 0.8s ease-out;
+}
+
+.highlight-about.shown {
+     background-image: linear-gradient(to right, transparent 50%, var(--highlight-about) 50%);
+}
+
+.highlight {
+    position: relative;
+    background-origin: 0;
+    background-size: 200% 100%;
+    background-repeat: repeat-x;
+    background-position: 0 100%;
+    transition: background-position 0.8s ease-out;
+    padding: 4px 0px;
+}
+
+:root{
+    --highlight-main: #9EEBCF;
+    --highlight-walker: #5AD1FF60;
+    --highlight-up: #58CCD560;
+    --highlight-REI: #FABB5460;
+    --highlight-cook-fresh: #CFEB6860;
+    --highlight-THD: #FDAA7560;
+    --highlight-eatxplore: #F9CB4260;
+    --highlight-thriller: #BB142215;
+    --highlight-photos: #1A73E825;
+    --highlight-google: #366FF225;
+    --highlight-about: #9EEBCF60;
+}

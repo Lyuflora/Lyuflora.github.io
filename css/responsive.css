@@ -318,7 +318,8 @@
 	}
 
 	.blog-thumb .icon-video-blog {
-    	left: 70%;
+    	/*left: 70%;*/
+    	left: 100%;
 	}
 
 	.ef-parallax-bg{
