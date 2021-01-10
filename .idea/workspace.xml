@@ -47,7 +47,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pages" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pages/games" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -55,18 +55,18 @@
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/pages/single-project.html" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages\games" />
+      <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages" />
+      <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages\essays" />
+      <recent name="D:\GitHub\Lyuflora.github.io\pages" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages" />
       <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages\projects" />
       <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages\games" />
       <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages\essays" />
       <recent name="D:\GitHub\Lyuflora.github.io" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages" />
-      <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages\games" />
-      <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages\essays" />
-      <recent name="D:\GitHub\Lyuflora.github.io\pages" />
     </key>
   </component>
   <component name="RunManager">
@@ -162,7 +162,8 @@
       <workItem from="1609961755521" duration="20379000" />
       <workItem from="1610216754671" duration="1008000" />
       <workItem from="1610253503454" duration="10515000" />
-      <workItem from="1610294105468" duration="1485000" />
+      <workItem from="1610294105468" duration="1544000" />
+      <workItem from="1610296169103" duration="106000" />
     </task>
     <servers />
   </component>
