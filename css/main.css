@@ -92,11 +92,11 @@ body {
     color: #fff;
 }
 ::selection {
-    background: #8db0e6;
+    background: var(--theme-color);
     color: #fff;
 }
 ::-moz-selection {
-    background: #8db0e6;
+    background: var(--theme-color);
     color: #fff;
 }
 ::-webkit-input-placeholder {
@@ -199,12 +199,26 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Lekton', sans-serif;
+    font-family: 'Berkshire', sans-serif;
     letter-spacing: 1.3pt;
-    color: #111111;
+    color: #555555;
     clear: both;
     padding-bottom: 5px;
 }
+h1{
+    padding-top:20px;
+}
+
+.game-h2 {
+    border-left: 6px solid var(--game-color);
+    padding-left: 28px;
+}
+
+.game-h3 {
+    border-left: 6px solid var(--game-color);
+    padding-left: 28px;
+}
+
 b {
     font-weight: 900;
 }
@@ -1459,6 +1473,7 @@ ul.sub-menu li a {
 
 .menu-wrap-2 ul li a{
     letter-spacing: 2px;
+    background: linear-gradient(0deg,var(--shadow-color) 50%,#fff 50%);
         cursor: url(../img/cursor_s.png), auto;
 }
 
@@ -3264,4 +3279,12 @@ p {
     --highlight-photos: #1A73E825;
     --highlight-google: #366FF225;
     --highlight-about: #9EEBCF60;
+
+    --game-color: #44DCC4;
+    --project-color: #fcadd2;
+    --essay-color: #e89c5a;
+    --about-color: #44DCC4;
+
+    --theme-color: #8db0e6;
+    --shadow-color: #d5e2f5;
 }
