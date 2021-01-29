@@ -271,7 +271,7 @@ small {
     font-size: 0.8em;
 }
 p {
-    color: var(--primary-text);
+    color: var(--primary-black);
     line-height: 28px;
     font-size: 18px;
     font-weight: 100;
@@ -279,14 +279,21 @@ p {
     letter-spacing: 0.4px;
 }
 hr {
-    width: 40px;
+    /*width: 40px;*/
+    /*height: 1px;*/
+    /*background: #111111;*/
+    /*border-top: 0;*/
+    /*margin-top: 0px;*/
+    /*margin-bottom: 20px;*/
+    /*clear: both;*/
+    /*float: left;*/
+    color: var(--secondary-black);
+    background-color: var(--secondary-black);
+    border: none;
     height: 1px;
-    background: #111111;
-    border-top: 0;
-    margin-top: 0px;
-    margin-bottom: 20px;
-    clear: both;
-    float: left;
+    width: 40px;
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
 h1 {
     font-size: 24px;
@@ -300,7 +307,7 @@ h3 {
     font-size: 20px;
 }
 h4 {
-    font-size: 18px;
+    font-size: 21px;
 }
 h5 {
     font-size: 16px;
@@ -315,6 +322,7 @@ h4,
 h5,
 h6 {
     font-family: 'Berkshire', sans-serif;
+    /*font-family: 'Fakt Pro Black', sans-serif;*/
     letter-spacing: 1.3pt;
     color: #555555;
     clear: both;
@@ -324,7 +332,21 @@ h1{
     padding-top:20px;
 }
 
-h2 {
+/*@media only screen and (min-width: 768px)*/
+.group h3 {
+    /*font-family: 'Circular Std Bold';*/
+    font-size: 24px;
+    /*width: 60%;*/
+    color: var(--primary-black);
+    margin-top: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 30px;
+    letter-spacing: 2px;
+}
+
+h3 {
     padding-top:20px;
     padding-bottom: 20px;
     font-weight: bold;
@@ -334,14 +356,27 @@ h2 {
     margin-inline-start: 0px;
     margin-inline-end: 0px
 }
+h4 {
+    font-family: 'Fakt Pro Black', sans-serif;
+    letter-spacing: 0px;
+    margin-top: 25px;
+}
 
-.semg-border-h3 {
-    border-left: 6px solid var(--game-color);
+.semg-border {
+    border-left: 6px solid var(--semg-color);
     padding-left: 28px;
+}
+
+.underline {
+    background: linear-gradient(0deg,var(--highlight-semg) 50%,#fff 50%);
 }
 
 .p-padding-1{
      padding-left: 35px;
+}
+
+.p-margin-botton {
+    margin-bottom: 48px;
 }
 
 b {
@@ -363,11 +398,13 @@ ul {
     padding-left: 25px;
 }
 ul li {
+    font-family: 'Fakt Pro Light', sans-serif;
+    font-size: 18px;
     list-style-type: inherit;
 }
 ul.list {
     display: block;
-    line-height: 25px;
+    line-height: 40px;
 }
 ul.sublist {
     padding-left: 35px;
@@ -637,8 +674,6 @@ ul.sublist {
     left: 0;
     z-index: 1030;
 }
-
-
 
 .logo {
     float: left;
@@ -2647,6 +2682,7 @@ ul.social-buttons li {
     width: 100%;
 }
 .blog-thumb {
+    margin-top: 20px;
     position: relative;
 }
 
@@ -2669,6 +2705,15 @@ ul.social-buttons li {
 .blog-thumb .icon-video-blog:hover {
     background-color: #fff;
 }
+
+.div-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  /*border: 3px solid green;*/
+}
+
 .circle {
     stroke: #48ac8a;
     stroke-dasharray: 650;
@@ -2676,7 +2721,20 @@ ul.social-buttons li {
     -webkit-transition: all 0.5s ease-in-out;
     opacity: 0.3;
 }
-
+.container .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
 /*Play Button*/
 .playBut { 
     display: inline-block;
@@ -2685,7 +2743,7 @@ ul.social-buttons li {
     border-radius: 50%;
 }
 .playBut .triangle {
-    -webkit-transition: all 0.7s ease-in-out;
+    /*-webkit-transition: all 0.7s ease-in-out;*/
     stroke-dasharray: 240;
     stroke-dashoffset: 480;
     stroke: #000;
@@ -2695,7 +2753,10 @@ ul.social-buttons li {
     stroke-dashoffset: 0;
     opacity: 1;
     stroke: #48ac8a;
-    animation: nudge 0.7s ease-in-out;
+    /*animation: nudge 0.7s ease-in-out;*/
+}
+.portfolio-video .btn-text {
+    font-size: 20px;
 }
 @keyframes nudge {
     0% {
@@ -2937,6 +2998,8 @@ ul.social-buttons li {
     width: 69px;
     height: 69px;
     top: calc(50% - 36px);
+    border-radius: 35px 35px 35px 35px;
+    box-shadow: 0 2px 20px 0 rgba(0,0, 0, 0.14);
 }
 /* =Contact
 -------------------------------------------------------------- */
@@ -3137,11 +3200,6 @@ ul.social-media li a i:hover {
     letter-spacing: 1.5pt;
 }
 
-.img-responsive{
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
 
 /* =WordPress Core
 -------------------------------------------------------------- */
@@ -3419,7 +3477,7 @@ p {
 }
 
 .highlight-about.shown {
-     background-image: linear-gradient(to right, transparent 50%, var(--highlight-about) 50%);
+     background-image: linear-gradient(to right, transparent 50%, var(--highlight-semg) 50%);
 }
 
 .highlight {
@@ -3443,14 +3501,15 @@ p {
     --highlight-thriller: #BB142215;
     --highlight-photos: #1A73E825;
     --highlight-google: #366FF225;
-    --highlight-about: #9EEBCF60;
+    --highlight-semg: #9EEBCF60;
 
-    --game-color: #44DCC4;
+    --semg-color: #b3f3c2;
     --project-color: #fcadd2;
     --essay-color: #e89c5a;
     --about-color: #44DCC4;
 
-    --primary-text:#555555;
+    --primary-black:#555555;
+    --secondary-black:#868686;
     --theme-color: #8db0e6;
     --shadow-color: #d5e2f5;
 }
