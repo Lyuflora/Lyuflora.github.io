@@ -310,7 +310,7 @@ h4 {
     font-size: 21px;
 }
 h5 {
-    font-size: 16px;
+    font-size: 18px;
 }
 h6 {
     font-size: 14px;
@@ -356,10 +356,17 @@ h3 {
     margin-inline-start: 0px;
     margin-inline-end: 0px
 }
+
 h4 {
     font-family: 'Fakt Pro Black', sans-serif;
     letter-spacing: 0px;
     margin-top: 25px;
+}
+
+h5 {
+    font-family: 'Fakt Pro Normal', sans-serif;
+    line-height: 22px;
+    letter-spacing: 0px;
 }
 
 .semg-border {
@@ -373,6 +380,10 @@ h4 {
 
 .p-padding-1{
      padding-left: 35px;
+}
+
+.p-padding-2{
+     padding-left: 45px;
 }
 
 .p-margin-botton {
@@ -395,7 +406,7 @@ blockquote p {
     display: inline;
 }
 ul {
-    padding-left: 25px;
+    padding-left: 50px;
 }
 ul li {
     font-family: 'Fakt Pro Light', sans-serif;
