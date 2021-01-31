@@ -313,7 +313,7 @@ h5 {
     font-size: 18px;
 }
 h6 {
-    font-size: 14px;
+    font-size: 18px;
 }
 h1,
 h2,
@@ -322,7 +322,6 @@ h4,
 h5,
 h6 {
     font-family: 'Berkshire', sans-serif;
-    /*font-family: 'Fakt Pro Black', sans-serif;*/
     letter-spacing: 1.3pt;
     color: #555555;
     clear: both;
@@ -332,6 +331,69 @@ h1{
     padding-top:20px;
 }
 
+/*bs nav*/
+/**********************Side bar for navigation in portfolio pieces*******************8*/
+.bs-docs-sidebar {
+  padding-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/* all links in sidebar*/
+.bs-docs-sidebar .nav>li>a {
+    color: var(--secondary-black);
+    padding: 4px 20px;
+    font-family: 'Fakt', sans-serif;
+    font-size: 1.1em;
+    font-weight: 200;
+}
+/* nested links in sidebar*/
+.bs-docs-sidebar .nav .nav>li>a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 30px;
+    font-size: 1em;
+}
+/* add transparent border to all links in sidebar*/
+.bs-docs-sidebar .nav>li>a {
+    border-left: 2px solid transparent;
+}
+/* active & hover links in sidebar*/
+.bs-docs-sidebar .nav>.active>a,
+.bs-docs-sidebar .nav>li>a:hover,
+.bs-docs-sidebar .nav>li>a:focus {
+    color: var(--primary-black);
+    text-decoration: none;
+    font-weight: 400;
+    background-color: transparent;
+    border-left: 1px solid black;
+}
+/* change font weight for all active links in sidebar*/
+.bs-docs-sidebar .nav>.active>a,
+.bs-docs-sidebar .nav>.active:hover>a,
+.bs-docs-sidebar .nav>.active:focus>a {
+    font-weight: 700;
+}
+/* change font weight for nested active links in sidebar*/
+.bs-docs-sidebar .nav .nav>.active>a,
+.bs-docs-sidebar .nav .nav>.active:hover>a,
+.bs-docs-sidebar .nav .nav>.active:focus>a {
+    font-weight: 400;
+}
+/*to make sidebar scrollable*/
+.bs-docs-sidebar > ul {
+    overflow-y: auto;
+    height: 100%;
+}
+
+/* hide all (inactive) nested list */
+.bs-docs-sidebar .nav ul.nav {
+    display: none;
+}
+/* show active nested list */
+.bs-docs-sidebar .nav>.active>ul.nav {
+    display: block;
+}
+/*bs nav end*/
 /*@media only screen and (min-width: 768px)*/
 .group h3 {
     /*font-family: 'Circular Std Bold';*/
@@ -358,9 +420,9 @@ h3 {
 }
 
 h4 {
-    font-family: 'Fakt Pro Black', sans-serif;
-    letter-spacing: 0px;
-    margin-top: 25px;
+    font-weight: bold;
+    margin-top: 45px;
+    margin-bottom: 25px;
 }
 
 h5 {
@@ -1166,6 +1228,11 @@ span.border-text {
 .close-menu:hover,
 .search-icon:hover {
     color: #9BC5DE;
+}
+#sidebar {
+    position: fixed;
+    z-index: 1;
+    width: 220px;
 }
 /* search */
 .js-ui-search input[type="text"] {
