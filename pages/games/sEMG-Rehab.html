@@ -50,6 +50,14 @@
 
     <!-- Modernizer & Respond js -->
     <script src="../../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <style type='text/css'></style>
+    <script type='text/javascript'>//<![CDATA[
+    $(window).load(function(){
+    $('body').scrollspy({
+        target: '#sidebar'
+    });
+    });//]]>
+    </script>
 </head>
 
 <body>
@@ -118,54 +126,55 @@
 </div>
     <div class="container">
         <div class="row">
-            <nav class="col-lg-3 col-md-3 hidden-sm hidden-xs">
-          <div class="bs-docs-sidebar" style="display: block;">
-            <ul class="nav nav-stacked cc_cursor" id="sidebar">
+            <nav class="col-lg-3 col-md-3 hidden-sm hidden-xs" style="margin-top: 50px">
+                <div class="bs-docs-sidebar" style="display: block;">
+                <ul class="nav nav-stacked cc_cursor" id="sidebar">
 
-              <li class="">
-                <a href="#overview">Overview</a>
-                <ul class="nav nav-stacked">
-                  <li class=""><a href="#problem">Problem</a></li>
-                  <li class=""><a href="#solution">Solution</a></li>
-                  <li class=""><a href="#methods">Our Approach</a></li>
-                  <li class=""><a href="#my-role">My Contribution</a></li>
-                  <li class=""><a href="#design-outcome">Design Outcome</a></li>
+                  <li class="">
+                    <a href="#overview">Overview</a>
+                    <ul class="nav nav-stacked">
+                      <li class=""><a href="#problem">Problem</a></li>
+                      <li class=""><a href="#solution">Solution</a></li>
+                      <li class=""><a href="#methods">Our Approach</a></li>
+                      <li class=""><a href="#my-role">My Contribution</a></li>
+                      <li class=""><a href="#design-outcome">Design Outcome</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="">
+                    <a href="#research">Research</a>
+                    <ul class="nav nav-stacked">
+                      <li class=""><a href="#expert-interview">Expert Interview</a></li>
+                      <li class=""><a href="#comp-analysis">Competitive Analysis</a></li>
+                      <li class=""><a href="#lit-review">Literature Review</a></li>
+                      <li class=""><a href="#interviews">Interviews</a></li>
+                      <li class=""><a href="#persona">Persona</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="active">
+                    <a href="#design">Design</a>
+                    <ul class="nav nav-stacked">
+                      <li class=""><a href="#ideation">Ideation</a></li>
+                      <li class=""><a href="#design-alts">Design Alternatives</a></li>
+                      <li class=""><a href="#feedback">User Feedback</a></li>
+                      <li class=""><a href="#info-arch">Information Architecture</a></li>
+                      <li class=""><a href="#final-design">Final Design</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="">
+                    <a href="#evaluate">Evaluate</a>
+                    <ul class="nav nav-stacked">
+                      <li class=""><a href="#usability">Usability Testing</a></li>
+                      <li class=""><a href="#future-directions">Future Directions</a></li>
+                    </ul>
+                  </li>
+
                 </ul>
-              </li>
+              </div>
+            </nav>
 
-              <li class="">
-                <a href="#research">Research</a>
-                <ul class="nav nav-stacked">
-                  <li class=""><a href="#expert-interview">Expert Interview</a></li>
-                  <li class=""><a href="#comp-analysis">Competitive Analysis</a></li>
-                  <li class=""><a href="#lit-review">Literature Review</a></li>
-                  <li class=""><a href="#interviews">Interviews</a></li>
-                  <li class=""><a href="#persona">Persona</a></li>
-                </ul>
-              </li>
-
-              <li class="active">
-                <a href="#design">Design</a>
-                <ul class="nav nav-stacked">
-                  <li class=""><a href="#ideation">Ideation</a></li>
-                  <li class=""><a href="#design-alts">Design Alternatives</a></li>
-                  <li class=""><a href="#feedback">User Feedback</a></li>
-                  <li class=""><a href="#info-arch">Information Architecture</a></li>
-                  <li class=""><a href="#final-design">Final Design</a></li>
-                </ul>
-              </li>
-
-              <li class="">
-                <a href="#evaluate">Evaluate</a>
-                <ul class="nav nav-stacked">
-                  <li class=""><a href="#usability">Usability Testing</a></li>
-                  <li class=""><a href="#future-directions">Future Directions</a></li>
-                </ul>
-              </li>
-
-            </ul>
-          </div>
-        </nav>
         </div>
     </div>
     <div class="container">
@@ -270,26 +279,7 @@
                     </div>
                 </div>
             </section>
-            <section id="problem" class="group">
-                <div class="row">
-                    <div class="col-md-10 col-md-offset-1 col-sm-10">
-                        <h4>Drawbacks of Conventional Rehabilitation</h4>
-                        <img class="img-responsive" src="../../img/games-sEMGmyo/Problem-1.png" alt="Background">
-                        <p class="p-margin-botton "></p>
-                        <h4>Features of patients' favored rehabilitation games</h4>
-                        <p>
-                            We conducted a survey among patients with hemiplegia that consists of 14 questions on their expectations for idea game-based rehabilitation.
-                        </p>
-                        <img class="img-responsive" style="max-width: 70%;" src="../../img/games-sEMGmyo/Game-Features.png" alt="Favored Game Features">
-                        <p>
-                            According to our survey, the most desired feature is
-                            <span class="underline">"familiarity"</span>,
-                            <span class="underline">"Intuitive and Simple Interface"</span>, and
-                            <span class="underline">"Recommended by Therapists"</span>.
-                        </p>
-                    </div>
-                </div>
-            </section>
+
             <section id="research" class="group">
                 <h3>Research</h3>
                 <hr class="solid">
@@ -391,9 +381,12 @@ The resultant recognition a ccuracy reached reached 99.0% using simple majority 
                         <p>
                             Additionally, it can provide individualized treatment plans developed on the basis of sEMG analysis and following case-by-case treatment goals.
                         </p>
-                        <img class="img-responsive" src="../../img/games-sEMGmyo/usage.png" style="width: 100%" alt="myo">
+                        <img class="img-responsive" src="../../img/games-sEMGmyo/usage.png" style="width: 100%" alt="usage">
                         <h4>System Description</h4>
-                        <img class="img-responsive" src="../../img/games-sEMGmyo/system.png" style="width: 100%" alt="myo">
+                        <img class="img-responsive" src="../../img/games-sEMGmyo/system.png" style="width: 100%" alt="system">
+                        <h4>Persona</h4>
+                        <h4>Scenario</h4>
+                        <img class="img-responsive" src="../../img/games-sEMGmyo/scenario.png" style="width: 100%" alt="scenario">
                         <p class="p-margin-botton "></p>
                     </div>
                 </div>
