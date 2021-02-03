@@ -499,6 +499,10 @@ h5 {
     border-left: 6px solid var(--semg-color);
 }
 
+.gem-border {
+    border-left: 6px solid var(--gem-color);
+}
+
 .tmaht-border {
     border-left: 6px solid var(--tmaht-color);
 }
@@ -3655,6 +3659,7 @@ p {
 
     --semg-color: #b3f3c2;
     --tmaht-color: #5D608D;
+    --gem-color: #F3D884;
     --project-color: #fcadd2;
     --essay-color: #e89c5a;
     --about-color: #44DCC4;
