@@ -346,6 +346,27 @@ ul {
     margin-inline-end: 0px;
     padding-inline-start: 40px;
 }
+.dl-button {
+    position: relative;
+    border-width: 12px;
+    border-radius: 50px;
+    border-color: transparent;
+    margin-top: 24px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 12px 40px;
+    background-color: #ffffff;
+    color: var(--primary-black);
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Fakt' sans-serif !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 2px 20px 0 var(--shadow-color);
+    -webkit-transition: all 250ms cubic-bezier(.02, .01, .47, 1);
+    -moz-transition: all 250ms cubic-bezier(.02, .01, .47, 1);
+    transition: all 250ms cubic-bezier(.02, .01, .47, 1);
+}
 /**********************Side bar for navigation in portfolio pieces*******************8*/
 
 .fixed {
