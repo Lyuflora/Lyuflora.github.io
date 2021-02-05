@@ -528,11 +528,19 @@ h5 {
     border-left: 6px solid var(--tmaht-color);
 }
 
+.origami-border {
+    border-left: 6px solid var(--origami-color);
+}
+
 .semg-underline {
     background: linear-gradient(0deg,var(--highlight-semg) 50%,#fff 50%);
 }
 .gem-underline {
     background: linear-gradient(0deg,var(--highlight-gem) 50%,#fff 50%);
+}
+
+.origami-underline {
+    background: linear-gradient(0deg,var(--highlight-origami) 50%,#fff 50%);
 }
 
 .p-padding-1{
@@ -3657,6 +3665,10 @@ p {
      background-image: linear-gradient(to right, transparent 50%, var(--highlight-tmaht) 50%);
 }
 
+.highlight-origami.shown {
+     background-image: linear-gradient(to right, transparent 50%, var(--highlight-origami) 50%);
+}
+
 .highlight {
     position: relative;
     background-origin: 0;
@@ -3681,10 +3693,12 @@ p {
     --highlight-semg: #9EEBCF60;
     --highlight-gem: rgba(235, 217, 118, 0.38);
     --highlight-tmaht: rgba(169, 173, 243, 0.49);
+    --highlight-origami: rgba(243, 163, 65, 0.49);
 
     --semg-color: #b3f3c2;
     --tmaht-color: #5D608D;
     --gem-color: #F3D884;
+    --origami-color: #f3aa54;
     --project-color: #fcadd2;
     --essay-color: #e89c5a;
     --about-color: #44DCC4;
