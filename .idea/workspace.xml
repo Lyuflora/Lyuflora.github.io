@@ -48,7 +48,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pages/projects" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pages/games" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -56,19 +56,19 @@
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/pages/single-project.html" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitHub\Lyuflora.github.io\pages\games" />
+      <recent name="D:\GitHub\Lyuflora.github.io\pages\projects" />
+      <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages\games" />
+      <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages" />
+      <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages\essays" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages" />
       <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages\projects" />
       <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages\games" />
       <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages\essays" />
       <recent name="D:\GitHub\Lyuflora.github.io" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\GitHub\Lyuflora.github.io\pages\projects" />
-      <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages\games" />
-      <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages" />
-      <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages\essays" />
-      <recent name="D:\GitHub\Lyuflora.github.io\pages" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -191,7 +191,7 @@
       <workItem from="1612357159424" duration="9892000" />
       <workItem from="1612441825173" duration="23647000" />
       <workItem from="1612515938662" duration="1320000" />
-      <workItem from="1612580094836" duration="854000" />
+      <workItem from="1612580094836" duration="2735000" />
     </task>
     <servers />
   </component>
