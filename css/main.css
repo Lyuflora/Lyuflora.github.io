@@ -543,6 +543,10 @@ h5 {
     background: linear-gradient(0deg,var(--highlight-origami) 50%,#fff 50%);
 }
 
+.clothbrush-underline {
+    background: linear-gradient(0deg,var(--highlight-clothbrush) 50%,#fff 50%);
+}
+
 .p-padding-1{
      padding-left: 35px;
 }
@@ -3694,6 +3698,7 @@ p {
     --highlight-gem: rgba(235, 217, 118, 0.38);
     --highlight-tmaht: rgba(169, 173, 243, 0.49);
     --highlight-origami: rgba(243, 163, 65, 0.49);
+    --highlight-clothbrush: rgb(189, 170, 241);
 
     --semg-color: #b3f3c2;
     --tmaht-color: #5D608D;
