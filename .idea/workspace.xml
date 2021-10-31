@@ -23,9 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/pages/essays/Manifesto.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +58,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="JupyterTrust" id="988a5156-f3bf-4ac0-8236-94d4c61631d2" />
   <component name="ProjectId" id="1XK6OqN8tKXcEzmTThwLfmnOpJf" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -71,7 +79,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pages/projects" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pages/essays" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -82,11 +90,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Github\Personal\Lyuflora.github.io\pages\essays" />
       <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages\projects" />
       <recent name="D:\GitHub\Lyuflora.github.io\pages\projects" />
       <recent name="D:\GitHub\Lyuflora.github.io\pages\games" />
       <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages\games" />
-      <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages" />
@@ -215,7 +223,9 @@
       <workItem from="1624017970661" duration="1236000" />
       <workItem from="1624647395427" duration="1325000" />
       <workItem from="1629213120012" duration="1330000" />
-      <workItem from="1632623235562" duration="995000" />
+      <workItem from="1632623235562" duration="1597000" />
+      <workItem from="1634358768691" duration="114000" />
+      <workItem from="1635644369142" duration="1793000" />
     </task>
     <servers />
   </component>
