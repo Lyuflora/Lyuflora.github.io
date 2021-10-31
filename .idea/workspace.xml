@@ -22,7 +22,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="" />
+    <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/pages/essays/Manifesto page.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/essays/Manifesto page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/essays/Manifesto-page.gif" beforeDir="false" afterPath="$PROJECT_DIR$/pages/essays/Manifesto-page.gif" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -222,7 +225,7 @@
       <workItem from="1632623235562" duration="1597000" />
       <workItem from="1634358768691" duration="114000" />
       <workItem from="1635644369142" duration="1793000" />
-      <workItem from="1635652950067" duration="646000" />
+      <workItem from="1635652950067" duration="1007000" />
     </task>
     <servers />
   </component>
