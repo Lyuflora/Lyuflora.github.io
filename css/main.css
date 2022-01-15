@@ -539,6 +539,9 @@ h5 {
 .hacker-border {
     border-left: 6px solid var(--hacker-color);
 }
+.twenty-border {
+    border-left: 6px solid var(--twenty-color);
+}
 .origami-border {
     border-left: 6px solid var(--origami-color);
 }
@@ -3682,6 +3685,10 @@ p {
 .highlight-hacker.shown {
      background-image: linear-gradient(to right, transparent 50%, var(--highlight-hacker) 50%);
 }
+.highlight-twenty.shown {
+     background-image: linear-gradient(to right, transparent 50%, var(--highlight-twenty) 50%);
+}
+
 .highlight-origami.shown {
      background-image: linear-gradient(to right, transparent 50%, var(--highlight-origami) 50%);
 }
@@ -3710,6 +3717,7 @@ p {
     --highlight-semg: #9EEBCF60;
     --highlight-gem: rgba(235, 217, 118, 0.38);
     --highlight-tmaht: rgba(169, 173, 243, 0.49);
+    --highlight-twenty: rgba(231, 156, 115, 0.49);
     --highlight-hacker: rgba(125, 232, 125, 0.49);
     --highlight-origami: rgba(243, 163, 65, 0.49);
     --highlight-clothbrush: rgb(189, 170, 241);
@@ -3717,6 +3725,7 @@ p {
     --semg-color: #b3f3c2;
     --tmaht-color: #5D608D;
     --hacker-color: rgba(162, 215, 154, 0.49);
+    --twenty-color: #c5955e;
     --gem-color: #F3D884;
     --origami-color: #f3aa54;
     --project-color: #fcadd2;
