@@ -22,22 +22,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="Update About">
-      <change afterPath="$PROJECT_DIR$/pages/essays/Narrative-reflection.html" afterDir="false" />
+    <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="Update 2014 page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/games-twentyfourteen/Twenty Fourteen_Export.pptx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/games-twentyfourteen/gameplay.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/games-twentyfourteen/幻灯片10.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/games-twentyfourteen/幻灯片11.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/games-twentyfourteen/幻灯片12.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/games-twentyfourteen/幻灯片2.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/games-twentyfourteen/幻灯片4.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/games-twentyfourteen/幻灯片5.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/games-twentyfourteen/幻灯片6.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/games-twentyfourteen/幻灯片7.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/games-twentyfourteen/幻灯片8.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/games-twentyfourteen/幻灯片9.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/games/twentyftn.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/twentyftn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/games-hacker/未标题-1-恢复的.psd" beforeDir="false" afterPath="$PROJECT_DIR$/img/games-hacker/未标题-1-恢复的.psd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/hacker-101.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/hacker-101.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +231,8 @@
       <workItem from="1641537989113" duration="5000" />
       <workItem from="1641931416872" duration="5563000" />
       <workItem from="1641937075514" duration="4482000" />
-      <workItem from="1642192779791" duration="7846000" />
+      <workItem from="1642192779791" duration="9123000" />
+      <workItem from="1643073810143" duration="2993000" />
     </task>
     <task id="LOCAL-00001" summary="Add Game project">
       <created>1641932592453</created>
@@ -265,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642261959310</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Update 2014 page">
+      <created>1642313215138</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1642313215139</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,9 +282,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add Game project" />
-    <MESSAGE value="Update 2014 page" />
     <MESSAGE value="Update About" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update About" />
+    <MESSAGE value="Update 2014 page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update 2014 page" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Lyuflora_github_io$app.coverage" NAME="app Coverage Results" MODIFIED="1582779028369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../../Program File/Tencent Files/评比/14/code" />
