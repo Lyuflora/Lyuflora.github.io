@@ -23,12 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="Update Index">
-      <change afterPath="$PROJECT_DIR$/pages/essays/FinalManifesto.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/essays.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/essays.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/essays/Manifesto.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/games/twentyftn.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/twentyftn.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/techarts.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/techarts.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,7 +236,8 @@
       <workItem from="1643904519595" duration="753000" />
       <workItem from="1646090318776" duration="1015000" />
       <workItem from="1646122612764" duration="24000" />
-      <workItem from="1646782275878" duration="15012000" />
+      <workItem from="1646782275878" duration="15051000" />
+      <workItem from="1646952050252" duration="14000" />
     </task>
     <task id="LOCAL-00001" summary="Add Game project">
       <created>1641932592453</created>
