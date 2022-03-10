@@ -643,6 +643,9 @@ ul.sublist {
 .main-title.near-content {
     margin-bottom: 22px;
 }
+.main-title.far-content {
+    margin-right: 72px;
+}
 .main-title h1 {
     font-size: 24px;
     font-weight: 700;
