@@ -24,7 +24,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="Update Index">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/game.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/project.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/project.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/techarts.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/techarts.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +239,7 @@
       <workItem from="1643904519595" duration="753000" />
       <workItem from="1646090318776" duration="1015000" />
       <workItem from="1646122612764" duration="24000" />
-      <workItem from="1646782275878" duration="12122000" />
+      <workItem from="1646782275878" duration="12547000" />
     </task>
     <task id="LOCAL-00001" summary="Add Game project">
       <created>1641932592453</created>
