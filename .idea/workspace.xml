@@ -23,8 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="Update Index">
+      <change afterPath="$PROJECT_DIR$/pages/essays/FinalManifesto.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/essays.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/essays.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/essays/Manifesto.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/twentyftn.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/twentyftn.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/techarts.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/techarts.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +82,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pages" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pages/essays" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -90,8 +93,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Github\Personal\Lyuflora.github.io\pages" />
       <recent name="E:\Github\Personal\Lyuflora.github.io\pages\essays" />
+      <recent name="E:\Github\Personal\Lyuflora.github.io\pages" />
       <recent name="E:\Github\Personal\Lyuflora.github.io\pages\games" />
       <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages\projects" />
       <recent name="D:\GitHub\Lyuflora.github.io\pages\projects" />
@@ -238,7 +241,7 @@
       <workItem from="1643904519595" duration="753000" />
       <workItem from="1646090318776" duration="1015000" />
       <workItem from="1646122612764" duration="24000" />
-      <workItem from="1646782275878" duration="14068000" />
+      <workItem from="1646782275878" duration="15012000" />
     </task>
     <task id="LOCAL-00001" summary="Add Game project">
       <created>1641932592453</created>
