@@ -20,7 +20,7 @@
   height: 80vh;
   border-radius: 50px;
   color: #fff;
-  cursor: pointer;
+    cursor: url(../img/cursor_s.png), auto;
   flex: 0.35;
   margin: 10px;
   position: relative;

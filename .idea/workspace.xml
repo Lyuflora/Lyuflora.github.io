@@ -22,11 +22,48 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="Add pps link">
-      <change afterPath="$PROJECT_DIR$/css/expandingcards.css" afterDir="false" />
+    <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="Update Index">
+      <change afterPath="$PROJECT_DIR$/pages/techarts.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/expandingcards.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/expandingcards.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/essays-page2.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/essays-page2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/essays.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/essays.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/essays/EngChn.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/essays/EngChn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/essays/Houdini.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/essays/Houdini.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/essays/Manifesto.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/essays/Manifesto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/essays/Narrative-reflection.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/essays/Narrative-reflection.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/essays/UnityShader.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/essays/UnityShader.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/essays/braid.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/essays/braid.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/essays/ecg-denoising.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/essays/ecg-denoising.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/essays/gunpoint.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/essays/gunpoint.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/essays/pandemic.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/essays/pandemic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/essays/powergrid.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/essays/powergrid.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/game.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/MUD.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/MUD.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/Underground.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/Underground.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/ant.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/ant.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/ball.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/ball.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/hacker-101.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/hacker-101.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/hahacoco.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/hahacoco.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/maze.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/maze.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/sEMG-Rehab.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/sEMG-Rehab.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/sounderplayer.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/sounderplayer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/spideroar.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/spideroar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/the-magician-and-his-tenant.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/the-magician-and-his-tenant.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/twentyftn.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/twentyftn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index - 副本.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index - 副本.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/project.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/projects/clothBrush.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/projects/clothBrush.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/projects/criminal_investigation-XR.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/projects/criminal_investigation-XR.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/projects/origami-AR.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/projects/origami-AR.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/projects/safetyedu.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/projects/safetyedu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/projects/vrcrimesys.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/projects/vrcrimesys.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/video-essay.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/video-essay.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +117,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pages/essays" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pages" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -91,11 +128,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Github\Personal\Lyuflora.github.io\pages" />
       <recent name="E:\Github\Personal\Lyuflora.github.io\pages\essays" />
       <recent name="E:\Github\Personal\Lyuflora.github.io\pages\games" />
       <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages\projects" />
       <recent name="D:\GitHub\Lyuflora.github.io\pages\projects" />
-      <recent name="D:\GitHub\Lyuflora.github.io\pages\games" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Github\Personal\Lyuflora.github.io\upload" />
@@ -239,7 +276,7 @@
       <workItem from="1643904519595" duration="753000" />
       <workItem from="1646090318776" duration="1015000" />
       <workItem from="1646122612764" duration="24000" />
-      <workItem from="1646782275878" duration="7467000" />
+      <workItem from="1646782275878" duration="12031000" />
     </task>
     <task id="LOCAL-00001" summary="Add Game project">
       <created>1641932592453</created>
@@ -304,7 +341,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646122630044</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Update Index">
+      <created>1646887074844</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1646887074844</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,7 +375,8 @@
     <MESSAGE value="Add W3Count" />
     <MESSAGE value="Add pps project" />
     <MESSAGE value="Add pps link" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add pps link" />
+    <MESSAGE value="Update Index" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Index" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Lyuflora_github_io$app.coverage" NAME="app Coverage Results" MODIFIED="1582779028369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../../Program File/Tencent Files/评比/14/code" />

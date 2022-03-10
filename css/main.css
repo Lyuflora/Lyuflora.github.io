@@ -650,6 +650,7 @@ ul.sublist {
     font-size: 24px;
     font-weight: 700;
     margin: 0;
+    background: linear-gradient(0deg,var(--shadow-color) 30%,#fff 30%);
 }
 .main-title h6 {
     font-family: 'Ubuntu', sans-serif;
