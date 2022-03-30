@@ -25,7 +25,6 @@
     <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="Update Index">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/img/home-portfolio/game_2014title.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/home-portfolio/game_2014title.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/game.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -243,7 +242,9 @@
       <workItem from="1646952050252" duration="1075000" />
       <workItem from="1647311111128" duration="113000" />
       <workItem from="1647365300270" duration="2455000" />
-      <workItem from="1648601840313" duration="628000" />
+      <workItem from="1648601840313" duration="1894000" />
+      <workItem from="1648653028227" duration="513000" />
+      <workItem from="1648653861526" duration="3588000" />
     </task>
     <task id="LOCAL-00001" summary="Add Game project">
       <created>1641932592453</created>
