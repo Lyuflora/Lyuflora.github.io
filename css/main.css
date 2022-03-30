@@ -2773,12 +2773,13 @@ span.press {
 .table>tfoot>tr>th,
 .table>thead>tr>td,
 .table>tbody>tr>td,
-.table>tfoot>tr>td {
+.table>tfoot>tr>td{
     border: 0;
     font-size: 16px;
     font-weight: 300;
     color: #383838;
 }
+
 ul.social-buttons {
     padding: 0;
 }
@@ -3420,6 +3421,10 @@ ul.social-media li a i:hover {
 }
 .gallery-caption{
     padding: 25px;
+    text-align: center;
+    font-size: 12px !important;
+    font-weight: 100 !important;
+    font-style: italic;
 }
 .bypostauthor{
     font-weight: 700;
@@ -3721,7 +3726,7 @@ p {
     --highlight-semg: #9EEBCF60;
     --highlight-gem: rgba(235, 217, 118, 0.38);
     --highlight-tmaht: rgba(169, 173, 243, 0.49);
-    --highlight-twenty: rgba(231, 156, 115, 0.49);
+    --highlight-twenty: rgba(192, 162, 146, 0.49);
     --highlight-hacker: rgba(125, 232, 125, 0.49);
     --highlight-origami: rgba(243, 163, 65, 0.49);
     --highlight-clothbrush: rgb(189, 170, 241);
@@ -3729,7 +3734,7 @@ p {
     --semg-color: #b3f3c2;
     --tmaht-color: #5D608D;
     --hacker-color: rgba(162, 215, 154, 0.49);
-    --twenty-color: #c5955e;
+    --twenty-color: #694f44;
     --gem-color: #F3D884;
     --origami-color: #f3aa54;
     --project-color: #fcadd2;
