@@ -23,8 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="Update Index">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/games/the-magician-and-his-tenant.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/the-magician-and-his-tenant.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/game.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload/Hear Hear by ALEKS &amp; ARIS #4.pdf" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,7 +245,7 @@
       <workItem from="1648653028227" duration="513000" />
       <workItem from="1648653861526" duration="12490000" />
       <workItem from="1648683939150" duration="1191000" />
-      <workItem from="1649257482524" duration="1603000" />
+      <workItem from="1649257482524" duration="1782000" />
     </task>
     <task id="LOCAL-00001" summary="Add Game project">
       <created>1641932592453</created>
