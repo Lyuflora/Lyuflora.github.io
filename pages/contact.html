@@ -135,17 +135,19 @@
                     </div>
                 </div>
 
-                <form method="GET">
+                <form action="https://formsubmit.co/keyaolyu@gmail.com" method="POST">
                     <div class="contact-form">
 
                         <div class="col-md-4">
-                            <input type="text" placeholder="NAME *">
-                            <input type="text" placeholder="E-MAIL *">
+                            <input type="text" name="name" placeholder="NAME *" required>
+                            <input type="text" name="email" placeholder="E-MAIL *" required>
+                            <input type="hidden" name="_next" value="https://lyuflora.github.io">
                             <input type="text" placeholder="SUBJECT">
                         </div>
                         <div class="col-md-5">
                             <textarea placeholder="MESSAGE"></textarea>
                             <input type="submit" value="SEND">
+                                 <button type="submit">Send</button>
                         </div>
                     </div>
                 </form>
