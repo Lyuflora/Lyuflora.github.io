@@ -9,10 +9,15 @@
 /*  margin: 0;*/
 /*}*/
 
-.cardcontainer {
+.flex-container {
   display: flex;
-  width: 70vw;
+  /*width: 70vw;*/
+  justify-content: center;
 }
+.flex-container > div{
+    margin: 10px;
+}
+
 .panel {
   background-size: cover;
   background-position: center;
