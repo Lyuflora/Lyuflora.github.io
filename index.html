@@ -249,10 +249,10 @@
 
     </div>
 
-    <div class="main-title portrait con-tooltip right">
+    <div id="portrait" class="main-title portrait con-tooltip right">
         <div class="main-title inner-border"></div>
         <!-- Right tooltip -->
-        <div class="main-title tooltip">
+        <div id="funfact" class="main-title tooltip">
             <p>Haha&Coco is the first game I made</p>
         </div>
 
@@ -627,6 +627,45 @@
             panel.classList.remove('active')
         })
     }
+
+    // Tooltip
+    const facts = {
+        data: [
+            {
+                id: '6',
+                text: 'I learned how to read and write Hebrew alphabet.',
+            }, {
+                id: '4',
+                text: 'I am a amateur vfx artist.',
+            }, {
+                id: '5',
+                text: 'I love Detective fiction.',
+            }, {
+                id: '7',
+                text: 'Haha & Coco is my first game',
+            },
+        ]
+    }
+    const portrait = document.getElementById("portrait");
+    const tooltip = document.getElementById("funfact");
+    const content = tooltip.querySelector('p');
+
+    portrait.addEventListener('mouseover', UpdateFact);
+
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+    }
+
+    function UpdateFact() {
+        var index = getRandomInt(4);
+        index = Math.min(index, facts.data.length - 1);
+        console.log("change fact" + index);
+        content.innerText = facts.data[index].text;
+        // todo: add link
+
+    }
+
+
 </script>
 
 <script src="js/vendor/jquery-1.11.2.min.js"></script>

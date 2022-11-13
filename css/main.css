@@ -805,7 +805,7 @@ ul.sublist {
     opacity: .40;
 
     width: 100%;
-    padding: 0px 20px;
+    padding: 0 20px;
 
     background: #333;
 
@@ -825,7 +825,7 @@ ul.sublist {
     color: #E086D3;
     font-size: 16px;
     line-height: 20px;
-    margin: 5px;
+    margin: 10px;
 }
 
 /* tooltip  after*/
