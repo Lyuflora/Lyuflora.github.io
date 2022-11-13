@@ -361,7 +361,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Berkshire', sans-serif;
+    /*font-family: 'Berkshire', sans-serif;*/
     letter-spacing: 1.3pt;
     color: #555555;
     clear: both;
@@ -709,7 +709,7 @@ ul.sublist {
 .main-title h1 {
     font-size: 4.5vw;
     font-weight: 700;
-    margin: 0;
+    margin-bottom: 10px;
     /*font-family: "SecularOne";*/
 }
 /*Subtitle*/
@@ -722,6 +722,7 @@ ul.sublist {
     max-width: 300px;
     line-height: 1.5em;
     margin-bottom: var(--margin-xs);
+    margin-top: var(--margin-xs);
     margin-left: var(--margin-s);
     vertical-align: bottom
 }
@@ -2933,8 +2934,9 @@ ul.client-thumb-2 li a img:hover {
     z-index: 4;
 }
 
-.img .overlay-thumb:hover {
-    background: linear-gradient(to bottom, rgba(51, 51, 51, 0), rgba(51, 51, 51, 0) 50%, #eee 75%, #ffffff 75%);
+/*:hover*/
+.img .overlay-thumb {
+    background: linear-gradient(to bottom, rgba(51, 51, 51, 0), rgba(51, 51, 51, 0) 50%, rgba(238, 238, 238, 0) 75%, #ffffff 75%);
 }
 
 .img .overlay-thumb.bg-white:hover {
@@ -2998,7 +3000,13 @@ ul.client-thumb-2 li a img:hover {
     left: 0;
     top: 0;
 }
+.overlay-thumb .btnBefore {
+    border-width: 0 0 2px 2px;
+}
 
+.overlay-thumb .btnAfter {
+    border-width: 2px 2px 0 0;
+}
 .overlay-thumb:hover .btnBefore {
     border-width: 0 0 4px 4px;
 }
@@ -3006,9 +3014,9 @@ ul.client-thumb-2 li a img:hover {
 .overlay-thumb:hover .btnAfter {
     border-width: 4px 4px 0 0;
 }
-
-.overlay-thumb:hover .btnAfter,
-.overlay-thumb:hover .btnBefore {
+/*:hover*/
+.overlay-thumb .btnAfter,
+.overlay-thumb .btnBefore {
     height: 100%;
     width: 100%;
     transition: width 0.5s ease, height 0.5s ease 0.5s, border-top-right-radius 0.1s ease 0.4s, border-bottom-left-radius 0.1s ease 0.4s, border-bottom-right-radius 0.1s ease 0.9s, border-top-left-radius 0.1s ease 0.9s;
@@ -3017,23 +3025,32 @@ ul.client-thumb-2 li a img:hover {
     -o-transition: width 0.5s ease, height 0.5s ease 0.5s, border-top-right-radius 0.1s ease 0.4s, border-bottom-left-radius 0.1s ease 0.4s, border-bottom-right-radius 0.1s ease 0.9s, border-top-left-radius 0.1s ease 0.9s;
     -ms-transition: width 0.5s ease, height 0.5s ease 0.5s, border-top-right-radius 0.1s ease 0.4s, border-bottom-left-radius 0.1s ease 0.4s, border-bottom-right-radius 0.1s ease 0.9s, border-top-left-radius 0.1s ease 0.9s;
 }
-
 .overlay-thumb:hover:before,
 .overlay-thumb:hover span {
     opacity: 1;
 }
 
-.overlay-thumb:hover .details span {
+.overlay-thumb .details span {
+    opacity: 1;
     top: 0;
 }
 
-.overlay-thumb:hover .title {
-    transition-delay: 0.15s;
-}
+/*.overlay-thumb:hover:before,*/
+/*.overlay-thumb:hover span {*/
+/*    opacity: 1;*/
+/*}*/
 
-.overlay-thumb:hover .info {
-    transition-delay: 0.25s;
-}
+/*.overlay-thumb:hover .details span {*/
+/*    top: 0;*/
+/*}*/
+
+/*.overlay-thumb:hover .title {*/
+/*    transition-delay: 0.15s;*/
+/*}*/
+
+/*.overlay-thumb:hover .info {*/
+/*    transition-delay: 0.25s;*/
+/*}*/
 
 /*Details on portfolio*/
 .details {
@@ -3049,9 +3066,9 @@ ul.client-thumb-2 li a img:hover {
     opacity: 0;
     position: relative;
     top: 100px;
-    transition-property: top, opacity;
-    transition-duration: 0.3s;
-    transition-delay: 0s;
+    /*transition-property: top, opacity;*/
+    /*transition-duration: 0.3s;*/
+    /*transition-delay: 0s;*/
 }
 
 .details .title {
