@@ -707,14 +707,52 @@ ul.sublist {
 }
 
 .main-title h1 {
-    font-size: 24px;
+    font-size: 4.5vw;
     font-weight: 700;
     margin: 0;
 }
+/*Subtitle*/
 
-.main-title h6 {
-    font-family: 'Ubuntu', sans-serif;
+.home-subtitle {
+    grid-area: home-subtitle;
+    align-self: end;
+    color: var(--color-text-normal);
+    font-family: fam-text, sans-serif;
+    max-width: 300px;
+    line-height: 1.5em;
+    margin-bottom: var(--margin-xs);
+    margin-left: var(--margin-s);
+    vertical-align: bottom
+}
 
+.home-subtitle {
+    font-size: 14px
+}
+
+@media screen and (min-width: 600px) {
+    .home-subtitle {
+        font-size: calc(14px + 4 * ((100vw - 600px) / 200))
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .home-subtitle {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .home-title {
+        justify-self: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 0
+    }
+
+    .home-subtitle {
+        margin-left: 0;
+        text-align: center
+    }
 }
 
 /*portrait*/
@@ -728,6 +766,7 @@ ul.sublist {
     padding: 0px;
     /*background-clip: padding-box;*/
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    cursor: url(../img/cursor_s.png), auto;
 }
 
 @media (max-width: 800px) {
@@ -737,10 +776,11 @@ ul.sublist {
 }
 
 .main-title.inner-border {
-    border: 2px solid #b0b4bb;
+    border: 2px solid #d0d0d0;
     border-radius: 28px;
     height: 100%;
     width: 100%;
+    cursor: url(../img/cursor_s.png), auto;
 }
 
 /*tooltip Box*/
@@ -783,7 +823,7 @@ ul.sublist {
     color: #E086D3;
     font-size: 16px;
     line-height: 20px;
-    margin:5px ;
+    margin: 5px;
 }
 
 /* tooltip  after*/
@@ -840,7 +880,6 @@ ul.sublist {
 
 
 /*left*/
-
 .left .tooltip {
     top: -20%;
     left: -170%;
@@ -853,7 +892,6 @@ ul.sublist {
 }
 
 /*right*/
-
 .right .tooltip {
     top: -0%;
     left: 115%;
@@ -1027,7 +1065,6 @@ ul.sublist {
 
 /* =Buttons
 -------------------------------------------------------------- */
-
 .btn {
     letter-spacing: 1.5pt;
     border-radius: 0;
@@ -1052,7 +1089,6 @@ ul.sublist {
 
 /* =Preloader
 -------------------------------------------------------------- */
-
 .cover {
     position: fixed;
     left: 0px;
@@ -1065,7 +1101,6 @@ ul.sublist {
 
 /* =Header
 -------------------------------------------------------------- */
-
 .header {
     height: 100px;
     width: 100%;
@@ -1280,7 +1315,6 @@ p {
 
 /* =Full Width Slider
 -------------------------------------------------------------- */
-
 .has-slider {
     position: absolute;
     background: transparent;
@@ -1594,7 +1628,7 @@ span.border-text {
     font-weight: 400;
 }
 
-/* =Architecure Slider 
+/* =Architecure Slider
 -------------------------------------------------------------- */
 .arch-slider {
     position: relative;
@@ -1637,7 +1671,6 @@ span.border-text {
 
 /* =Menu right
 -------------------------------------------------------------- */
-
 .navigation {
     display: block;
     position: absolute;
@@ -2235,7 +2268,6 @@ ul.sub-menu li a {
 
 /* =Menu Version 2
 -------------------------------------------------------------- */
-
 .menu-wrap-2 {
     float: right;
 }
@@ -2378,7 +2410,6 @@ ul.sub-menu li a {
 
 /* =Architecture Content
 -------------------------------------------------------------- */
-
 .architecture-content .box-over-image {
     min-height: 660px;
     margin-bottom: 30px;
@@ -2455,7 +2486,6 @@ ul.sub-menu li a {
 }
 
 /* About Studio */
-
 .about-studio {
     position: relative;
     width: 100%;
@@ -2903,7 +2933,7 @@ ul.client-thumb-2 li a img:hover {
 }
 
 .img .overlay-thumb:hover {
-    background-color: rgba(144, 179, 201, 0.77);
+    /*background-color: rgba(52, 53, 54, 0.77);*/
 }
 
 .img .overlay-thumb.bg-white:hover {
@@ -2969,11 +2999,11 @@ ul.client-thumb-2 li a img:hover {
 }
 
 .overlay-thumb:hover .btnBefore {
-    border-width: 0 0 3px 3px;
+    border-width: 0 0 4px 4px;
 }
 
 .overlay-thumb:hover .btnAfter {
-    border-width: 3px 3px 0 0;
+    border-width: 4px 4px 0 0;
 }
 
 .overlay-thumb:hover .btnAfter,
@@ -3407,7 +3437,6 @@ ul.social-buttons li {
 
 /* =Blog
 -------------------------------------------------------------- */
-
 .blog-post {
     margin-bottom: 100px;
 }
@@ -4413,4 +4442,16 @@ p {
     --colour-background: #fff;
     --colour-background-folded: #f5f5f5;
     --colour-background-stripes: rgba(255, 255, 255, .5);
+    --color-text-normal: #d0d0d0;
+}
+
+@media (max-width: 1024px) {
+    :root {
+        --margin-xxl: 220px;
+        --margin-xl: 110px;
+        --margin-l: 80px;
+        --margin-m: 50px;
+        --margin-s: 30px;
+        --margin-xs: 20px;
+    }
 }
