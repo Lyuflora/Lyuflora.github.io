@@ -2974,14 +2974,14 @@ ul.client-thumb-2 li a img:hover {
     font-size: 18px;
     letter-spacing: 1.2pt;
     line-height: 24px;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
 }
 
 .details span.role {
     font-size: 18px;
     letter-spacing: 1.2pt;
     line-height: 24px;
-    font-family: "Courier New", Courier, monospace;
+    font-family: "Sora", Helvetica, Arial, sans-serif;
     /*text-transform: uppercase;*/
     color: var(--filter-active);
 }
@@ -4355,6 +4355,12 @@ a img.aligncenter {
     src: url("../fonts/SecularOne-Regular.ttf") format("ttf");
 }
 
+@font-face {
+	font-family: 'Sora';
+	src: url('../fonts/home/Sora/Sora-VariableFont_wght.ttf') format('ttf-variations');
+	font-weight: 100 1000;
+	font-stretch: 25% 151%;
+}
 .bigwords {
     display: block;
     text-align: justify;
