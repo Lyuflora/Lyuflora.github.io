@@ -732,6 +732,10 @@ ul.sublist {
     font-size: 18px;
 }
 
+.name{
+    color: var(--filter-active);
+}
+
 @media screen and (min-width: 600px) {
     .home-subtitle {
         font-size: calc(14px + 4 * ((100vw - 600px) / 200))
