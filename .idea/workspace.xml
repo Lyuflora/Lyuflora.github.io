@@ -24,9 +24,11 @@
   <component name="ChangeListManager">
     <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="Update Index">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/home-portfolio/game_firefighter_cover1.psd" beforeDir="false" afterPath="$PROJECT_DIR$/img/home-portfolio/game_firefighter_cover1.psd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/about.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/essays.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/essays.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/games/the-magician-and-his-tenant.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/the-magician-and-his-tenant.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -265,7 +267,8 @@
       <workItem from="1667481876416" duration="293000" />
       <workItem from="1668285352870" duration="20066000" />
       <workItem from="1668372432257" duration="10404000" />
-      <workItem from="1668440512571" duration="9666000" />
+      <workItem from="1668440512571" duration="10263000" />
+      <workItem from="1668538944953" duration="1659000" />
     </task>
     <task id="LOCAL-00001" summary="Add Game project">
       <created>1641932592453</created>
