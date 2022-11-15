@@ -24,8 +24,16 @@
   <component name="ChangeListManager">
     <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="Update Index">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/clipboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/clipboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/essays.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/essays.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/game.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/ant.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/ant.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/ball.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/ball.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/hahacoco.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/hahacoco.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/maze.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/maze.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/sEMG-Rehab.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/sEMG-Rehab.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/sounderplayer.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/soundplayer.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,7 +272,7 @@
       <workItem from="1667481876416" duration="293000" />
       <workItem from="1668285352870" duration="20066000" />
       <workItem from="1668372432257" duration="10404000" />
-      <workItem from="1668440512571" duration="5101000" />
+      <workItem from="1668440512571" duration="5734000" />
     </task>
     <task id="LOCAL-00001" summary="Add Game project">
       <created>1641932592453</created>
