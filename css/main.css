@@ -4374,6 +4374,12 @@ a img.aligncenter {
     font-stretch: 25% 151%;
 }
 
+.bs-docs-sidebar {
+    padding-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .bigwords {
     display: block;
     text-align: justify;
