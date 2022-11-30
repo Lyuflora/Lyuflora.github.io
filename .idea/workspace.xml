@@ -23,10 +23,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="Update Index">
+      <change afterPath="$PROJECT_DIR$/js/sidebar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/MUD.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/MUD.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/TheGalleryMystery.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/TheGalleryMystery.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/Underground.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/Underground.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/ant.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/ant.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/ball.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/ball.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/hacker-101.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/hacker-101.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/hahacoco.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/hahacoco.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/maze.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/maze.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/sEMG-Rehab.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/sEMG-Rehab.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/soundplayer.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/soundplayer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/spideroar.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/spideroar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/the-magician-and-his-tenant.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/the-magician-and-his-tenant.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/games/twentyftn.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/twentyftn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/projects/clothBrush.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/projects/clothBrush.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/projects/criminal_investigation-XR.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/projects/criminal_investigation-XR.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/projects/origami-AR.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/projects/origami-AR.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/projects/vrcrimesys.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/projects/vrcrimesys.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,9 +65,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -272,7 +287,11 @@
       <workItem from="1668559235106" duration="650000" />
       <workItem from="1669082567906" duration="64000" />
       <workItem from="1669082822041" duration="622000" />
-      <workItem from="1669127272901" duration="267000" />
+      <workItem from="1669127272901" duration="426000" />
+      <workItem from="1669153962482" duration="863000" />
+      <workItem from="1669165732028" duration="94000" />
+      <workItem from="1669171102133" duration="918000" />
+      <workItem from="1669820453203" duration="3081000" />
     </task>
     <task id="LOCAL-00001" summary="Add Game project">
       <created>1641932592453</created>

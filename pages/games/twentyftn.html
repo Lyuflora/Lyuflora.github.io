@@ -22,6 +22,7 @@
 
     <!--  Slider -->
     <link rel="stylesheet" href="../../css/jquery.kenburnsy.css">
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 
     <!-- Animate -->
     <link rel="stylesheet" href="../../css/animate.css">
@@ -52,61 +53,27 @@
     <!-- Modernizer & Respond js -->
     <script src="../../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <script src="https://www.w3counter.com/tracker.js?id=141460"></script>
+    <script src="../../js/sidebar.js"></script>
 </head>
 
 <body>
-<!--<nav class="col-lg-3 col-md-3 hidden-sm hidden-xs">-->
-<!--          <div class="bs-docs-sidebar" style="display: block;">-->
-<!--            <ul class="nav nav-stacked" id="sidebar">-->
+<nav class="col-lg-3 col-md-3 hidden-sm hidden-xs">
+          <div class="bs-docs-sidebar" style="display: block;">
+            <ul class="nav nav-stacked" id="sidebar">
 
-<!--              <li class="active">-->
-<!--                <a href="#overview">Overview</a>-->
-<!--                <ul class="nav nav-stacked">-->
-<!--                  <li class=""><a href="#problem">Problem</a></li>-->
-<!--                  <li class=""><a href="#solution">Solution</a></li>-->
-<!--                </ul>-->
-<!--              </li>-->
+              <li class="active">
+                <a href="#overview">Overview</a>
+                <ul class="nav nav-stacked">
+                  <li class=""><a href="#summary">Summary</a></li>
+                  <li class=""><a href="#gameplay">Gameplay</a></li>
+                </ul>
+              </li>
 
-<!--              <li>-->
-<!--                <a href="#research">Research</a>-->
-<!--                <ul class="nav nav-stacked">-->
-<!--                  <li><a href="#why-photos">Why Redesigning Google Photos?</a></li>-->
-<!--                  <li><a href="#domain-research">Domain Research</a></li>-->
-<!--                  <li><a href="#user-needs">Defining User Needs</a></li>-->
-<!--                  <li><a href="#design-goals">Design Goals</a></li>-->
-<!--                </ul>-->
-<!--              </li>-->
 
-<!--              <li>-->
-<!--                <a href="#design">Design</a>-->
-<!--                <ul class="nav nav-stacked">-->
-<!--                  <li><a href="#browsing">Facilitating the Browsing of Past Photos</a></li>-->
-<!--                  <li><a href="#curating">Helping Users Curate Their Photo Library</a></li>-->
-<!--                  <li><a href="#hi-fi">High Fidelity Design</a></li>-->
-<!--                </ul>-->
-<!--              </li>-->
 
-<!--              <li>-->
-<!--                <a href="#future-steps">Future Steps</a>-->
-<!--                <ul class="nav nav-stacked">-->
-<!--                  <li><a href="#edge-cases">Technical Details for Grouping</a></li>-->
-<!--                  <li><a href="#user-testing">Evaluating the Design with Users</a></li>-->
-<!--                  <li><a href="#existing-features">Integrating with Existing Features</a></li>-->
-<!--                  <li><a href="#web-ui">Extending the UI to Other Platforms</a></li>-->
-<!--                </ul>-->
-<!--              </li>-->
-
-<!--              <li>-->
-<!--                <a href="#what-i-learned">What I Learned</a>-->
-<!--                <ul class="nav nav-stacked">-->
-<!--                  <li><a href="#redesign">Considerations for Redesign</a></li>-->
-<!--                  <li><a href="#ideas">Capturing Creative Ideas</a></li>-->
-<!--                </ul>-->
-<!--              </li>-->
-
-<!--            </ul>-->
-<!--          </div>-->
-<!--        </nav>-->
+            </ul>
+          </div>
+        </nav>
 <!-- Preloader -->
 <div class="cover"></div>
 
@@ -156,7 +123,7 @@
                     </p>
                     <img class="img-responsive half-img aligncenter"
                          src="../../img/games-twentyfourteen/screenshots/start.PNG" alt="Start">
-                    <h1>
+                    <h1 id="summary">
                         Summary
                     </h1>
                     <p>
@@ -212,7 +179,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1 col-sm-10">
-                        <h1>Gameplay</h1>
+                        <h1 id="gameplay">Gameplay</h1>
                         <br>
                         <br>
                         <div class="col-md-6 col-sm-10 col-xs-12">
@@ -570,18 +537,16 @@
                 </div>
             </div>
 
-            <div class="col-md-4 col-sm-4 col-xs-12">
+<div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="footer-inner">
                     <div class="footer-content">
                         <ul class="social-media">
-                            <li><a href="#"><i class="iconmoon-facebook"></i></a></li>
-                            <li><a href="#"><i class="iconmoon-twitter"></i></a></li>
-                            <li><a href="#"><i class="iconmoon-flickr2"></i></a></li>
-                            <li><a href="#"><i class="iconmoon-dribbble3"></i></a></li>
-                            <li><a href="#"><i class="iconmoon-pinterest"></i></a></li>
-                            <li><a href="#"><i class="iconmoon-linkedin2"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/keyao-lyu-26a4a11b6/"><i
+                                    class="iconmoon-linkedin2"></i></a></li>
+                            <li><a href="https://www.instagram.com/flowmelon/"><i class="iconmoon-instagram"></i></a>
+                            </li>
                         </ul>
-                        <!--                            <span class="copyright-mark">&copy; 2015 OAK, ALL RIGHTS RESERVED</span>-->
+                        <!--                        <span class="copyright-mark">&copy; 2015 OAK, ALL RIGHTS RESERVED</span>-->
                     </div>
                 </div>
             </div>
@@ -592,6 +557,7 @@
 <a href="javascript:void(0)" class="scroll-top" id="scroll-top"><i class="pe-7s-angle-up"></i></a>
 
 <script src="../../js/vendor/jquery-1.11.2.min.js"></script>
+
 <script data-pace-options='{ "ajax": false }' src="../../js/vendor/pace.min.js"></script>
 <script src="../../js/vendor/bootstrap.min.js"></script>
 <script src="../../js/vendor/classie.js"></script>
