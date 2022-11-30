@@ -23,7 +23,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="Update Index">
-      <change afterPath="$PROJECT_DIR$/js/sidebar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/games/MUD.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/MUD.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/games/TheGalleryMystery.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/TheGalleryMystery.html" afterDir="false" />
@@ -41,6 +40,7 @@
       <change beforePath="$PROJECT_DIR$/pages/projects/clothBrush.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/projects/clothBrush.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/projects/criminal_investigation-XR.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/projects/criminal_investigation-XR.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/projects/origami-AR.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/projects/origami-AR.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/projects/safetyedu.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/projects/safetyedu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/projects/vrcrimesys.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/projects/vrcrimesys.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -291,7 +291,7 @@
       <workItem from="1669153962482" duration="863000" />
       <workItem from="1669165732028" duration="94000" />
       <workItem from="1669171102133" duration="918000" />
-      <workItem from="1669820453203" duration="3081000" />
+      <workItem from="1669820453203" duration="6749000" />
     </task>
     <task id="LOCAL-00001" summary="Add Game project">
       <created>1641932592453</created>
