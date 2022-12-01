@@ -24,24 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="Update Index">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/games/MUD.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/MUD.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/games/TheGalleryMystery.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/TheGalleryMystery.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/games/Underground.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/Underground.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/games/ant.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/ant.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/games/ball.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/ball.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/games/hacker-101.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/hacker-101.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/games/hahacoco.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/hahacoco.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/games/maze.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/maze.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/games/sEMG-Rehab.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/sEMG-Rehab.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/games/soundplayer.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/soundplayer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/games/spideroar.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/spideroar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/games/the-magician-and-his-tenant.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/the-magician-and-his-tenant.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/games/twentyftn.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/twentyftn.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/projects/clothBrush.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/projects/clothBrush.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/projects/criminal_investigation-XR.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/projects/criminal_investigation-XR.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/projects/origami-AR.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/projects/origami-AR.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/projects/safetyedu.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/projects/safetyedu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/projects/vrcrimesys.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/projects/vrcrimesys.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -292,6 +275,8 @@
       <workItem from="1669165732028" duration="94000" />
       <workItem from="1669171102133" duration="918000" />
       <workItem from="1669820453203" duration="6749000" />
+      <workItem from="1669853007524" duration="615000" />
+      <workItem from="1669863903071" duration="1494000" />
     </task>
     <task id="LOCAL-00001" summary="Add Game project">
       <created>1641932592453</created>
