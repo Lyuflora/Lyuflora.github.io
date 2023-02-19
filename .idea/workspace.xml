@@ -25,6 +25,7 @@
     <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="Update Index">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/about.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/games/TheGalleryMystery.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/TheGalleryMystery.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/games/Underground.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/Underground.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/games/hacker-101.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/hacker-101.html" afterDir="false" />
@@ -33,6 +34,7 @@
       <change beforePath="$PROJECT_DIR$/pages/games/soundplayer.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/soundplayer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/games/the-magician-and-his-tenant.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/the-magician-and-his-tenant.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/games/twentyftn.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/twentyftn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload/Keyao_Lyu_Resume.pdf" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -292,7 +294,7 @@
       <workItem from="1670780038088" duration="27000" />
       <workItem from="1670880387224" duration="46000" />
       <workItem from="1676692887652" duration="802000" />
-      <workItem from="1676739938024" duration="1315000" />
+      <workItem from="1676739938024" duration="2456000" />
     </task>
     <task id="LOCAL-00001" summary="Add Game project">
       <created>1641932592453</created>
