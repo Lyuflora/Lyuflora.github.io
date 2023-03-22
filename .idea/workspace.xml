@@ -23,9 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="Update Index">
-      <change afterPath="$PROJECT_DIR$/pages/games/rhythm-rotisserie.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -288,7 +286,10 @@
       <workItem from="1676739938024" duration="4749000" />
       <workItem from="1677184335478" duration="1316000" />
       <workItem from="1678574303405" duration="619000" />
-      <workItem from="1679066725146" duration="48000" />
+      <workItem from="1679066725146" duration="978000" />
+      <workItem from="1679214324094" duration="594000" />
+      <workItem from="1679352423978" duration="1390000" />
+      <workItem from="1679377039603" duration="1229000" />
     </task>
     <task id="LOCAL-00001" summary="Add Game project">
       <created>1641932592453</created>
