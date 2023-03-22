@@ -23,8 +23,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="Update Index">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -293,7 +291,7 @@
       <workItem from="1679352423978" duration="1390000" />
       <workItem from="1679377039603" duration="1229000" />
       <workItem from="1679443914842" duration="1191000" />
-      <workItem from="1679448135628" duration="240000" />
+      <workItem from="1679448135628" duration="297000" />
     </task>
     <task id="LOCAL-00001" summary="Add Game project">
       <created>1641932592453</created>
