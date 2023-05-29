@@ -4471,6 +4471,9 @@ p {
 .highlight-tmaht.shown {
     background-image: linear-gradient(to right, transparent 50%, var(--highlight-tmaht) 50%);
 }
+.highlight-tmmt.shown {
+    background-image: linear-gradient(to right, transparent 50%, var(--highlight-tmmt) 50%);
+}
 
 .highlight-hacker.shown {
     background-image: linear-gradient(to right, transparent 50%, var(--highlight-hacker) 50%);
@@ -4517,10 +4520,12 @@ p {
     --highlight-twenty: rgba(192, 162, 146, 0.49);
     --highlight-hacker: rgba(125, 232, 125, 0.49);
     --highlight-origami: rgba(243, 163, 65, 0.49);
+    --highlight-tmmt: rgb(239, 208, 127);
     --highlight-clothbrush: rgb(189, 170, 241);
 
     --semg-color: #b3f3c2;
     --tmaht-color: #5D608D;
+    --tmmt-color: #eec812;
     --hacker-color: rgba(162, 215, 154, 0.49);
     --twenty-color: #694f44;
     --gem-color: #F3D884;

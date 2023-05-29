@@ -23,10 +23,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="Update Index">
-      <change afterPath="$PROJECT_DIR$/pages/games/TheMoment.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/games-themoment/Devlog_20230303_005641.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/games-themoment/Devlog_20230427_204728.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/projects/VFX2023.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/projects/VFX2023.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/TheMoment.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/TheMoment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/soundplayer.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/soundplayer.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -302,7 +305,12 @@
       <workItem from="1682994250475" duration="21000" />
       <workItem from="1683039823544" duration="905000" />
       <workItem from="1683605106423" duration="2646000" />
-      <workItem from="1683817172796" duration="36000" />
+      <workItem from="1683817172796" duration="671000" />
+      <workItem from="1683821623178" duration="2797000" />
+      <workItem from="1683825125314" duration="551000" />
+      <workItem from="1683835272924" duration="882000" />
+      <workItem from="1685278954724" duration="2336000" />
+      <workItem from="1685362721524" duration="2058000" />
     </task>
     <task id="LOCAL-00001" summary="Add Game project">
       <created>1641932592453</created>

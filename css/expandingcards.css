@@ -11,7 +11,7 @@
 
 .flex-container {
   display: flex;
-  /*width: 70vw;*/
+  width: 70vw;
   justify-content: center;
 }
 .flex-container > div{
