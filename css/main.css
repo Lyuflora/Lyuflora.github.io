@@ -651,6 +651,12 @@ ul.sublist {
     padding-left: 35px;
 }
 
+
+.florist_list{
+    font-size: 14px;
+    font-family: 'Itim','Sriracha', sans-serif;
+}
+
 /* =General
 -------------------------------------------------------------- */
 
@@ -744,7 +750,7 @@ ul.sublist {
 
 @media screen and (min-width: 800px) {
     .home-subtitle {
-        font-size: 20px;
+        font-size: 30px;
     }
 }
 
@@ -4366,6 +4372,14 @@ a img.aligncenter {
     font-family: "SecularOne";
     src: url("../fonts/SecularOne-Regular.ttf") format("ttf");
 }
+@font-face {
+    font-family: "Itim";
+    src: url("../fonts/Itim-Regular.ttf") format("ttf");
+}
+@font-face {
+    font-family: "Sriracha";
+    src: url("../fonts/Sriracha-Regular.ttf") format("ttf");
+}
 
 @font-face {
     font-family: 'Sora';
@@ -4467,7 +4481,9 @@ p {
 .highlight-semg.shown {
     background-image: linear-gradient(to right, transparent 50%, var(--highlight-semg) 50%);
 }
-
+.highlight-florist.shown {
+    background-image: linear-gradient(to right, transparent 50%, var(--highlight-florist) 50%);
+}
 .highlight-tmaht.shown {
     background-image: linear-gradient(to right, transparent 50%, var(--highlight-tmaht) 50%);
 }
@@ -4496,7 +4512,9 @@ p {
     transition: background-position 0.8s ease-out;
     padding: 4px 0px;
 }
-
+.special{
+    font-family: Sriracha;
+}
 :root {
     /*--highlight-main: #9BC5DE;*/
     --highlight-main: #f8c8c8;
@@ -4515,6 +4533,7 @@ p {
     --highlight-photos: #1A73E825;
     --highlight-google: #366FF225;
     --highlight-semg: #9EEBCF60;
+    --highlight-florist: rgba(139, 224, 126, 0.38);
     --highlight-gem: rgba(235, 217, 118, 0.38);
     --highlight-tmaht: rgba(169, 173, 243, 0.49);
     --highlight-twenty: rgba(192, 162, 146, 0.49);
@@ -4524,6 +4543,7 @@ p {
     --highlight-clothbrush: rgb(189, 170, 241);
 
     --semg-color: #b3f3c2;
+    --florist-color: #c5f3b3;
     --tmaht-color: #5D608D;
     --tmmt-color: #eec812;
     --hacker-color: rgba(162, 215, 154, 0.49);
