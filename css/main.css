@@ -653,7 +653,7 @@ ul.sublist {
 
 
 .florist_list{
-    font-size: 14px;
+    font-size: 16px;
     font-family: 'Itim','Sriracha', sans-serif;
 }
 
@@ -4513,7 +4513,7 @@ p {
     padding: 4px 0px;
 }
 .special{
-    font-family: Sriracha;
+    font-family: 'Itim','Sriracha';
 }
 :root {
     /*--highlight-main: #9BC5DE;*/
