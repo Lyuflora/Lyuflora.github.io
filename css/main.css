@@ -589,7 +589,9 @@ h5 {
 .semg-underline {
     background: linear-gradient(0deg, var(--highlight-semg) 50%, #fff 50%);
 }
-
+.florist-underline {
+    background: linear-gradient(0deg, var(--highlight-florist) 50%, #fff 50%);
+}
 .gem-underline {
     background: linear-gradient(0deg, var(--highlight-gem) 50%, #fff 50%);
 }
@@ -4533,7 +4535,7 @@ p {
     --highlight-photos: #1A73E825;
     --highlight-google: #366FF225;
     --highlight-semg: #9EEBCF60;
-    --highlight-florist: rgba(139, 224, 126, 0.38);
+    --highlight-florist: rgba(154, 196, 77, 0.38);
     --highlight-gem: rgba(235, 217, 118, 0.38);
     --highlight-tmaht: rgba(169, 173, 243, 0.49);
     --highlight-twenty: rgba(192, 162, 146, 0.49);
