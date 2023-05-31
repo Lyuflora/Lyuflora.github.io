@@ -4515,7 +4515,7 @@ p {
     padding: 4px 0px;
 }
 .special{
-    font-family: 'Itim','Sriracha';
+    font-family: 'Itim','Sriracha', sans-serif;
 }
 :root {
     /*--highlight-main: #9BC5DE;*/
@@ -4540,7 +4540,7 @@ p {
     --highlight-tmaht: rgba(169, 173, 243, 0.49);
     --highlight-twenty: rgba(192, 162, 146, 0.49);
     --highlight-hacker: rgba(125, 232, 125, 0.49);
-    --highlight-origami: rgba(243, 163, 65, 0.49);
+    --highlight-origami: rgba(229, 210, 175, 0.49);
     --highlight-tmmt: rgb(239, 208, 127);
     --highlight-clothbrush: rgb(189, 170, 241);
 
