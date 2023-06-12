@@ -589,9 +589,11 @@ h5 {
 .semg-underline {
     background: linear-gradient(0deg, var(--highlight-semg) 50%, #fff 50%);
 }
+
 .florist-underline {
     background: linear-gradient(0deg, var(--highlight-florist) 50%, #fff 50%);
 }
+
 .gem-underline {
     background: linear-gradient(0deg, var(--highlight-gem) 50%, #fff 50%);
 }
@@ -654,9 +656,9 @@ ul.sublist {
 }
 
 
-.florist_list{
+.florist_list {
     font-size: 16px;
-    font-family: 'Itim','Sriracha', sans-serif;
+    font-family: 'Itim', 'Sriracha', sans-serif;
 }
 
 /* =General
@@ -4355,6 +4357,47 @@ a img.aligncenter {
     color: #d2d2d2;
 }
 
+
+#sas-game {
+    /*width:720px;*/
+    /*height:540px;*/
+}
+
+.game-responsive {
+    display: block;
+    max-width: 100%;
+    /*height: auto;*/
+}
+
+@media screen and (min-width: 1200px) {
+
+}
+
+@media (min-width: 300px) {
+    #sas-game {
+        font-size: 18px
+    }
+}
+
+@media (min-width: 600px) {
+    #sas-game {
+        font-size: 20px
+    }
+}
+
+@media (min-width: 960px) {
+    #sas-game {
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #sas-game {
+        font-size: 24px;
+    }
+}
+
+
 @font-face {
     font-family: "Baloo";
     src: url("../fonts/round/Baloo-Regular.ttf") format("ttf");
@@ -4374,10 +4417,12 @@ a img.aligncenter {
     font-family: "SecularOne";
     src: url("../fonts/SecularOne-Regular.ttf") format("ttf");
 }
+
 @font-face {
     font-family: "Itim";
     src: url("../fonts/Itim-Regular.ttf") format("ttf");
 }
+
 @font-face {
     font-family: "Sriracha";
     src: url("../fonts/Sriracha-Regular.ttf") format("ttf");
@@ -4483,12 +4528,15 @@ p {
 .highlight-semg.shown {
     background-image: linear-gradient(to right, transparent 50%, var(--highlight-semg) 50%);
 }
+
 .highlight-florist.shown {
     background-image: linear-gradient(to right, transparent 50%, var(--highlight-florist) 50%);
 }
+
 .highlight-tmaht.shown {
     background-image: linear-gradient(to right, transparent 50%, var(--highlight-tmaht) 50%);
 }
+
 .highlight-tmmt.shown {
     background-image: linear-gradient(to right, transparent 50%, var(--highlight-tmmt) 50%);
 }
@@ -4514,9 +4562,11 @@ p {
     transition: background-position 0.8s ease-out;
     padding: 4px 0px;
 }
-.special{
-    font-family: 'Itim','Sriracha', sans-serif;
+
+.special {
+    font-family: 'Itim', 'Sriracha', sans-serif;
 }
+
 :root {
     /*--highlight-main: #9BC5DE;*/
     --highlight-main: #f8c8c8;
