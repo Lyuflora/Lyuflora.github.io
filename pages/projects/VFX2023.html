@@ -52,6 +52,7 @@
     <!-- Modernizer & Respond js -->
     <script src="../../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <script src="https://www.w3counter.com/tracker.js?id=141460"></script>
+
 </head>
 
 <body>
@@ -59,11 +60,11 @@
 <!-- Preloader -->
 <div class="cover"></div>
 
-<div class="header">
+<div id="navbar" class="header dark">
     <div class="container">
         <div class="logo">
             <a href="../../index.html">
-                <img src="../../img/logo.png" alt="Logo">
+                <img src="../../img/logo_bg.png" alt="Logo">
             </a>
         </div>
 
@@ -76,7 +77,7 @@
                 <li class=""><a href="../../index.html">Projects</a></li>
                 <li><a href="../essays.html">Essays</a></li>
                 <li><a href="../about.html">About Me</a></li>
-               <li class="resume"><a href="../../upload/Aris_Lyu_Resume.pdf">Resume</a></li>
+                <li class="resume"><a href="../../upload/Aris_Lyu_Resume.pdf">Resume</a></li>
             </ul>
         </div>
         <!-- End of Menu Inline -->
@@ -96,6 +97,8 @@
 </div>
 
 <div class="container">
+
+    <div class="vfx-content"></div>
     <div class="single-portfolio-wrapper">
         <section id="prototype" class="group">
             <h3>Visual Effects</h3>
@@ -103,70 +106,73 @@
                 <div class="col-md-10 col-md-offset-1 col-sm-10">
 
 
-<!--                    <p>-->
-<!--                        After several iterations, we finally decided the direction:-->
-<!--                    </p>-->
-<!--                    <ul>-->
-<!--                        <li>-->
-<!--                            Abandon the node system but keep the concept in a simpler way-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            Use visuals and shaders to enhance the experience-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                    <p>-->
-<!--                        We used visuals and shaders to enhance the experience which we found were helpful during-->
-<!--                        playtests. The followings are the earlier and the later version.-->
-<!--                    </p>-->
-<!--                    <img class="img-responsive" src="../../img/games-dec/prototypes/pp1_text.png" alt="art">-->
+                    <!--                    <p>-->
+                    <!--                        After several iterations, we finally decided the direction:-->
+                    <!--                    </p>-->
+                    <!--                    <ul>-->
+                    <!--                        <li>-->
+                    <!--                            Abandon the node system but keep the concept in a simpler way-->
+                    <!--                        </li>-->
+                    <!--                        <li>-->
+                    <!--                            Use visuals and shaders to enhance the experience-->
+                    <!--                        </li>-->
+                    <!--                    </ul>-->
+                    <!--                    <p>-->
+                    <!--                        We used visuals and shaders to enhance the experience which we found were helpful during-->
+                    <!--                        playtests. The followings are the earlier and the later version.-->
+                    <!--                    </p>-->
+                    <!--                    <img class="img-responsive" src="../../img/games-dec/prototypes/pp1_text.png" alt="art">-->
 
-<!--                    <img class="img-responsive" src="../../img/games-dec/prototypes/pp2_text.png" alt="art">-->
-<!--                </div>-->
+                    <!--                    <img class="img-responsive" src="../../img/games-dec/prototypes/pp2_text.png" alt="art">-->
+                    <!--                </div>-->
 
-                <div class="col-md-12 wow animated fadeInUp" data-wow-delay="0.10s">
-                    <div class="blog-thumb">
-                        <img class="img-responsive img-center" src="../../img/vfx/01_magic_explosion/screenshot_1.png"
-                             alt="Final">
-                        <div class="icon-video-blog">
-                            <a href="https://www.youtube.com/watch?v=xfydstuJhME" class="popup-video playBut">
-                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="69px"
-                                     height="69px" viewBox="0 0 213.7 213.7" enable-background="new 0 0 213.7 213.7"
-                                     xml:space="preserve">
+                    <div class="col-md-12 wow animated fadeInUp" data-wow-delay="0.10s">
+                        <div class="blog-thumb">
+                            <img class="img-responsive img-center"
+                                 src="../../img/vfx/01_magic_explosion/screenshot_1.png"
+                                 alt="Final">
+                            <div class="icon-video-blog">
+                                <a href="https://www.youtube.com/watch?v=xfydstuJhME" class="popup-video playBut">
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="69px"
+                                         height="69px" viewBox="0 0 213.7 213.7" enable-background="new 0 0 213.7 213.7"
+                                         xml:space="preserve">
                                             <polygon class="triangle" id="XMLID_18_" fill="none" stroke-width="7"
                                                      stroke-linecap="round" stroke-linejoin="round"
                                                      stroke-miterlimit="10" points="
                                         73.5,62.5 148.5,105.8 73.5,149.1 "/>
-                                    <circle class="circle" id="XMLID_17_" fill="none" stroke-width="7"
-                                            stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
-                                            cx="106.8" cy="106.8" r="103.3"/>
+                                        <circle class="circle" id="XMLID_17_" fill="none" stroke-width="7"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                                                cx="106.8" cy="106.8" r="103.3"/>
                                         </svg>
-                            </a>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-12 wow animated fadeInUp" data-wow-delay="0.10s">
-                    <div class="blog-thumb">
-                        <img class="img-responsive img-center" src="../../img/vfx/02_moon/02_cover.png"
-                             alt="Final">
-                        <div class="icon-video-blog">
-                            <a href="https://www.youtube.com/watch?v=J81HxC2F-NU" class="popup-video playBut">
-                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="69px"
-                                     height="69px" viewBox="0 0 213.7 213.7" enable-background="new 0 0 213.7 213.7"
-                                     xml:space="preserve">
-                                            <polygon class="triangle" id="XMLID_18_" fill="none" stroke-width="7"
-                                                     stroke-linecap="round" stroke-linejoin="round"
-                                                     stroke-miterlimit="10" points="
-                                        73.5,62.5 148.5,105.8 73.5,149.1 "/>
-                                    <circle class="circle" id="XMLID_17_" fill="none" stroke-width="7"
-                                            stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
-                                            cx="106.8" cy="106.8" r="103.3"/>
-                                        </svg>
-                            </a>
-                        </div>
-                    </div>
+
+                    <!--                <div class="col-md-12 wow animated fadeInUp" data-wow-delay="0.10s">-->
+                    <!--                    <div class="blog-thumb">-->
+                    <!--                        <img class="img-responsive img-center" src="../../img/vfx/02_moon/02_cover.png"-->
+                    <!--                             alt="Final">-->
+                    <!--                        <div class="icon-video-blog">-->
+                    <!--                            <a href="https://www.youtube.com/watch?v=J81HxC2F-NU" class="popup-video playBut">-->
+                    <!--                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"-->
+                    <!--                                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="69px"-->
+                    <!--                                     height="69px" viewBox="0 0 213.7 213.7" enable-background="new 0 0 213.7 213.7"-->
+                    <!--                                     xml:space="preserve">-->
+                    <!--                                            <polygon class="triangle" id="XMLID_18_" fill="none" stroke-width="7"-->
+                    <!--                                                     stroke-linecap="round" stroke-linejoin="round"-->
+                    <!--                                                     stroke-miterlimit="10" points="-->
+                    <!--                                        73.5,62.5 148.5,105.8 73.5,149.1 "/>-->
+                    <!--                                    <circle class="circle" id="XMLID_17_" fill="none" stroke-width="7"-->
+                    <!--                                            stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"-->
+                    <!--                                            cx="106.8" cy="106.8" r="103.3"/>-->
+                    <!--                                        </svg>-->
+                    <!--                            </a>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                    <!--                </div>-->
                 </div>
             </div>
             <hr>
@@ -175,6 +181,20 @@
 
                 </div>
             </div>
+        </section>
+        <section id="gallery" class="group">
+            <h3>Visual Effects</h3>
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 col-sm-10">
+                    <div class="parallax p1"></div>
+                    <div class="vfx-content"></div>
+                    <div class="parallax p2"></div>
+                    <div class="vfx-content"></div>
+                    <div class="parallax p3"></div>
+                    <div class="vfx-content"></div>
+                </div>
+            </div>
+
         </section>
     </div>
 </div>
@@ -187,8 +207,6 @@
         </div>
     </div>
 </div>
-
-
 
 
 <!--    video-->
@@ -208,25 +226,7 @@
 <!--            </div>-->
 <!--        </div>-->
 <!--</div>-->
-<div class="container">
-    <div class="portfolio-controls">
-        <div class="btn-project home-btn">
-            <a href="../../index.html" data-hover="Home">
-                <i class="pe-7s-keypad"></i>
-            </a>
-        </div>
-        <div class="btn-project forward-btn">
-            <a href="#" data-hover="Next">
-                <i class="pe-7s-angle-right right"></i>
-            </a>
-        </div>
-        <div class="btn-project back-btn">
-            <a href="#" data-hover="Previous">
-                <i class="pe-7s-angle-left left"></i>
-            </a>
-        </div>
-    </div>
-</div>
+
 <div class="container margin-top">
 </div>
 
@@ -270,6 +270,9 @@
 
 <a href="javascript:void(0)" class="scroll-top" id="scroll-top"><i class="pe-7s-angle-up"></i></a>
 
+<script>
+    document.querySelectorAll('html')[0].setAttribute('darkreader-scheme', 'one');
+</script>
 <script src="../../js/vendor/jquery-1.11.2.min.js"></script>
 <script data-pace-options='{ "ajax": false }' src="../../js/vendor/pace.min.js"></script>
 <script src="../../js/vendor/bootstrap.min.js"></script>
