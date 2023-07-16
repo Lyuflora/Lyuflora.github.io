@@ -1127,15 +1127,17 @@ ul.sublist {
     width: 100%;
     background: var(--theme-nav-bk);
     z-index: 9;
-    /*position: relative;*/
-    position: fixed;
+    position: relative;
+    /*position: fixed;*/
     transition: top 0.6s;
 }
 
 .header.relative {
     position: relative;
 }
-
+.header.fixed {
+    position: fixed;
+}
 .header.dark {
     background: var(--theme-nav-bk);
 }
