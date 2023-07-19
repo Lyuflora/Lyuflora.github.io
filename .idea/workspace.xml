@@ -24,6 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="Update Index">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/projects/VFX2023.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/projects/VFX2023.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -320,7 +321,7 @@
       <workItem from="1689466863180" duration="148000" />
       <workItem from="1689568206680" duration="429000" />
       <workItem from="1689569564767" duration="41000" />
-      <workItem from="1689805420638" duration="612000" />
+      <workItem from="1689805420638" duration="1308000" />
     </task>
     <task id="LOCAL-00001" summary="Add Game project">
       <created>1641932592453</created>

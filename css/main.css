@@ -4472,7 +4472,9 @@ a img.aligncenter {
 .p3 {
     background-image: url("../img/vfx/03_Tornado/03_cover.png");
 }
-
+.p4 {
+    background-image: url("../img/vfx/04_Projectile/04_cover.jpg");
+}
 .vfx-content {
     width: 100%;
     height: 20vh;
