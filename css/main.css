@@ -588,7 +588,7 @@ h5 {
     border-left: 6px solid var(--origami-color);
 }
 .theme-underline {
-    background: linear-gradient(0deg, var(--theme-dark) 50%, #fff 50%);
+    background: linear-gradient(0deg, var(--theme-dark) 10%, #fff 25%);
 }
 .semg-underline {
     background: linear-gradient(0deg, var(--highlight-semg) 50%, #fff 50%);
@@ -725,6 +725,10 @@ ul.sublist {
     font-weight: 700;
     margin-bottom: 10px;
     /*font-family: "SecularOne";*/
+}
+
+.vfx-link :hover{
+    color: wheat;
 }
 
 /*Subtitle*/
