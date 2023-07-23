@@ -587,7 +587,9 @@ h5 {
 .origami-border {
     border-left: 6px solid var(--origami-color);
 }
-
+.theme-underline {
+    background: linear-gradient(0deg, var(--theme-dark) 50%, #fff 50%);
+}
 .semg-underline {
     background: linear-gradient(0deg, var(--highlight-semg) 50%, #fff 50%);
 }
@@ -730,7 +732,7 @@ ul.sublist {
 .home-subtitle {
     grid-area: home-subtitle;
     align-self: end;
-    color: var(--color-text-normal);
+    color: var(--filter-active);
     font-family: fam-text, sans-serif;
     max-width: 300px;
     line-height: 1.5em;
@@ -1135,9 +1137,11 @@ ul.sublist {
 .header.relative {
     position: relative;
 }
+
 .header.fixed {
     position: fixed;
 }
+
 .header.dark {
     background: var(--theme-nav-bk);
 }
@@ -4472,9 +4476,11 @@ a img.aligncenter {
 .p3 {
     background-image: url("../img/vfx/03_Tornado/03_cover.png");
 }
+
 .p4 {
     background-image: url("../img/vfx/04_Projectile/04_cover.jpg");
 }
+
 .vfx-content {
     width: 100%;
     height: 20vh;
@@ -4578,6 +4584,10 @@ p {
     transition: background-position 0.8s ease-out;
 }
 
+.highlight-theme.shown {
+    background-image: linear-gradient(to right, transparent 50%, var(--theme-dark) 50%);
+}
+
 .highlight-semg.shown {
     background-image: linear-gradient(to right, transparent 50%, var(--highlight-semg) 50%);
 }
@@ -4633,6 +4643,7 @@ p {
     /*--highlight-main: #9BC5DE;*/
     --highlight-main: #f8c8c8;
     --filter-active: #dc6d6d;
+    --theme-dark: #efa8a8;
     /*--shadow-color: #d5e2f5;*/
     --shadow-color: #f8c8c8;
     --tooltip-text: #fc9f9f;
