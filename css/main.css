@@ -4460,7 +4460,7 @@ a img.aligncenter {
 /*parallax START*/
 .parallax {
     width: 100%;
-    height: 80vh;
+    height: 40vh;
     position: relative;
     overflow: hidden;
     background-repeat: no-repeat;
@@ -4468,7 +4468,15 @@ a img.aligncenter {
     background-attachment: fixed;
     background-size: cover;
 }
-
+.top-banner{
+    background:white;
+    /*position:absolute;*/
+    left: 0;
+    right: 0;
+    padding:15px;
+    /*height:60px;*/
+    background-size:100%;
+}
 .p1 {
     background-image: url("../img/vfx/01_magic_explosion/screenshot_1.png");
 }
