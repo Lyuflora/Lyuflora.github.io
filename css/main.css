@@ -1102,19 +1102,48 @@ section h1 {
     color: #fff;
     font-size: 48px;
 }
-
+.scroll-down a{
+    text-decoration: none;
+}
 .scroll-down {
     position: absolute;
-    bottom: 20%;
-    right: -2%;
+    bottom: -30vh;
+    left: calc(50% - 100px);
     /*cursor: pointer;*/
-    cursor: url(../img/cursor.png), auto;
-    width: 50px;
-    height: 50px;
+    cursor: url(../img/cursor_s.png), auto;
+    width: 200px;
+    height: 80px;
     background-color: rgba(51, 51, 51, 0);
     text-align: center;
     color: #fff;
     z-index: 9;
+
+
+  -webkit-animation: sdb04 2s infinite;
+  animation: sdb04 2s infinite;
+  box-sizing: border-box;
+}
+@-webkit-keyframes sdb04 {
+  0% {
+    -webkit-transform:  translate(0, 0);
+  }
+  20% {
+    -webkit-transform:  translate(-10px, 10px);
+  }
+  40% {
+    -webkit-transform:  translate(0, 0);
+  }
+}
+@keyframes sdb04 {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(0px, 10px);
+  }
+  40% {
+    transform: translate(0, 0);
+  }
 }
 
 .scroll-down i {
@@ -4603,8 +4632,8 @@ a img.aligncenter {
 }
 
 .vfx-content {
-    width: 100%;
-    height: 20vh;
+    width: 100vw;
+    height: 10vh;
     /*margin: 0 auto;*/
     /*text-align: justify;*/
     /*display: flex;*/
