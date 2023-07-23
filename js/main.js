@@ -122,6 +122,8 @@ $.fn.scrollToTop = function() {
     })
 };
 
+
+
 //Detect Mobile
 var isMobile = {
     Android: function() {
