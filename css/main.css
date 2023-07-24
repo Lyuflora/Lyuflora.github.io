@@ -1155,6 +1155,9 @@ section h1 {
     height: 100vh;
 }
 
+
+
+
 .animated {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
@@ -4304,6 +4307,16 @@ ul.social-media li a i:hover {
     font-size: 24px;
     z-index: 1;
 }
+.figcaption {
+  margin: 0; opacity: 0;
+  background: rgba(0,0,0,0.3);
+  color: #fff; padding: .3rem;
+  font-size: 1.2rem;
+  position: absolute;
+  bottom: 0; width: 100%;
+	transition: 1s 1s opacity;
+}
+.figcaption { opacity: 1; }
 
 .gallery-caption {
     padding: 25px;
@@ -4311,7 +4324,13 @@ ul.social-media li a i:hover {
     font-size: 16px !important;
     font-weight: 100 !important;
     font-style: italic;
+    justify-content: center;
 }
+
+.fixed-height{
+    width: 45vw;
+}
+
 
 .bypostauthor {
     font-weight: 700;
@@ -4634,7 +4653,7 @@ a img.aligncenter {
 .vfx-content {
     width: 100vw;
     height: 10vh;
-    /*margin: 0 auto;*/
+    margin: 0 auto;
     /*text-align: justify;*/
     /*display: flex;*/
     /*align-items: center;*/
