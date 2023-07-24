@@ -338,7 +338,7 @@ h1 {
 
 h2 {
     line-height: 32px;
-    font-size: 22px;
+    font-size: 28px;
 }
 
 h3 {
@@ -723,10 +723,16 @@ ul.sublist {
 }
 
 .main-title h1 {
-    font-size: 4vw;
-    font-weight: 700;
+    font-size: calc(min(6vh, 6vw));
+    font-weight: 300;
     margin-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 0;
     /*font-family: "SecularOne";*/
+}
+
+.main-role{
+    width: 50vw;
 }
 
 .vfx-title h1 {
@@ -810,14 +816,20 @@ ul.sublist {
 .home-subtitle {
     grid-area: home-subtitle;
     align-self: end;
-    color: var(--filter-active);
-    font-family: fam-text, sans-serif;
-    max-width: 300px;
+    color: #555555;
+    font-family: inherit;
+    font-weight: bolder;
+    max-width: 360px;
     line-height: 1.5em;
     margin-bottom: var(--margin-xs);
     margin-top: var(--margin-xs);
     margin-left: var(--margin-s);
     vertical-align: bottom
+}
+
+.vfx-link{
+    font-size: 22px;
+    line-height: inherit;
 }
 
 .home-subtitle {
@@ -857,6 +869,10 @@ ul.sublist {
 }
 
 /*portrait*/
+#portrait{
+    margin-top: 10vh;
+}
+
 .main-title.portrait {
     width: 180px;
     height: 180px;

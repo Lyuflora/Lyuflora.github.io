@@ -11,8 +11,8 @@
 
 .flex-container {
   display: flex;
-  width: 70vw;
-  justify-content: center;
+  width: 100vw;
+  justify-content: space-around;
 }
 .flex-container > div{
     margin: 10px;
