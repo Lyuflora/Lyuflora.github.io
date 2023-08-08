@@ -723,7 +723,7 @@ ul.sublist {
 }
 
 .main-title h1 {
-    font-size: calc(min(6vh, 6vw));
+    font-size: calc(min(6vh, 4vw));
     font-weight: 300;
     margin-bottom: 10px;
     padding-top: 5px;
@@ -733,6 +733,7 @@ ul.sublist {
 
 .main-role{
     width: 50vw;
+     white-space: nowrap;
 }
 
 .vfx-title h1 {
