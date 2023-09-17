@@ -841,6 +841,20 @@ ul.sublist {
     color: var(--filter-active);
 }
 
+.myDIV{
+        cursor: url(../img/cursor_s.png), auto;
+}
+
+.hidden-role {
+  display: block;
+  color: var(--theme-bk);
+}
+
+.myDIV:hover + .hidden-role {
+  display: block;
+   color: var(--filter-active);
+}
+
 @media screen and (min-width: 600px) {
     .home-subtitle {
         font-size: calc(14px + 4 * ((100vw - 600px) / 200))
@@ -875,8 +889,8 @@ ul.sublist {
 }
 
 .main-title.portrait {
-    width: 180px;
-    height: 180px;
+    width: 240px;
+    height: 240px;
     background-image: url("../img/about-img/portrait.png");
     background-repeat: no-repeat;
     border-radius: 28px;
@@ -923,6 +937,7 @@ ul.sublist {
     width: 100%;
     padding: 0 20px;
 
+    /*background: var(--theme-bk);*/
     background: #333;
 
     position: absolute;
@@ -930,11 +945,14 @@ ul.sublist {
     left: -25%;
 
     border-radius: 9px;
+    border-width: 3px;
+    border-color: #3F3F3F;
+
 
     transform: translateY(9px);
     transition: all 0.3s ease-in-out;
 
-    box-shadow: 0 0 3px rgba(56, 54, 54, 0.86);
+    box-shadow: 0 0 3px rgba(21, 20, 20, 0.86);
 }
 
 .tooltip > p {
