@@ -193,7 +193,8 @@ html {
 body {
     overflow-x: hidden !important;
     -webkit-font-smoothing: antialiased;
-    font-family: 'Ubuntu', sans-serif;
+    /*font-family: 'Ubuntu', sans-serif;*/
+        font-family: 'Fakt Pro Normal', sans-serif;
 
     background-color: var(--theme-bk);
 }
@@ -723,8 +724,9 @@ ul.sublist {
 }
 
 .main-title h1 {
-    font-size: calc(min(6vh, 4vw));
-    font-weight: 300;
+    /*font-size: calc(min(6vh, 4vw));*/
+    font-size: calc(30px + 4 * ((100vw - 600px) / 200));
+    font-weight: 2000;
     margin-bottom: 10px;
     padding-top: 5px;
     padding-bottom: 0;
@@ -818,7 +820,8 @@ ul.sublist {
     grid-area: home-subtitle;
     align-self: end;
     color: #555555;
-    font-family: inherit;
+    font-family: 'Fakt Pro Light', sans-serif;
+    /*font-family: inherit;*/
     font-weight: bolder;
     max-width: 360px;
     line-height: 1.5em;
@@ -938,7 +941,7 @@ ul.sublist {
     padding: 0 20px;
 
     /*background: var(--theme-bk);*/
-    background: #333;
+    background: #ffffff;
 
     position: absolute;
     top: -140%;
@@ -952,7 +955,10 @@ ul.sublist {
     transform: translateY(9px);
     transition: all 0.3s ease-in-out;
 
-    box-shadow: 0 0 3px rgba(21, 20, 20, 0.86);
+
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+
+    /*box-shadow: 0 0 3px rgba(21, 20, 20, 0.86);*/
 }
 
 .tooltip > p {
@@ -970,7 +976,7 @@ ul.sublist {
 
     border-style: solid;
     border-width: 12px 12.5px 0 12.5px;
-    border-color: #333 transparent transparent transparent;
+    border-color: #ffffff transparent transparent transparent;
 
     position: absolute;
     left: 40%;
@@ -1030,13 +1036,13 @@ ul.sublist {
 /*right*/
 .right .tooltip {
     top: -0%;
-    left: 115%;
+    left: -85%;
 }
 
 .right .tooltip::after {
-    top: 40%;
-    left: -10%;
-    transform: rotate(90deg);
+    top: 70%;
+    left: 97%;
+    transform: rotate(-90deg);
 }
 
 
@@ -4839,7 +4845,7 @@ p {
     --theme-dark: #f6c5c5;
     /*--shadow-color: #d5e2f5;*/
     --shadow-color: #f8c8c8;
-    --tooltip-text: #fc9f9f;
+    --tooltip-text: #373a44;
 
     --highlight-walker: #5AD1FF60;
     --highlight-up: #58CCD560;
