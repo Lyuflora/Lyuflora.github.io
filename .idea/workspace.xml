@@ -23,9 +23,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="Update Index">
+      <change afterPath="$PROJECT_DIR$/pages/projects/TheMoment.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index_v2.html" beforeDir="false" afterPath="$PROJECT_DIR$/index_v2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/TheGalleryMystery.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/TheGalleryMystery.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/TheMoment.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/TheMoment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/Underground.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/Underground.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/florist.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/florist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/hacker-101.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/hacker-101.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/hahacoco.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/hahacoco.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/rhythm-rotisserie.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/rhythm-rotisserie.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/sEMG-Rehab.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/sEMG-Rehab.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/sas_webgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/sas_webgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/soundplayer.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/soundplayer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/twentyftn.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/twentyftn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/old-essays.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/old-essays.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/projects/dogcamp.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/projects/dogcamp.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +105,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pages/projects" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pages" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -100,9 +116,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Github\Personal\Lyuflora.github.io\pages" />
       <recent name="E:\Github\Personal\Lyuflora.github.io\pages\projects" />
       <recent name="E:\Github\Personal\Lyuflora.github.io\pages\games" />
-      <recent name="E:\Github\Personal\Lyuflora.github.io\pages" />
       <recent name="E:\Github\Personal\Lyuflora.github.io\pages\essays" />
       <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages\projects" />
     </key>
@@ -351,7 +367,7 @@
       <workItem from="1708111187083" duration="1844000" />
       <workItem from="1708299280228" duration="622000" />
       <workItem from="1708305541324" duration="1759000" />
-      <workItem from="1708355593894" duration="14406000" />
+      <workItem from="1708355593894" duration="18549000" />
     </task>
     <task id="LOCAL-00001" summary="Add Game project">
       <created>1641932592453</created>

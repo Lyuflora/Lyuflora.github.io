@@ -863,7 +863,36 @@ ul.sublist {
     font-size: 22px;
     line-height: inherit;
 }
+.vfx-link:hover{
+    color: black;
+}
 
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.rightturn {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.leftturn {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
 .home-subtitle {
     font-size: 18px;
 }
@@ -934,6 +963,9 @@ ul.sublist {
 
 @media (max-width: 800px) {
     .main-title.portrait {
+        visibility: hidden;
+    }
+    #bubble{
         visibility: hidden;
     }
 }
@@ -1021,7 +1053,6 @@ ul.sublist {
 }
 
 #bubble {
-    visibility: visible;
     background-image: url("../img/bubble.png");
     position: absolute;
     left: -15%;
@@ -1043,6 +1074,47 @@ ul.sublist {
     /*animation: odsoky 1s ease-in-out infinite alternate;*/
 
 }
+
+
+/* CSS */
+.button-52 {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-52:after {
+  content: "";
+  background-color: var(--highlight-main);
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.button-52:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .button-52 {
+    padding: 13px 50px 13px;
+  }
+}
+
 
 @keyframes odsoky {
     0% {
