@@ -815,12 +815,35 @@ ul.sublist {
 }
 
 /*Subtitle*/
+.palanquin-dark-regular {
+  font-family: "Palanquin Dark", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.palanquin-dark-medium {
+  font-family: "Palanquin Dark", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.palanquin-dark-semibold {
+  font-family: "Palanquin Dark", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.palanquin-dark-bold {
+  font-family: "Palanquin Dark", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
 
 .home-subtitle {
     grid-area: home-subtitle;
     align-self: end;
     color: #555555;
-    font-family: 'Fakt Pro Light', sans-serif;
+    /*font-family: 'Fakt Pro Light', sans-serif;*/
     /*font-family: inherit;*/
     font-weight: bolder;
     max-width: 360px;
