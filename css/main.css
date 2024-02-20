@@ -1094,7 +1094,7 @@ ul.sublist {
 
 .button-52:after {
   content: "";
-  background-color: var(--highlight-main);
+  background-color: var(--shadow-color);
   width: 100%;
   z-index: -1;
   position: absolute;
