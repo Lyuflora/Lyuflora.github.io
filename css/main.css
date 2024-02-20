@@ -4690,7 +4690,10 @@ a img.aligncenter {
     /*justify-content: center;*/
     /*flex-direction: column;*/
 }
-
+.as-entrance{
+    position: inherit;
+    left: 16px;
+}
 /*parallax END*/
 
 .bs-docs-sidebar {
