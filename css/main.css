@@ -700,7 +700,9 @@ ul.sublist {
 .margin-top {
     margin-top: 100px;
 }
-
+.sm-margin-top {
+    margin-top: 40px;
+}
 .margin-bottom {
     margin-bottom: 100px;
 }
@@ -863,47 +865,60 @@ ul.sublist {
     font-size: 22px;
     line-height: inherit;
 }
-.vfx-link:hover{
+
+.vfx-link:hover {
     color: black;
 }
 
 .arrow {
-  border: solid black;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 3px;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
 }
 
 .rightturn {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
 }
 
 .leftturn {
-  transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
 }
 
 .up {
-  transform: rotate(-135deg);
-  -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
 }
 
 .down {
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
 }
+
 .home-subtitle {
     font-size: 18px;
 }
 
+.greeting {
+    padding-bottom: 0;
+}
+
 .name {
-    color: var(--filDC6D6DFFter-active);
+    color: var(--filter-active);
 }
 
 .myDIV {
     cursor: url(../img/cursor_s.png), auto;
     width: 30vw;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+@media screen and (max-width: 800px) {
+    .myDIV {
+        width: 80vw;
+    }
 }
 
 .hidden-role {
@@ -966,7 +981,8 @@ ul.sublist {
     .main-title.portrait {
         visibility: hidden;
     }
-    #bubble{
+
+    #bubble {
         visibility: hidden;
     }
 }
@@ -1057,7 +1073,7 @@ ul.sublist {
     background-image: url("../img/bubble.png");
     position: absolute;
     left: -15%;
-    top:0%;
+    top: 0%;
 
     width: 120px;
     height: 120px;
@@ -1066,7 +1082,7 @@ ul.sublist {
     background-size: contain;
 }
 
-.con-tooltip:hover #bubble{
+.con-tooltip:hover #bubble {
 
     visibility: hidden;
     transform: translateY(10px);
@@ -1079,41 +1095,41 @@ ul.sublist {
 
 /* CSS */
 .button-52 {
-  font-size: 16px;
-  font-weight: 200;
-  letter-spacing: 1px;
-  padding: 13px 20px 13px;
-  outline: 0;
-  border: 1px solid black;
-  cursor: pointer;
-  position: relative;
-  background-color: rgba(0, 0, 0, 0);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+    font-size: 16px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    padding: 13px 20px 13px;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
 }
 
 .button-52:after {
-  content: "";
-  background-color: var(--shadow-color);
-  width: 100%;
-  z-index: -1;
-  position: absolute;
-  height: 100%;
-  top: 7px;
-  left: 7px;
-  transition: 0.2s;
+    content: "";
+    background-color: var(--shadow-color);
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.2s;
 }
 
 .button-52:hover:after {
-  top: 0px;
-  left: 0px;
+    top: 0px;
+    left: 0px;
 }
 
 @media (min-width: 768px) {
-  .button-52 {
-    padding: 13px 50px 13px;
-  }
+    .button-52 {
+        padding: 13px 50px 13px;
+    }
 }
 
 
