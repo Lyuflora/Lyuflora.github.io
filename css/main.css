@@ -903,6 +903,7 @@ ul.sublist {
 
 .myDIV {
     cursor: url(../img/cursor_s.png), auto;
+    width: 30vw;
 }
 
 .hidden-role {
