@@ -700,9 +700,11 @@ ul.sublist {
 .margin-top {
     margin-top: 100px;
 }
+
 .sm-margin-top {
     margin-top: 40px;
 }
+
 .margin-bottom {
     margin-bottom: 100px;
 }
@@ -915,6 +917,7 @@ ul.sublist {
     padding-bottom: 0;
     padding-top: 0;
 }
+
 @media screen and (max-width: 800px) {
     .myDIV {
         width: 80vw;
@@ -3824,7 +3827,7 @@ ul.social-buttons li {
     transform: translate(100%, 0);
     transition: all .3s ease-in-out;
     font-size: 10px;
-    background: #9BC5DE;
+    background: var(--highlight-main);
 }
 
 /*Similar Project*/
@@ -3924,6 +3927,7 @@ ul.social-buttons li {
     cursor: pointer;
     border-radius: 5px;
 }
+
 
 /*Play Button*/
 .playBut {
