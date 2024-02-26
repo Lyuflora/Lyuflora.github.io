@@ -12,7 +12,7 @@
 .flex-container {
   display: flex;
   width: 100vw;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 .flex-container > div{
     margin: 10px;
