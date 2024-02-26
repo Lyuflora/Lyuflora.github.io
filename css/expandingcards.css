@@ -13,6 +13,7 @@
   display: flex;
   width: 100vw;
   justify-content: flex-start;
+  column-gap: min(10vw, 150px);
 }
 .flex-container > div{
     margin: 10px;
