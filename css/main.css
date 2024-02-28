@@ -1498,7 +1498,16 @@ ul.sublist {
 .logo {
     float: left;
     line-height: 100px;
+    /*margin: auto;*/
+}
 
+.as-logo {
+    /*float: left;*/
+    /*line-height: 100px;*/
+    /*margin: auto;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 a > span.site-name {

@@ -24,8 +24,10 @@
   <component name="ChangeListManager">
     <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="Update Index">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/expandingcards.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/expandingcards.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/projects/VFX2023.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/vfx.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,11 +109,11 @@
       <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages\projects" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Github\Personal\Lyuflora.github.io\pages" />
       <recent name="E:\Github\Personal\Lyuflora.github.io\pages\projects" />
       <recent name="E:\Github\Personal\Lyuflora.github.io" />
       <recent name="E:\Github\Personal\Lyuflora.github.io\upload" />
       <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages" />
-      <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages\projects" />
     </key>
   </component>
   <component name="RunManager">
@@ -356,7 +358,8 @@
       <workItem from="1708485750720" duration="1262000" />
       <workItem from="1708561135402" duration="1328000" />
       <workItem from="1708623853783" duration="2262000" />
-      <workItem from="1708978773601" duration="1832000" />
+      <workItem from="1708978773601" duration="2020000" />
+      <workItem from="1709097898986" duration="2289000" />
     </task>
     <task id="LOCAL-00001" summary="Add Game project">
       <created>1641932592453</created>
