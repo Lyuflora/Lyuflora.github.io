@@ -13,8 +13,20 @@
   display: flex;
   width: 100vw;
   justify-content: flex-start;
-  column-gap: min(10vw, 150px);
+
 }
+
+@media screen and ( min-width: 1400px) {
+    .flex-container {
+        width: 60vw;
+        /*column-gap: 200px;*/
+        justify-content: space-between;
+    }
+  .myDIV{
+
+  }
+}
+
 .flex-container > div{
     margin: 10px;
 }

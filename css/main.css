@@ -338,8 +338,8 @@ h1 {
 }
 
 h2 {
-    line-height: 32px;
-    font-size: 28px;
+    line-height: 12px;
+    font-size: 20px;
 }
 
 h3 {
@@ -704,7 +704,9 @@ ul.sublist {
 .sm-margin-top {
     margin-top: 40px;
 }
-
+.lg-margin-top {
+    margin-top: 140px;
+}
 .margin-bottom {
     margin-bottom: 100px;
 }
@@ -913,14 +915,30 @@ ul.sublist {
 
 .myDIV {
     cursor: url(../img/cursor_s.png), auto;
-    width: calc(15vw + 200px);
+    /*width: calc(15vw + 100px);*/
     padding-bottom: 0;
     padding-top: 0;
 }
 
+.shortcut-btn-gr{
+    display: flex;
+    justify-content: flex-start;
+    gap: 16px;
+    margin-bottom: 32px;
+}
 @media screen and (max-width: 800px) {
     .myDIV {
-        width: 80vw;
+        width: 40vw;
+    }
+}
+@media screen and (min-width: 800px) {
+    .myDIV {
+        width: 40vw;
+    }
+}
+@media screen and (min-width: 1500px) {
+    .myDIV {
+        width: 500px;
     }
 }
 
@@ -980,7 +998,7 @@ ul.sublist {
     cursor: url(../img/cursor_s.png), auto;
 }
 
-@media (max-width: 800px) {
+@media screen and (max-width: 800px) {
     .main-title.portrait {
         visibility: hidden;
     }
@@ -1110,6 +1128,7 @@ ul.sublist {
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+width: auto;
 }
 
 .button-52:after {
@@ -3737,7 +3756,7 @@ span.press {
 }
 
 .single-portfolio-wrapper span.info {
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: 1.5px;
     padding-bottom: 25px;
     clear: both;
@@ -4859,6 +4878,14 @@ a img.aligncenter {
     left: 16px;
 }
 
+.sm-video{
+    width:100%;
+    height: calc(100vw * 0.2);
+}
+
+li.proj-resp-item:not(:last-child) {
+   margin-bottom: 15px;
+}
 /*parallax END*/
 
 .bs-docs-sidebar {
@@ -5027,7 +5054,7 @@ p {
     --highlight-semg: #9EEBCF60;
     --highlight-florist: rgba(196, 217, 160, 0.38);
     --highlight-gem: rgba(235, 217, 118, 0.38);
-    --highlight-tmaht: rgba(169, 173, 243, 0.49);
+    --highlight-tmaht: rgb(255, 178, 188);
     --highlight-twenty: rgba(192, 162, 146, 0.49);
     --highlight-hacker: rgba(125, 232, 125, 0.49);
     --highlight-origami: rgba(229, 210, 175, 0.49);
