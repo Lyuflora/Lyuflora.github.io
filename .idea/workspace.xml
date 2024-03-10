@@ -23,8 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="Update Index">
+      <change afterPath="$PROJECT_DIR$/index_test_rive.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +89,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pages/games" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -99,11 +100,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Github\Personal\Lyuflora.github.io" />
       <recent name="E:\Github\Personal\Lyuflora.github.io\pages\games" />
       <recent name="E:\Github\Personal\Lyuflora.github.io\pages" />
       <recent name="E:\Github\Personal\Lyuflora.github.io\pages\projects" />
       <recent name="E:\Github\Personal\Lyuflora.github.io\pages\essays" />
-      <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages\projects" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Github\Personal\Lyuflora.github.io\pages" />
@@ -359,7 +360,8 @@
       <workItem from="1709097898986" duration="2391000" />
       <workItem from="1709145193756" duration="13506000" />
       <workItem from="1709255152857" duration="1220000" />
-      <workItem from="1709766268142" duration="293000" />
+      <workItem from="1709766268142" duration="849000" />
+      <workItem from="1709961889728" duration="4465000" />
     </task>
     <task id="LOCAL-00001" summary="Add Game project">
       <created>1641932592453</created>
