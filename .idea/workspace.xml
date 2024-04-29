@@ -23,9 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="Update Index">
-      <change afterPath="$PROJECT_DIR$/index_test_rive.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -361,7 +360,11 @@
       <workItem from="1709145193756" duration="13506000" />
       <workItem from="1709255152857" duration="1220000" />
       <workItem from="1709766268142" duration="849000" />
-      <workItem from="1709961889728" duration="4465000" />
+      <workItem from="1709961889728" duration="5152000" />
+      <workItem from="1712624455438" duration="1010000" />
+      <workItem from="1713220236087" duration="624000" />
+      <workItem from="1713997376848" duration="1193000" />
+      <workItem from="1714270629765" duration="2860000" />
     </task>
     <task id="LOCAL-00001" summary="Add Game project">
       <created>1641932592453</created>
