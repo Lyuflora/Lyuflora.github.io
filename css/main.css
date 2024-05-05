@@ -29,6 +29,8 @@
 
 /* =Common Styles
 -------------------------------------------------------------- */
+@import "sidebar-table.scss";
+
 * {
     cursor: url(../img/cursor.png), auto;
 }
