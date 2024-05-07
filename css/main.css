@@ -190,6 +190,9 @@ a {
 html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    scroll-behavior: smooth;
+
 }
 
 body {
@@ -706,9 +709,11 @@ ul.sublist {
 .sm-margin-top {
     margin-top: 40px;
 }
+
 .lg-margin-top {
     margin-top: 140px;
 }
+
 .margin-bottom {
     margin-bottom: 100px;
 }
@@ -922,22 +927,25 @@ ul.sublist {
     padding-top: 0;
 }
 
-.shortcut-btn-gr{
+.shortcut-btn-gr {
     display: flex;
     justify-content: flex-start;
     gap: 16px;
     margin-bottom: 32px;
 }
+
 @media screen and (max-width: 800px) {
     .myDIV {
         width: 40vw;
     }
 }
+
 @media screen and (min-width: 800px) {
     .myDIV {
         width: 40vw;
     }
 }
+
 @media screen and (min-width: 1500px) {
     .myDIV {
         width: 500px;
@@ -1130,7 +1138,7 @@ ul.sublist {
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-width: auto;
+    width: auto;
 }
 
 .button-52:after {
@@ -1526,9 +1534,9 @@ width: auto;
     /*float: left;*/
     /*line-height: 100px;*/
     /*margin: auto;*/
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 a > span.site-name {
@@ -3884,7 +3892,26 @@ ul.social-buttons li {
     font-size: .8em;
     transition: all .3s ease-in-out;
 }
+/*section divider*/
 
+.section-divider {
+    padding-top: 80px;
+    text-align: center;
+    padding-bottom: 100px;
+}
+.dot1, .dot2 {
+  margin-right: 30px;
+}
+
+.dot1, .dot2, .dot3 {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 30%;
+  -moz-border-radius: 30%;
+  -webkit-border-radius: 30%;
+  background-color: black;
+}
 /* =Blog
 -------------------------------------------------------------- */
 .blog-post {
@@ -4880,14 +4907,15 @@ a img.aligncenter {
     left: 16px;
 }
 
-.sm-video{
-    width:100%;
+.sm-video {
+    width: 100%;
     height: calc(100vw * 0.2);
 }
 
 li.proj-resp-item:not(:last-child) {
-   margin-bottom: 15px;
+    margin-bottom: 15px;
 }
+
 /*parallax END*/
 
 .bs-docs-sidebar {

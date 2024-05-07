@@ -23,13 +23,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="Update Index">
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/sidebar-table.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sidebar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sidebar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/sidebar-table.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/sidebar-table.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/sidebar-table.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/sidebar-table.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/sidebar-table.scss" beforeDir="false" afterPath="$PROJECT_DIR$/css/sidebar-table.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/TheGalleryMystery.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/TheGalleryMystery.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games/sEMG-Rehab.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/sEMG-Rehab.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/sidebar_table.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,11 +114,11 @@
       <recent name="E:\Github\Personal\Lyuflora.github.io\pages\essays" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Github\Personal\Lyuflora.github.io\js" />
       <recent name="E:\Github\Personal\Lyuflora.github.io\pages" />
       <recent name="E:\Github\Personal\Lyuflora.github.io\pages\projects" />
       <recent name="E:\Github\Personal\Lyuflora.github.io" />
       <recent name="E:\Github\Personal\Lyuflora.github.io\upload" />
-      <recent name="D:\My Workspace\Github\Lyuflora.github.io\pages" />
     </key>
   </component>
   <component name="RunManager">
@@ -373,7 +375,9 @@
       <workItem from="1714270629765" duration="4051000" />
       <workItem from="1714500270486" duration="6659000" />
       <workItem from="1714686363534" duration="2554000" />
-      <workItem from="1714798670660" duration="3421000" />
+      <workItem from="1714798670660" duration="4036000" />
+      <workItem from="1714945065740" duration="18480000" />
+      <workItem from="1715035415253" duration="4914000" />
     </task>
     <task id="LOCAL-00001" summary="Add Game project">
       <created>1641932592453</created>
