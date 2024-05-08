@@ -186,7 +186,11 @@ a {
     src: local('Fakt Pro Black Italic'), url('../fonts/FaktProBlackItalic.woff') format('woff');
 }
 
-
+@media (min-width: 2400px) {
+    .container.main-portfolio-body {
+        width: 1870px
+    }
+}
 html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

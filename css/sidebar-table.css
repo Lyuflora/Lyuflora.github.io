@@ -33,6 +33,10 @@
 .toc li.visible > a {
   color: #111;
   transform: translate(5px);
+  font-weight: bold;
+}
+.toc li.visible ul li > a {
+  font-weight: normal;
 }
 .toc ul.nav-stacked {
   display: none;

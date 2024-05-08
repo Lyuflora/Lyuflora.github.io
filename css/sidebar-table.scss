@@ -38,8 +38,11 @@ $menuPaddingLeft: 2.5em;
   li.visible > a {
     color: #111;
     transform: translate(5px);
+    font-weight: bold;
   }
-
+  li.visible ul li > a {
+    font-weight: normal;
+  }
   /* hide all (inactive) nested list */
   ul.nav-stacked{
       display: none;
