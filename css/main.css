@@ -3916,6 +3916,10 @@ ul.social-buttons li {
   -webkit-border-radius: 30%;
   background-color: black;
 }
+.full-screen-img {
+    width: 100%;
+}
+
 /* =Blog
 -------------------------------------------------------------- */
 .blog-post {

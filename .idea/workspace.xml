@@ -25,10 +25,6 @@
     <list default="true" id="9f10628c-59ad-407b-a2c3-afda31345ec1" name="Default Changelist" comment="Update Index">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/sidebar-table.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/sidebar-table.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/sidebar-table.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/sidebar-table.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/sidebar-table.scss" beforeDir="false" afterPath="$PROJECT_DIR$/css/sidebar-table.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/games/sEMG-Rehab.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games/sEMG-Rehab.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -378,7 +374,7 @@
       <workItem from="1715035415253" duration="5568000" />
       <workItem from="1715048586800" duration="58000" />
       <workItem from="1715048703238" duration="762000" />
-      <workItem from="1715140801971" duration="2342000" />
+      <workItem from="1715140801971" duration="3787000" />
     </task>
     <task id="LOCAL-00001" summary="Add Game project">
       <created>1641932592453</created>
