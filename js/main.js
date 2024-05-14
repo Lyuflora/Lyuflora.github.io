@@ -1,5 +1,4 @@
 "use strict";
-
 //Esc Key 
 $.fn.escape = function(callback) {
     return this.each(function() {
