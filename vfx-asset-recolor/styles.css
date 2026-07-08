@@ -345,7 +345,7 @@ input[type="range"] {
 
 table {
   width: 100%;
-  min-width: 1160px;
+  min-width: 1280px;
   border-collapse: collapse;
   font-size: 13px;
 }
@@ -396,6 +396,38 @@ tr.unprocessed td {
   border: 1px solid rgba(255,255,255,.32);
   border-radius: 50%;
   box-shadow: 0 0 16px currentColor;
+}
+
+.manual-hue {
+  display: grid;
+  grid-template-columns: 72px 58px;
+  gap: 6px;
+  align-items: center;
+}
+
+.manual-hue input {
+  min-height: 32px;
+  padding: 0 8px;
+}
+
+.manual-hue button,
+.clear-manual {
+  min-height: 32px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel-2);
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.manual-active {
+  display: grid;
+  gap: 6px;
+}
+
+.manual-active span {
+  color: var(--cool);
+  font-weight: 800;
 }
 
 @media (max-width: 1080px) {

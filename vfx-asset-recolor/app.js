@@ -31,6 +31,7 @@ const state = {
   fileName: "vfx_asset.json",
   emitters: [],
   report: [],
+  manualOverrides: {},
   validation: null,
   outputText: ""
 };
@@ -144,6 +145,11 @@ function remap(rgb, source, theme) {
   const hsv = rgbToHsv(rgb);
   const h = theme.targetHue + hueDelta(hsv.h, source.centerHue) * theme.hueSpread;
   return hsvToRgb(h, hsv.s * theme.saturationScale, hsv.v * theme.valueScale);
+}
+
+function remapToHue(rgb, hue, theme) {
+  const hsv = rgbToHsv(rgb);
+  return hsvToRgb(hue, hsv.s * theme.saturationScale, hsv.v * theme.valueScale);
 }
 
 function braceDelta(line) {
@@ -401,7 +407,7 @@ function validateRecolorOutput(sourceText, result) {
   return validation;
 }
 
-function recolorText(text, theme, source) {
+function recolorText(text, theme, source, manualOverrides = {}) {
   const lines = splitLines(text);
   const out = [...lines];
   const insertions = new Map();
@@ -422,14 +428,16 @@ function recolorText(text, theme, source) {
     const emitter = emitterInfo?.label || "<no label>";
     const curves = collectColorCurves(lines, objectStart, objectEnd);
     curves.forEach(curve => {
+      const rowId = `${objectStart}:${curve.name}`;
+      const manualHue = manualOverrides[rowId];
       const original = [curve.channels[0][0].value, curve.channels[1][0].value, curve.channels[2][0].value];
       const hsv = rgbToHsv(original);
-      if (selectedSource(original, source)) {
-        const target = remap(original, source, theme);
+      if (manualHue !== undefined || selectedSource(original, source)) {
+        const target = manualHue !== undefined ? remapToHue(original, manualHue, theme) : remap(original, source, theme);
         target.forEach((value, channel) => curve.channels[channel].forEach(item => setCollectedValue(out, insertions, item, value)));
-        report.push({ changed: true, emitter, emitterName: emitterInfo?.name || "", emitterStart: emitterInfo?.start ?? -1, moduleName, moduleType, curveName: curve.name, original, target, hsv });
+        report.push({ rowId, changed: true, manual: manualHue !== undefined, manualHue, emitter, emitterName: emitterInfo?.name || "", emitterStart: emitterInfo?.start ?? -1, moduleName, moduleType, curveName: curve.name, original, target, hsv });
       } else {
-        report.push({ changed: false, emitter, emitterName: emitterInfo?.name || "", emitterStart: emitterInfo?.start ?? -1, moduleName, moduleType, curveName: curve.name, original, target: null, hsv });
+        report.push({ rowId, changed: false, manual: false, emitter, emitterName: emitterInfo?.name || "", emitterStart: emitterInfo?.start ?? -1, moduleName, moduleType, curveName: curve.name, original, target: null, hsv });
       }
     });
     if (curves.length) {
@@ -594,11 +602,26 @@ function renderOverview(report = [], emitters = state.emitters, processed = fals
   }).join("");
 }
 
+function manualHueCell(row) {
+  if (row.manual) {
+    return `<div class="manual-active">
+      <span>${fmt(row.manualHue)} deg</span>
+      <button class="clear-manual" type="button" data-row-id="${escapeHtml(row.rowId)}">Clear</button>
+    </div>`;
+  }
+  if (row.changed) return "Auto";
+  const hue = Math.round(mod(Number(els.customHue.value) || currentTheme().targetHue));
+  return `<div class="manual-hue">
+    <input type="number" min="0" max="360" step="1" value="${hue}" data-row-id="${escapeHtml(row.rowId)}" aria-label="Manual hue for ${escapeHtml(row.moduleName)}">
+    <button type="button" data-apply-manual="${escapeHtml(row.rowId)}">Apply</button>
+  </div>`;
+}
+
 function renderReport(report, validation = state.validation) {
   els.rows.innerHTML = report.map(row => {
     const target = row.target || row.original;
     const cls = row.changed ? "changed" : "skipped";
-    const status = row.changed ? "Changed" : "Skipped";
+    const status = row.manual ? "Manual" : row.changed ? "Changed" : "Skipped";
     const hsv = `H ${fmt(row.hsv.h)} / S ${fmt(row.hsv.s)} / V ${fmt(row.hsv.v)}`;
     return `<tr class="${cls}">
       <td>${status}</td>
@@ -609,6 +632,7 @@ function renderReport(report, validation = state.validation) {
       <td>${escapeHtml(row.curveName)}</td>
       <td><span class="color-cell"><span class="color-dot" style="background:${rgbHex(row.original)}; color:${rgbHex(row.original)}"></span>${row.original.map(fmt).join(", ")}</span></td>
       <td><span class="color-cell"><span class="color-dot" style="background:${rgbHex(target)}; color:${rgbHex(target)}"></span>${row.changed ? target.map(fmt).join(", ") : "Unchanged"}</span></td>
+      <td>${manualHueCell(row)}</td>
       <td>${hsv}</td>
     </tr>`;
   }).join("");
@@ -623,7 +647,7 @@ function renderReport(report, validation = state.validation) {
 function previewRecolor(key = themeKey()) {
   if (!state.text) throw new Error("Choose a VFX asset file first.");
   const theme = key === themeKey() || key === "custom" ? currentTheme() : themes[key];
-  const result = recolorText(state.text, theme, sources[sourceKey()]);
+  const result = recolorText(state.text, theme, sources[sourceKey()], state.manualOverrides);
   const validation = validateRecolorOutput(state.text, result);
   if (!validation.ok) {
     throw new Error(`Output validation failed: ${validation.errors.join(" ")}`);
@@ -636,6 +660,18 @@ function previewRecolor(key = themeKey()) {
   renderOverview(result.report, result.emitters, true);
   renderReport(result.report, validation);
   return result;
+}
+
+function applyManualOverride(rowId, value) {
+  const hue = Number(value);
+  if (!Number.isFinite(hue)) throw new Error("Enter a valid hue from 0 to 360.");
+  state.manualOverrides[rowId] = Math.round(mod(hue));
+  previewRecolor();
+}
+
+function clearManualOverride(rowId) {
+  delete state.manualOverrides[rowId];
+  previewRecolor();
 }
 
 function download(name, text, type = "application/json") {
@@ -654,6 +690,7 @@ function setAssetText(text, name, sourceLabel) {
   state.text = text;
   state.emitters = collectEmitters(splitLines(text));
   state.report = [];
+  state.manualOverrides = {};
   state.validation = null;
   state.outputText = "";
   renderOverview([], state.emitters, false);
@@ -746,6 +783,29 @@ function init() {
   els.preview.addEventListener("click", () => {
     try {
       previewRecolor();
+    } catch (error) {
+      els.status.textContent = error.message;
+    }
+  });
+  els.rows.addEventListener("click", event => {
+    const applyButton = event.target.closest("[data-apply-manual]");
+    const clearButton = event.target.closest(".clear-manual");
+    try {
+      if (applyButton) {
+        const control = applyButton.closest(".manual-hue");
+        const input = control?.querySelector("input");
+        applyManualOverride(applyButton.dataset.applyManual, input?.value);
+      } else if (clearButton) {
+        clearManualOverride(clearButton.dataset.rowId);
+      }
+    } catch (error) {
+      els.status.textContent = error.message;
+    }
+  });
+  els.rows.addEventListener("keydown", event => {
+    if (event.key !== "Enter" || !event.target.matches(".manual-hue input")) return;
+    try {
+      applyManualOverride(event.target.dataset.rowId, event.target.value);
     } catch (error) {
       els.status.textContent = error.message;
     }
