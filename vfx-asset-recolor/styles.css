@@ -149,6 +149,29 @@ textarea {
   padding: 0 12px;
 }
 
+.select-control {
+  position: relative;
+}
+
+.select-control select {
+  padding-left: 38px;
+}
+
+.select-dot {
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  z-index: 1;
+  width: 14px;
+  height: 14px;
+  border: 1px solid rgba(255,255,255,.38);
+  border-radius: 50%;
+  background: var(--muted);
+  box-shadow: 0 0 10px currentColor;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
 select,
 input[type="text"],
 input[type="number"] {
@@ -260,6 +283,51 @@ input[type="range"] {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 6px;
+}
+
+.tuning-preview {
+  display: grid;
+  grid-template-columns: auto 18px 1fr auto;
+  gap: 9px;
+  align-items: center;
+  padding: 8px 10px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.03);
+}
+
+.tuning-preview-label,
+.tuning-preview-value {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.tuning-preview-value {
+  min-width: 48px;
+  text-align: right;
+}
+
+.tuning-preview-dot {
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgba(255,255,255,.38);
+  border-radius: 50%;
+  background: var(--hot);
+  box-shadow: 0 0 12px currentColor;
+}
+
+.tuning-preview-ramp {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.tuning-preview-chip {
+  min-height: 18px;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 999px;
+  background: var(--panel-2);
 }
 
 .range-row {

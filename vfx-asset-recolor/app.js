@@ -43,8 +43,10 @@ const els = {
   usePasted: document.querySelector("#usePastedContent"),
   target: document.querySelector("#targetColor"),
   source: document.querySelector("#sourceColor"),
+  targetSelectDot: document.querySelector("#targetSelectDot"),
   targetSwatch: document.querySelector("#targetSwatch"),
   targetRamp: document.querySelector("#targetRamp"),
+  sourceSelectDot: document.querySelector("#sourceSelectDot"),
   sourceSwatch: document.querySelector("#sourceSwatch"),
   sourceRamp: document.querySelector("#sourceRamp"),
   suffix: document.querySelector("#nameSuffix"),
@@ -58,6 +60,11 @@ const els = {
   satScaleValue: document.querySelector("#satScaleValue"),
   valScale: document.querySelector("#valScale"),
   valScaleValue: document.querySelector("#valScaleValue"),
+  tuningPreviewDot: document.querySelector("#tuningPreviewDot"),
+  tuningPreviewLow: document.querySelector("#tuningPreviewLow"),
+  tuningPreviewMid: document.querySelector("#tuningPreviewMid"),
+  tuningPreviewHigh: document.querySelector("#tuningPreviewHigh"),
+  tuningPreviewValue: document.querySelector("#tuningPreviewValue"),
   resetThemeTuning: document.querySelector("#resetThemeTuning"),
   preview: document.querySelector("#previewChanges"),
   exportJson: document.querySelector("#exportJson"),
@@ -518,13 +525,27 @@ function paintVisuals() {
   const theme = currentTheme();
   const source = sources[sourceKey()];
   const targetColors = [theme.targetHue - 10, theme.targetHue, theme.targetHue + 10].map((h, index) => rgbHex(hsvToRgb(h, [.65, .75, .9][index] * theme.saturationScale, [.34, .7, 1][index] * theme.valueScale)));
+  const tuningSpread = 24 * theme.hueSpread;
+  const tuningColors = [theme.targetHue - tuningSpread, theme.targetHue, theme.targetHue + tuningSpread].map((h, index) => rgbHex(hsvToRgb(h, [.72, .8, .9][index] * theme.saturationScale, [.58, .82, 1][index] * theme.valueScale)));
   const sourceColors = sourceKey() === "all"
     ? [0, 45, 90, 160, 220, 285, 330].map(h => rgbHex(hsvToRgb(h, .78, .95)))
     : [source.minHue, source.centerHue, source.maxHue].map((h, index) => rgbHex(hsvToRgb(h, [.65, .75, .9][index], [.4, .72, .98][index])));
-  els.targetSwatch.style.background = rgbHex(hsvToRgb(theme.targetHue, .78, .95));
-  els.sourceSwatch.style.background = rgbHex(hsvToRgb(source.centerHue, .78, .95));
+  const targetSwatch = rgbHex(hsvToRgb(theme.targetHue, .78, .95));
+  const sourceSwatch = rgbHex(hsvToRgb(source.centerHue, .78, .95));
+  els.targetSwatch.style.background = targetSwatch;
+  els.targetSelectDot.style.background = targetSwatch;
+  els.targetSelectDot.style.color = targetSwatch;
+  els.sourceSwatch.style.background = sourceSwatch;
+  els.sourceSelectDot.style.background = sourceSwatch;
+  els.sourceSelectDot.style.color = sourceSwatch;
   els.targetRamp.style.background = `linear-gradient(90deg, ${targetColors.join(", ")})`;
   els.sourceRamp.style.background = `linear-gradient(90deg, ${sourceColors.join(", ")})`;
+  els.tuningPreviewDot.style.background = targetSwatch;
+  els.tuningPreviewDot.style.color = targetSwatch;
+  els.tuningPreviewLow.style.background = tuningColors[0];
+  els.tuningPreviewMid.style.background = tuningColors[1];
+  els.tuningPreviewHigh.style.background = tuningColors[2];
+  els.tuningPreviewValue.textContent = `${Math.round(mod(theme.targetHue))} deg`;
   updateOutputName();
 }
 

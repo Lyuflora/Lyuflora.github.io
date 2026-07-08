@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>VFX Asset Recolor Tool</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20260708-tuning-preview">
   </head>
   <body>
     <main class="shell">
@@ -43,7 +43,10 @@
 
           <label>
             <span>Target Color</span>
-            <select id="targetColor"></select>
+            <div class="select-control">
+              <span class="select-dot" id="targetSelectDot" aria-hidden="true"></span>
+              <select id="targetColor"></select>
+            </div>
           </label>
           <div class="visual-row">
             <div class="swatch" id="targetSwatch"></div>
@@ -52,7 +55,10 @@
 
           <label>
             <span>Source Detection</span>
-            <select id="sourceColor"></select>
+            <div class="select-control">
+              <span class="select-dot" id="sourceSelectDot" aria-hidden="true"></span>
+              <select id="sourceColor"></select>
+            </div>
           </label>
           <div class="visual-row">
             <div class="swatch" id="sourceSwatch"></div>
@@ -92,6 +98,16 @@
               <button type="button" data-hue-step="1">+1</button>
               <button type="button" data-hue-step="5">+5</button>
               <button type="button" data-hue-step="15">+15</button>
+            </div>
+            <div class="tuning-preview" aria-label="Target tuning color preview">
+              <span class="tuning-preview-label">Preview</span>
+              <span class="tuning-preview-dot" id="tuningPreviewDot"></span>
+              <span class="tuning-preview-ramp" aria-hidden="true">
+                <span class="tuning-preview-chip" id="tuningPreviewLow"></span>
+                <span class="tuning-preview-chip" id="tuningPreviewMid"></span>
+                <span class="tuning-preview-chip" id="tuningPreviewHigh"></span>
+              </span>
+              <span class="tuning-preview-value" id="tuningPreviewValue">50 deg</span>
             </div>
             <label class="range-row"><span>Hue Spread</span><input id="hueSpread" type="range" min="0" max="150" value="75"><output id="hueSpreadValue">75%</output></label>
             <label class="range-row"><span>Saturation Scale</span><input id="satScale" type="range" min="0" max="150" value="95"><output id="satScaleValue">95%</output></label>
@@ -159,6 +175,6 @@
       </section>
     </main>
 
-    <script src="app.js"></script>
+    <script src="app.js?v=20260708-tuning-preview"></script>
   </body>
 </html>
