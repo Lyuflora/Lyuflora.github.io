@@ -23,6 +23,7 @@ const sources = {
 };
 
 const colorNameRe = /(^|[^a-z0-9])(yellow|orange|red|purple|magenta|blue|cyan|green)(?=$|[^a-z0-9])/i;
+const materialColorNameRe = /(^|[^a-z0-9])(yellow|orange|red|purple|magenta|blue|cyan|green)(?=$|[^a-z0-9])/ig;
 const valueRe = /^(\s*"valueY"\s+")(-?\d+(?:\.\d+)?)(".*)$/;
 const graphTypeRe = /"variant_type"\s+"Types_ParticleModule(ColorGraph|EmissiveGraph)"/;
 
@@ -49,6 +50,7 @@ const els = {
   sourceSelectDot: document.querySelector("#sourceSelectDot"),
   sourceSwatch: document.querySelector("#sourceSwatch"),
   sourceRamp: document.querySelector("#sourceRamp"),
+  processDisabled: document.querySelector("#processDisabledEmitters"),
   suffix: document.querySelector("#nameSuffix"),
   outputName: document.querySelector("#outputName"),
   tuningPanel: document.querySelector("#tuningPanel"),
@@ -71,6 +73,8 @@ const els = {
   copyOutput: document.querySelector("#copyOutput"),
   exportAll: document.querySelector("#exportAll"),
   report: document.querySelector("#downloadReport"),
+  showOverviewName: document.querySelector("#showOverviewName"),
+  overviewTable: document.querySelector(".overview-table"),
   emitterRows: document.querySelector("#emitterRows"),
   rows: document.querySelector("#assetRows"),
   status: document.querySelector("#assetStatus")
@@ -159,6 +163,11 @@ function remapToHue(rgb, hue, theme) {
   return hsvToRgb(hue, hsv.s * theme.saturationScale, hsv.v * theme.valueScale);
 }
 
+function colorChip(color) {
+  const theme = themes[color];
+  return rgbHex(hsvToRgb(theme?.targetHue ?? 0, .78, .95));
+}
+
 function braceDelta(line) {
   let inQuote = false;
   let escaped = false;
@@ -209,6 +218,28 @@ function topLevelStringInBlock(lines, start, end, key, last = false) {
   return found;
 }
 
+function materialColorKeywords(material) {
+  const colors = new Set();
+  materialColorNameRe.lastIndex = 0;
+  let match = materialColorNameRe.exec(material);
+  while (match) {
+    colors.add(match[2].toLowerCase());
+    match = materialColorNameRe.exec(material);
+  }
+  return [...colors];
+}
+
+function materialHintsInBlock(lines, start, end) {
+  const hints = [];
+  for (let index = start + 1; index < end; index++) {
+    const match = lines[index].match(/^\s*"material"\s+"([^"]+)"/);
+    if (!match) continue;
+    const colors = materialColorKeywords(match[1]);
+    if (colors.length) hints.push({ material: match[1], colors });
+  }
+  return hints;
+}
+
 function collectEmitterEntries(lines, start, end, targetDepth, initialDepth) {
   const emitters = [];
   const entryRe = /^\s*"\[\d+\]"\s*\{/;
@@ -220,7 +251,9 @@ function collectEmitterEntries(lines, start, end, targetDepth, initialDepth) {
       const emitterEnd = findBlockEnd(lines, emitterStart, end);
       const name = topLevelStringInBlock(lines, emitterStart, emitterEnd, "name") || "<unnamed>";
       const label = topLevelStringInBlock(lines, emitterStart, emitterEnd, "label", true);
-      emitters.push({ index: emitters.length, start: emitterStart, end: emitterEnd, label, name });
+      const disabled = topLevelStringInBlock(lines, emitterStart, emitterEnd, "disable") === "1";
+      const materialHints = materialHintsInBlock(lines, emitterStart, emitterEnd);
+      emitters.push({ index: emitters.length, start: emitterStart, end: emitterEnd, label, name, disabled, materialHints });
       index = emitterEnd;
       depth = targetDepth;
       continue;
@@ -414,13 +447,14 @@ function validateRecolorOutput(sourceText, result) {
   return validation;
 }
 
-function recolorText(text, theme, source, manualOverrides = {}) {
+function recolorText(text, theme, source, manualOverrides = {}, options = {}) {
   const lines = splitLines(text);
   const out = [...lines];
   const insertions = new Map();
   const emitters = collectEmitters(lines);
   const labels = emitterMap(emitters);
   const report = [];
+  const processDisabled = options.processDisabled !== false;
   for (let index = 0; index < lines.length; index++) {
     const typeMatch = lines[index].match(graphTypeRe);
     if (!typeMatch) continue;
@@ -433,18 +467,22 @@ function recolorText(text, theme, source, manualOverrides = {}) {
     const moduleType = graphLabel(typeMatch[1]);
     const emitterInfo = labels.get(objectStart);
     const emitter = emitterInfo?.label || "<no label>";
+    const omittedDisabled = Boolean(emitterInfo?.disabled && !processDisabled);
     const curves = collectColorCurves(lines, objectStart, objectEnd);
     curves.forEach(curve => {
       const rowId = `${objectStart}:${curve.name}`;
       const manualHue = manualOverrides[rowId];
       const original = [curve.channels[0][0].value, curve.channels[1][0].value, curve.channels[2][0].value];
       const hsv = rgbToHsv(original);
-      if (manualHue !== undefined || selectedSource(original, source)) {
+      const baseRow = { rowId, manual: false, emitter, emitterName: emitterInfo?.name || "", emitterStart: emitterInfo?.start ?? -1, disabled: Boolean(emitterInfo?.disabled), omittedDisabled, materialHints: emitterInfo?.materialHints || [], moduleName, moduleType, curveName: curve.name, original, hsv };
+      if (omittedDisabled) {
+        report.push({ ...baseRow, changed: false, target: null });
+      } else if (manualHue !== undefined || selectedSource(original, source)) {
         const target = manualHue !== undefined ? remapToHue(original, manualHue, theme) : remap(original, source, theme);
         target.forEach((value, channel) => curve.channels[channel].forEach(item => setCollectedValue(out, insertions, item, value)));
-        report.push({ rowId, changed: true, manual: manualHue !== undefined, manualHue, emitter, emitterName: emitterInfo?.name || "", emitterStart: emitterInfo?.start ?? -1, moduleName, moduleType, curveName: curve.name, original, target, hsv });
+        report.push({ ...baseRow, changed: true, manual: manualHue !== undefined, manualHue, target });
       } else {
-        report.push({ rowId, changed: false, manual: false, emitter, emitterName: emitterInfo?.name || "", emitterStart: emitterInfo?.start ?? -1, moduleName, moduleType, curveName: curve.name, original, target: null, hsv });
+        report.push({ ...baseRow, changed: false, target: null });
       }
     });
     if (curves.length) {
@@ -555,13 +593,16 @@ function overviewRows(report, emitters = state.emitters, processed = true) {
     byEmitter.set(emitter.start, {
       label: emitter.label,
       name: emitter.name,
+      disabled: Boolean(emitter.disabled),
+      materialHints: emitter.materialHints || [],
       colorTotal: 0,
       colorChanged: 0,
       emissiveTotal: 0,
       emissiveChanged: 0,
       total: 0,
       changed: 0,
-      skipped: 0
+      skipped: 0,
+      omittedDisabled: 0
     });
   });
   report.forEach(row => {
@@ -570,16 +611,21 @@ function overviewRows(report, emitters = state.emitters, processed = true) {
       byEmitter.set(key, {
         label: row.emitter,
         name: row.emitterName || "",
+        disabled: Boolean(row.disabled),
+        materialHints: row.materialHints || [],
         colorTotal: 0,
         colorChanged: 0,
         emissiveTotal: 0,
         emissiveChanged: 0,
         total: 0,
         changed: 0,
-        skipped: 0
+        skipped: 0,
+        omittedDisabled: 0
       });
     }
     const item = byEmitter.get(key);
+    item.disabled = item.disabled || Boolean(row.disabled);
+    if (!item.materialHints.length && row.materialHints?.length) item.materialHints = row.materialHints;
     const graphKey = row.moduleType === "Emissive Graph" ? "emissive" : "color";
     item[`${graphKey}Total`]++;
     item.total++;
@@ -588,12 +634,14 @@ function overviewRows(report, emitters = state.emitters, processed = true) {
       item.changed++;
     } else {
       item.skipped++;
+      if (row.omittedDisabled) item.omittedDisabled++;
     }
   });
   return [...byEmitter.values()].map(row => {
     let status = "Waiting";
     if (processed) {
       if (!row.total) status = "No color modules";
+      else if (row.disabled && row.omittedDisabled === row.total) status = "Omitted disabled";
       else if (row.changed === row.total) status = "Processed";
       else if (row.changed) status = "Partial";
       else status = "Unchanged";
@@ -605,14 +653,16 @@ function overviewRows(report, emitters = state.emitters, processed = true) {
 function renderOverview(report = [], emitters = state.emitters, processed = false) {
   const rows = overviewRows(report, emitters, processed);
   if (!rows.length) {
-    els.emitterRows.innerHTML = `<tr class="unprocessed"><td colspan="8">No emitters found yet.</td></tr>`;
+    els.emitterRows.innerHTML = `<tr class="unprocessed"><td colspan="10">No emitters found yet.</td></tr>`;
     return;
   }
   els.emitterRows.innerHTML = rows.map(row => {
-    const cls = processed && row.total && row.changed ? "changed" : processed && !row.changed ? "unprocessed" : "";
+    const cls = processed && row.omittedDisabled && row.omittedDisabled === row.total ? "omitted" : processed && row.total && row.changed ? "changed" : processed && !row.changed ? "unprocessed" : "";
     return `<tr class="${cls}">
-      <td>${escapeHtml(row.name)}</td>
+      <td class="optional-name">${escapeHtml(row.name)}</td>
       <td>${escapeHtml(row.label || "<no label>")}</td>
+      <td>${disabledCell(row.disabled)}</td>
+      <td>${materialHintCell(row.materialHints)}</td>
       <td>${row.colorChanged}/${row.colorTotal}</td>
       <td>${row.emissiveChanged}/${row.emissiveTotal}</td>
       <td>${row.total}</td>
@@ -623,7 +673,12 @@ function renderOverview(report = [], emitters = state.emitters, processed = fals
   }).join("");
 }
 
+function syncOverviewNameColumn() {
+  els.overviewTable.classList.toggle("show-name", els.showOverviewName.checked);
+}
+
 function manualHueCell(row) {
+  if (row.omittedDisabled) return "Omitted";
   if (row.manual) {
     return `<div class="manual-active">
       <span>${fmt(row.manualHue)} deg</span>
@@ -638,37 +693,71 @@ function manualHueCell(row) {
   </div>`;
 }
 
+function disabledCell(disabled) {
+  return disabled ? `<span class="tag warn">Disabled</span>` : `<span class="tag muted">Active</span>`;
+}
+
+function rowFlagsCell(row) {
+  const flags = [];
+  if (row.disabled) flags.push(`<span class="tag warn">Disabled</span>`);
+  if (row.omittedDisabled) flags.push(`<span class="tag muted">Omitted</span>`);
+  return flags.length ? `<span class="tag-list">${flags.join(" ")}</span>` : `<span class="tag muted">Active</span>`;
+}
+
+function uniqueHintColors(hints = []) {
+  return [...new Set(hints.flatMap(hint => hint.colors || []))];
+}
+
+function materialHintTitle(hints = []) {
+  return hints.map(hint => `${hint.material}: ${(hint.colors || []).join(", ")}`).join("; ");
+}
+
+function materialHintCell(hints = []) {
+  const colors = uniqueHintColors(hints);
+  if (!colors.length) return `<span class="tag muted">None</span>`;
+  const title = escapeHtml(materialHintTitle(hints));
+  return `<span class="tag-list" title="${title}">
+    ${colors.map(color => `<span class="tag"><span class="mini-dot" style="background:${colorChip(color)}; color:${colorChip(color)}"></span>${escapeHtml(color)}</span>`).join("")}
+  </span>`;
+}
+
 function renderReport(report, validation = state.validation) {
   els.rows.innerHTML = report.map(row => {
     const target = row.target || row.original;
-    const cls = row.changed ? "changed" : "skipped";
-    const status = row.manual ? "Manual" : row.changed ? "Changed" : "Skipped";
+    const cls = row.omittedDisabled ? "omitted" : row.changed ? "changed" : "skipped";
+    const status = row.omittedDisabled ? "Omitted disabled" : row.manual ? "Manual" : row.changed ? "Changed" : "Skipped";
     const hsv = `H ${fmt(row.hsv.h)} / S ${fmt(row.hsv.s)} / V ${fmt(row.hsv.v)}`;
     return `<tr class="${cls}">
-      <td>${status}</td>
-      <td>${escapeHtml(row.moduleName)}</td>
-      <td>${escapeHtml(row.emitterName || "")}</td>
-      <td>${escapeHtml(row.emitter || "<no label>")}</td>
-      <td>${escapeHtml(row.moduleType)}</td>
-      <td>${escapeHtml(row.curveName)}</td>
-      <td><span class="color-cell"><span class="color-dot" style="background:${rgbHex(row.original)}; color:${rgbHex(row.original)}"></span>${row.original.map(fmt).join(", ")}</span></td>
-      <td><span class="color-cell"><span class="color-dot" style="background:${rgbHex(target)}; color:${rgbHex(target)}"></span>${row.changed ? target.map(fmt).join(", ") : "Unchanged"}</span></td>
-      <td>${manualHueCell(row)}</td>
-      <td>${hsv}</td>
+      <td data-label="Status">${status}</td>
+      <td data-label="Module">${escapeHtml(row.moduleName)}</td>
+      <td data-label="Emitter Name">${escapeHtml(row.emitterName || "")}</td>
+      <td data-label="Emitter Label">${escapeHtml(row.emitter || "<no label>")}</td>
+      <td data-label="Flags">${rowFlagsCell(row)}</td>
+      <td data-label="Material Hints">${materialHintCell(row.materialHints)}</td>
+      <td data-label="Type">${escapeHtml(row.moduleType)}</td>
+      <td data-label="Curve">${escapeHtml(row.curveName)}</td>
+      <td data-label="Original"><span class="color-cell"><span class="color-dot" style="background:${rgbHex(row.original)}; color:${rgbHex(row.original)}"></span>${row.original.map(fmt).join(", ")}</span></td>
+      <td data-label="Target"><span class="color-cell"><span class="color-dot" style="background:${rgbHex(target)}; color:${rgbHex(target)}"></span>${row.changed ? target.map(fmt).join(", ") : "Unchanged"}</span></td>
+      <td data-label="Manual Hue">${manualHueCell(row)}</td>
+      <td data-label="HSV">${hsv}</td>
     </tr>`;
   }).join("");
   const changed = report.filter(row => row.changed).length;
   const emitterCount = state.emitters.length;
   const emissiveChanged = report.filter(row => row.changed && row.moduleType === "Emissive Graph").length;
   const emissiveTotal = report.filter(row => row.moduleType === "Emissive Graph").length;
+  const disabledEmitters = state.emitters.filter(emitter => emitter.disabled).length;
+  const omittedCurves = report.filter(row => row.omittedDisabled).length;
+  const materialHintEmitters = state.emitters.filter(emitter => emitter.materialHints?.length).length;
   const integrity = validation ? ` ${validationSummary(validation)}` : "";
-  els.status.textContent = `${changed} changed / ${report.length} color curves detected across ${emitterCount} emitters (${emissiveChanged}/${emissiveTotal} emissive).${integrity}`;
+  const disabledText = els.processDisabled.checked ? `${disabledEmitters} disabled emitters processed` : `${omittedCurves} curves omitted from disabled emitters`;
+  els.status.textContent = `${changed} changed / ${report.length} color curves detected across ${emitterCount} emitters (${emissiveChanged}/${emissiveTotal} emissive). ${disabledText}. ${materialHintEmitters} emitters with material color hints.${integrity}`;
 }
 
 function previewRecolor(key = themeKey()) {
   if (!state.text) throw new Error("Choose a VFX asset file first.");
   const theme = key === themeKey() || key === "custom" ? currentTheme() : themes[key];
-  const result = recolorText(state.text, theme, sources[sourceKey()], state.manualOverrides);
+  const result = recolorText(state.text, theme, sources[sourceKey()], state.manualOverrides, { processDisabled: els.processDisabled.checked });
   const validation = validateRecolorOutput(state.text, result);
   if (!validation.ok) {
     throw new Error(`Output validation failed: ${validation.errors.join(" ")}`);
@@ -743,15 +832,19 @@ function reportText(key, report) {
   const overview = overviewRows(report, state.emitters, true);
   const emissiveChanged = report.filter(row => row.changed && row.moduleType === "Emissive Graph").length;
   const emissiveTotal = report.filter(row => row.moduleType === "Emissive Graph").length;
+  const processDisabled = els.processDisabled.checked ? "Yes" : "No";
   return [`Theme: ${key}`, `Source: ${sources[sourceKey()].label}`, `Changed curves: ${report.filter(row => row.changed).length}`, "",
+    `Process disabled emitters: ${processDisabled}`,
     `Emissive curves changed: ${emissiveChanged}/${emissiveTotal}`,
     "",
     "Emitter overview:",
-    ...overview.map(row => `${row.status.toUpperCase()} ${row.label} / ${row.name}: ${row.changed} changed, ${row.skipped} skipped, ${row.total} curves, Color Graph ${row.colorChanged}/${row.colorTotal}, Emissive Graph ${row.emissiveChanged}/${row.emissiveTotal}`),
+    ...overview.map(row => `${row.status.toUpperCase()} ${row.label} / ${row.name}: ${row.changed} changed, ${row.skipped} skipped, ${row.total} curves, disabled ${row.disabled ? "yes" : "no"}, material hints ${materialHintTitle(row.materialHints) || "none"}, Color Graph ${row.colorChanged}/${row.colorTotal}, Emissive Graph ${row.emissiveChanged}/${row.emissiveTotal}`),
     "",
     "Color and emissive curves:",
-    ...report.map(row => {
-    const base = `${row.changed ? "CHANGED" : "SKIPPED"} ${row.emitter} / ${row.moduleName} / ${row.moduleType} / ${row.curveName}: RGB (${row.original.map(fmt).join(", ")})`;
+  ...report.map(row => {
+    const rowState = row.omittedDisabled ? "OMITTED DISABLED" : row.changed ? "CHANGED" : "SKIPPED";
+    const hints = materialHintTitle(row.materialHints);
+    const base = `${rowState} ${row.emitter} / ${row.moduleName} / ${row.moduleType} / ${row.curveName}: RGB (${row.original.map(fmt).join(", ")})${hints ? `, material hints ${hints}` : ""}`;
     return row.changed ? `${base} -> (${row.target.map(fmt).join(", ")})` : base;
   })].join("\n");
 }
@@ -789,6 +882,15 @@ function init() {
   });
   els.source.addEventListener("input", paintVisuals);
   els.source.addEventListener("change", paintVisuals);
+  els.showOverviewName.addEventListener("change", syncOverviewNameColumn);
+  els.processDisabled.addEventListener("change", () => {
+    if (!state.text || !state.report.length) return;
+    try {
+      previewRecolor();
+    } catch (error) {
+      els.status.textContent = error.message;
+    }
+  });
   [els.suffix, els.customHue, els.hueSpread, els.satScale, els.valScale].forEach(el => {
     el.addEventListener("input", paintVisuals);
     el.addEventListener("change", paintVisuals);
@@ -873,6 +975,7 @@ function init() {
     }
     download(outputNameFor(themeKey()).replace(/\.[^.]+$/, "_report.txt"), reportText(themeKey(), state.report), "text/plain");
   });
+  syncOverviewNameColumn();
   paintVisuals();
 }
 

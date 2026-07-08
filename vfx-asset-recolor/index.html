@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>VFX Asset Recolor Tool</title>
-    <link rel="stylesheet" href="styles.css?v=20260708-tuning-preview">
+    <link rel="stylesheet" href="styles.css?v=20260708-layout-compact">
   </head>
   <body>
     <main class="shell">
@@ -64,6 +64,11 @@
             <div class="swatch" id="sourceSwatch"></div>
             <div class="ramp" id="sourceRamp"></div>
           </div>
+
+          <label class="check-row">
+            <input id="processDisabledEmitters" type="checkbox" checked>
+            <span>Process disabled emitters</span>
+          </label>
 
           <div class="two-col">
             <label>
@@ -130,15 +135,23 @@
               <h2>VFX Asset Overview</h2>
               <p id="assetStatus">Choose a VFX file to begin.</p>
             </div>
-            <button id="downloadReport">Download Report</button>
+            <div class="result-actions">
+              <label class="mini-toggle">
+                <input id="showOverviewName" type="checkbox">
+                <span>Show names</span>
+              </label>
+              <button id="downloadReport">Download Report</button>
+            </div>
           </div>
 
           <div class="table-wrap overview-wrap">
             <table class="overview-table">
               <thead>
                 <tr>
-                  <th>Name</th>
+                  <th class="optional-name">Name</th>
                   <th>Emitter Label</th>
+                  <th>Disabled</th>
+                  <th>Material Hints</th>
                   <th>Color Graph</th>
                   <th>Emissive Graph</th>
                   <th>Curves</th>
@@ -153,13 +166,15 @@
 
           <h2 class="section-title">Detected Color Modules</h2>
           <div class="table-wrap">
-            <table>
+            <table class="modules-table">
               <thead>
                 <tr>
                   <th>Status</th>
                   <th>Module</th>
                   <th>Emitter Name</th>
                   <th>Emitter Label</th>
+                  <th>Flags</th>
+                  <th>Material Hints</th>
                   <th>Type</th>
                   <th>Curve</th>
                   <th>Original</th>
@@ -175,6 +190,6 @@
       </section>
     </main>
 
-    <script src="app.js?v=20260708-tuning-preview"></script>
+    <script src="app.js?v=20260708-layout-compact"></script>
   </body>
 </html>
