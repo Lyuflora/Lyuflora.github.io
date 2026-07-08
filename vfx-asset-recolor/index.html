@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VFX Asset Recolor Tool</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Local Browser Tool</p>
+          <h1>VFX Asset Recolor</h1>
+          <p>Load a text-style VFX asset, remap detected color curves, and export color variants directly from your browser.</p>
+        </div>
+        <div class="privacy-card">
+          <span>Privacy</span>
+          <strong>100% local</strong>
+          <small>No upload, no server processing, no localStorage.</small>
+        </div>
+      </header>
+
+      <section class="tool-grid">
+        <aside class="controls-panel">
+          <label>
+            <span>VFX Asset File</span>
+            <input id="assetFile" type="file" accept=".json,.txt,.vfx,*/*">
+          </label>
+
+          <details class="paste-panel">
+            <summary>Paste VFX Content</summary>
+            <label>
+              <span>Pasted Asset Name</span>
+              <input id="pasteName" type="text" value="pasted_vfx_asset.json" spellcheck="false">
+            </label>
+            <label>
+              <span>VFX Text</span>
+              <textarea id="pasteContent" spellcheck="false" placeholder="Paste the emitters block or full VFX asset text here"></textarea>
+            </label>
+            <button id="usePastedContent">Use Pasted Content</button>
+          </details>
+
+          <label>
+            <span>Target Color</span>
+            <select id="targetColor"></select>
+          </label>
+          <div class="visual-row">
+            <div class="swatch" id="targetSwatch"></div>
+            <div class="ramp" id="targetRamp"></div>
+          </div>
+
+          <label>
+            <span>Source Detection</span>
+            <select id="sourceColor"></select>
+          </label>
+          <div class="visual-row">
+            <div class="swatch" id="sourceSwatch"></div>
+            <div class="ramp" id="sourceRamp"></div>
+          </div>
+
+          <div class="two-col">
+            <label>
+              <span>Filename Suffix</span>
+              <input id="nameSuffix" type="text" placeholder="blank = replace color name">
+            </label>
+            <label>
+              <span>Output Name</span>
+              <input id="outputName" type="text" spellcheck="false">
+            </label>
+          </div>
+
+          <div class="tuning-panel" id="tuningPanel">
+            <div class="panel-head">
+              <div>
+                <strong>Target Tuning</strong>
+                <small>Fine tune the selected color before preview or export.</small>
+              </div>
+              <button id="resetThemeTuning" type="button">Reset</button>
+            </div>
+            <label>
+              <span>Hue</span>
+              <div class="hue-control">
+                <input id="customHue" type="range" min="0" max="360" step="1" value="50">
+                <input id="customHueNumber" type="number" min="0" max="360" step="1" value="50" aria-label="Hue degrees">
+              </div>
+            </label>
+            <div class="hue-nudges" aria-label="Hue nudge controls">
+              <button type="button" data-hue-step="-15">-15</button>
+              <button type="button" data-hue-step="-5">-5</button>
+              <button type="button" data-hue-step="-1">-1</button>
+              <button type="button" data-hue-step="1">+1</button>
+              <button type="button" data-hue-step="5">+5</button>
+              <button type="button" data-hue-step="15">+15</button>
+            </div>
+            <label class="range-row"><span>Hue Spread</span><input id="hueSpread" type="range" min="0" max="150" value="75"><output id="hueSpreadValue">75%</output></label>
+            <label class="range-row"><span>Saturation Scale</span><input id="satScale" type="range" min="0" max="150" value="95"><output id="satScaleValue">95%</output></label>
+            <label class="range-row"><span>Brightness Scale</span><input id="valScale" type="range" min="0" max="150" value="105"><output id="valScaleValue">105%</output></label>
+          </div>
+
+          <div class="actions">
+            <button id="previewChanges">Preview Changes</button>
+            <button id="exportJson">Export JSON</button>
+            <button id="copyOutput">Copy Output</button>
+            <button id="exportAll">Export All Presets</button>
+          </div>
+
+          <p class="privacy-note">Files and pasted text are read only inside this browser tab. Export uses Blob downloads. Asset text is never sent over the network.</p>
+        </aside>
+
+        <section class="results-panel">
+          <div class="result-head">
+            <div>
+              <h2>VFX Asset Overview</h2>
+              <p id="assetStatus">Choose a VFX file to begin.</p>
+            </div>
+            <button id="downloadReport">Download Report</button>
+          </div>
+
+          <div class="table-wrap overview-wrap">
+            <table class="overview-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Emitter Label</th>
+                  <th>Color Graph</th>
+                  <th>Emissive Graph</th>
+                  <th>Curves</th>
+                  <th>Changed</th>
+                  <th>Skipped</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="emitterRows"></tbody>
+            </table>
+          </div>
+
+          <h2 class="section-title">Detected Color Modules</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Status</th>
+                  <th>Module</th>
+                  <th>Emitter Name</th>
+                  <th>Emitter Label</th>
+                  <th>Type</th>
+                  <th>Curve</th>
+                  <th>Original</th>
+                  <th>Target</th>
+                  <th>HSV</th>
+                </tr>
+              </thead>
+              <tbody id="assetRows"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
