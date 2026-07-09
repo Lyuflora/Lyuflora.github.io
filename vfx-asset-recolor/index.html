@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>VFX Asset Recolor Tool</title>
-    <link rel="stylesheet" href="styles.css?v=20260708-layout-compact">
+    <link rel="stylesheet" href="styles.css?v=20260708-palette-history">
   </head>
   <body>
     <main class="shell">
@@ -17,16 +17,17 @@
         <div class="privacy-card">
           <span>Privacy</span>
           <strong>100% local</strong>
-          <small>No upload, no server processing, no localStorage.</small>
+          <small>No upload, no server processing. UI choices save locally.</small>
         </div>
       </header>
 
       <section class="tool-grid">
         <aside class="controls-panel">
           <label>
-            <span>VFX Asset File</span>
-            <input id="assetFile" type="file" accept=".json,.txt,.vfx,*/*">
+            <span>VFX Asset Files <small>up to 5</small></span>
+            <input id="assetFile" type="file" accept=".json,.txt,.vfx,*/*" multiple>
           </label>
+          <div class="batch-info" id="batchInfo" aria-live="polite"></div>
 
           <details class="paste-panel">
             <summary>Paste VFX Content</summary>
@@ -64,6 +65,33 @@
             <div class="swatch" id="sourceSwatch"></div>
             <div class="ramp" id="sourceRamp"></div>
           </div>
+
+          <div class="saved-setup">
+            <div class="palette-card">
+              <div class="palette-swatches" aria-hidden="true">
+                <span class="palette-dot" id="savedPaletteSource"></span>
+                <span class="palette-ramp" id="savedPaletteRamp"></span>
+                <span class="palette-dot" id="savedPaletteTarget"></span>
+              </div>
+              <div>
+                <strong>Saved Palette</strong>
+                <small id="savedSetupStatus">No saved setup yet.</small>
+              </div>
+            </div>
+            <div class="setup-actions">
+              <button id="saveColorSetup" type="button">Save Current</button>
+              <button id="applyColorSetup" type="button">Apply Saved</button>
+            </div>
+          </div>
+
+          <details class="history-panel" open>
+            <summary>
+              <span>File Color History</span>
+              <small id="fileHistoryCount">No records</small>
+            </summary>
+            <div class="history-list" id="fileHistoryList"></div>
+            <button id="clearColorHistory" type="button">Clear History</button>
+          </details>
 
           <label class="check-row">
             <input id="processDisabledEmitters" type="checkbox" checked>
@@ -126,7 +154,7 @@
             <button id="exportAll">Export All Presets</button>
           </div>
 
-          <p class="privacy-note">Files and pasted text are read only inside this browser tab. Export uses Blob downloads. Asset text is never sent over the network.</p>
+          <p class="privacy-note">Files and pasted text are read only inside this browser tab. Batch export uses separate Blob downloads. Color UI preferences and per-file history may be saved locally; asset text is never stored or sent over the network.</p>
         </aside>
 
         <section class="results-panel">
@@ -190,6 +218,6 @@
       </section>
     </main>
 
-    <script src="app.js?v=20260708-layout-compact"></script>
+    <script src="app.js?v=20260708-palette-history"></script>
   </body>
 </html>
