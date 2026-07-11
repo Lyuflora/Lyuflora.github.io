@@ -47,6 +47,7 @@ button {
   width: min(1440px, 100%);
   margin: 0 auto;
   padding: 16px;
+  overflow-x: hidden;
 }
 
 .hero {
@@ -75,9 +76,9 @@ p {
 }
 
 h1 {
-  margin-bottom: 8px;
-  font-size: clamp(24px, 3vw, 36px);
-  line-height: 1;
+  margin-bottom: 6px;
+  font-size: clamp(20px, 2.2vw, 28px);
+  line-height: 1.05;
 }
 
 h2 {
@@ -112,7 +113,7 @@ p {
 
 .tool-grid {
   display: grid;
-  grid-template-columns: minmax(300px, 360px) minmax(0, 1fr);
+  grid-template-columns: minmax(300px, 340px) minmax(0, 1fr);
   gap: 14px;
 }
 
@@ -127,12 +128,14 @@ p {
   display: grid;
   align-content: start;
   gap: 11px;
+  min-width: 0;
   padding: 13px;
 }
 
 label {
   display: grid;
   gap: 8px;
+  min-width: 0;
   color: var(--muted);
   font-size: 13px;
 }
@@ -148,6 +151,8 @@ input[type="text"],
 input[type="number"],
 textarea {
   width: 100%;
+  min-width: 0;
+  max-width: 100%;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: #111317;
@@ -157,6 +162,7 @@ textarea {
 
 .select-control {
   position: relative;
+  min-width: 0;
 }
 
 .select-control select {
@@ -444,11 +450,13 @@ input[type="range"] {
   display: grid;
   grid-template-columns: 48px 1fr;
   gap: 10px;
+  min-width: 0;
   margin-top: -5px;
 }
 
 .swatch,
 .ramp {
+  min-width: 0;
   min-height: 34px;
   border: 1px solid rgba(255,255,255,.22);
   border-radius: var(--radius);
@@ -460,20 +468,25 @@ input[type="range"] {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
+  min-width: 0;
 }
 
 .actions {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .actions button,
 #downloadReport {
+  min-width: 0;
   min-height: 40px;
+  padding: 0 10px;
   border: 0;
   border-radius: var(--radius);
   background: var(--hot);
   color: #140b07;
   font-weight: 800;
+  line-height: 1.15;
+  white-space: normal;
 }
 
 .actions button:nth-child(n+3),
@@ -486,6 +499,7 @@ input[type="range"] {
 .tuning-panel {
   display: grid;
   gap: 9px;
+  min-width: 0;
   padding: 10px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -578,20 +592,21 @@ input[type="range"] {
 }
 
 .range-row {
-  grid-template-columns: 120px 1fr 52px;
-  gap: 10px;
+  grid-template-columns: minmax(92px, 110px) minmax(58px, 1fr) 38px;
+  gap: 8px;
   align-items: center;
 }
 
 .range-row output {
   color: var(--ink);
-  font-size: 12px;
+  font-size: 11px;
   text-align: right;
 }
 
 .paste-panel {
   display: grid;
   gap: 10px;
+  min-width: 0;
   padding: 12px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -640,8 +655,13 @@ input[type="range"] {
   margin-bottom: 10px;
 }
 
+.result-head > div:first-child {
+  min-width: 0;
+}
+
 .result-actions {
   display: flex;
+  flex: 0 0 auto;
   gap: 8px;
   align-items: center;
   justify-content: flex-end;
@@ -836,11 +856,28 @@ tr.unprocessed td {
     min-width: 0;
   }
 
+  .overview-table {
+    display: block;
+    min-width: 0;
+  }
+
+  .overview-table colgroup {
+    display: none;
+  }
+
   .modules-table thead {
     display: none;
   }
 
+  .overview-table thead {
+    display: none;
+  }
+
   .modules-table tbody {
+    display: block;
+  }
+
+  .overview-table tbody {
     display: block;
   }
 
@@ -852,7 +889,19 @@ tr.unprocessed td {
     border-bottom: 1px solid var(--line);
   }
 
+  .overview-table tr {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 5px 12px;
+    padding: 9px 10px;
+    border-bottom: 1px solid var(--line);
+  }
+
   .modules-table tr:last-child {
+    border-bottom: 0;
+  }
+
+  .overview-table tr:last-child {
     border-bottom: 0;
   }
 
@@ -865,11 +914,43 @@ tr.unprocessed td {
     border-bottom: 0;
   }
 
+  .overview-table td {
+    display: grid;
+    grid-template-columns: 82px minmax(0, 1fr);
+    gap: 6px;
+    align-items: start;
+    min-width: 0;
+    padding: 0;
+    border-bottom: 0;
+  }
+
   .modules-table td::before {
     content: attr(data-label);
     color: var(--muted);
     font-size: 11px;
     font-weight: 800;
+  }
+
+  .overview-table td::before {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 800;
+  }
+
+  .overview-table td:nth-child(1)::before { content: "Name"; }
+  .overview-table td:nth-child(2)::before { content: "Label"; }
+  .overview-table td:nth-child(3)::before { content: "Disabled"; }
+  .overview-table td:nth-child(4)::before { content: "Materials"; }
+  .overview-table td:nth-child(5)::before { content: "Color"; }
+  .overview-table td:nth-child(6)::before { content: "Emissive"; }
+  .overview-table td:nth-child(7)::before { content: "Curves"; }
+  .overview-table td:nth-child(8)::before { content: "Changed"; }
+  .overview-table td:nth-child(9)::before { content: "Skipped"; }
+  .overview-table td:nth-child(10)::before { content: "Status"; }
+
+  .overview-table td:nth-child(2),
+  .overview-table td:nth-child(4) {
+    grid-column: 1 / -1;
   }
 
   .modules-table td[data-label="Module"],
@@ -900,5 +981,37 @@ tr.unprocessed td {
 
   .hue-nudges {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .shell {
+    padding: 10px;
+  }
+
+  .controls-panel,
+  .results-panel {
+    padding: 10px;
+  }
+
+  .overview-table tr,
+  .modules-table tr {
+    grid-template-columns: 1fr;
+  }
+
+  .overview-table td,
+  .modules-table td {
+    grid-template-columns: 88px minmax(0, 1fr);
+  }
+
+  .result-actions {
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .mini-toggle,
+  #downloadReport {
+    flex: 1 1 150px;
+    justify-content: center;
   }
 }
