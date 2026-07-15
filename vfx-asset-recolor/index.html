@@ -3,7 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; connect-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src data: blob:; font-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; worker-src 'none'; manifest-src 'none'; form-action 'none'; prefetch-src 'none'">
+    <meta name="referrer" content="no-referrer">
     <title>VFX Asset Recolor Tool</title>
+    <link rel="icon" href="data:,">
     <link rel="stylesheet" href="styles.css?v=20260711-title">
   </head>
   <body>
@@ -154,7 +157,7 @@
             <button id="exportAll">Export All Presets</button>
           </div>
 
-          <p class="privacy-note">Files and pasted text are read only inside this browser tab. Batch export uses separate Blob downloads. Color UI preferences and per-file history may be saved locally; asset text is never stored or sent over the network.</p>
+          <p class="privacy-note">Files and pasted text are read only inside this browser tab. A Content Security Policy blocks network connections and external resources. Batch export uses separate Blob downloads. Color UI preferences and per-file history may be saved locally; asset text is never stored or sent over the network.</p>
         </aside>
 
         <section class="results-panel">
