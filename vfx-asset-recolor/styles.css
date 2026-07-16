@@ -320,14 +320,21 @@ input[type="file"] {
   opacity: .48;
 }
 
-.history-panel {
+.history-panel,
+.privacy-panel {
   border: 1px solid rgba(48,184,201,.24);
   border-radius: var(--radius);
   background: rgba(48,184,201,.045);
   overflow: hidden;
 }
 
-.history-panel summary {
+.privacy-panel {
+  border-color: rgba(244,189,77,.22);
+  background: rgba(244,189,77,.035);
+}
+
+.history-panel summary,
+.privacy-panel summary {
   display: flex;
   justify-content: space-between;
   gap: 10px;
@@ -339,9 +346,88 @@ input[type="file"] {
   font-weight: 800;
 }
 
-.history-panel summary small {
+.history-panel summary small,
+.privacy-panel summary small {
   color: var(--cool);
   font-size: 11px;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  padding: 2px 7px;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.status-badge.ok {
+  border-color: rgba(69,199,104,.38);
+  color: #45c768;
+}
+
+.status-badge.warn {
+  border-color: rgba(244,189,77,.42);
+  color: #f4bd4d;
+}
+
+.privacy-lock {
+  margin: 0 10px 8px;
+  color: #f4bd4d;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.privacy-lock[hidden] {
+  display: none;
+}
+
+.privacy-checks {
+  display: grid;
+  gap: 5px;
+  margin: 0;
+  padding: 0 10px 10px;
+  list-style: none;
+}
+
+.privacy-checks li {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.privacy-checks li::before {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  border-radius: 50%;
+  content: "";
+}
+
+.privacy-checks li.ok::before {
+  background: #45c768;
+  box-shadow: 0 0 10px rgba(69,199,104,.6);
+}
+
+.privacy-checks li.warn::before {
+  background: #f4bd4d;
+  box-shadow: 0 0 10px rgba(244,189,77,.55);
+}
+
+.privacy-checks span {
+  color: var(--muted);
+  opacity: .8;
+}
+
+.privacy-tip {
+  margin: 0 10px 10px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.4;
 }
 
 .history-list {
@@ -408,7 +494,8 @@ input[type="file"] {
 }
 
 .history-item button,
-#clearColorHistory {
+#clearColorHistory,
+#clearLocalMetadata {
   min-height: 32px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -419,6 +506,11 @@ input[type="file"] {
 }
 
 #clearColorHistory {
+  width: calc(100% - 20px);
+  margin: 0 10px 10px;
+}
+
+#clearLocalMetadata {
   width: calc(100% - 20px);
   margin: 0 10px 10px;
 }

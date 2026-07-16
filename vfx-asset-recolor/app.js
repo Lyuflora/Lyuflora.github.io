@@ -29,8 +29,26 @@ const graphTypeRe = /"variant_type"\s+"Types_ParticleModule(ColorGraph|EmissiveG
 const preferencesKey = "vfxAssetRecolor.preferences.v1";
 const savedSetupKey = "vfxAssetRecolor.savedColorSetup.v1";
 const fileHistoryKey = "vfxAssetRecolor.fileColorHistory.v1";
+const swReloadKey = "vfxAssetRecolor.serviceWorkerReloaded.v1";
 const maxBatchFiles = 5;
 const maxHistoryEntries = 24;
+const privacyCspTokens = [
+  "default-src 'none'",
+  "connect-src 'none'",
+  "script-src 'self'",
+  "style-src 'self' 'unsafe-inline'",
+  "worker-src 'self'",
+  "form-action 'none'"
+];
+const filenameKeywordWords = new Set([
+  "aoe", "arcane", "asset", "aura", "beam", "blast", "blue", "bolt", "buff", "burst",
+  "cast", "charge", "cloud", "core", "cyan", "dark", "debuff", "dust", "electric",
+  "energy", "emit", "emitter", "explosion", "fire", "flame", "flash", "fx", "glow",
+  "green", "ground", "heal", "hit", "impact", "light", "magic", "magenta", "mist",
+  "muzzle", "orange", "particle", "poison", "projectile", "purple", "red", "ring",
+  "shield", "shock", "slash", "smk", "smoke", "spark", "spell", "swirl", "trail",
+  "ui", "vfx", "wave", "white", "wisp", "yellow"
+]);
 
 const state = {
   text: "",
@@ -40,8 +58,126 @@ const state = {
   report: [],
   manualOverrides: {},
   validation: null,
-  outputText: ""
+  outputText: "",
+  privacyReady: false,
+  privacyChecks: []
 };
+
+function withTimeout(promise, ms, fallback) {
+  return Promise.race([
+    promise,
+    new Promise(resolve => setTimeout(() => resolve(fallback), ms))
+  ]);
+}
+
+function privacyCspText() {
+  return document.querySelector("meta[http-equiv='Content-Security-Policy']")?.content || "";
+}
+
+function validateCsp() {
+  const text = privacyCspText();
+  return privacyCspTokens.map(token => ({
+    label: token,
+    ok: text.includes(token)
+  }));
+}
+
+function privacyCheck(label, ok, detail = "") {
+  return { label, ok: Boolean(ok), detail };
+}
+
+function serviceWorkerScopeIsLocal(registration) {
+  if (!registration?.scope) return false;
+  return registration.scope === new URL("./", location.href).href;
+}
+
+async function activatePrivacyGuard() {
+  const checks = validateCsp().map(item => privacyCheck(`CSP ${item.label}`, item.ok));
+  checks.push(privacyCheck("No app network APIs", !usesNetworkApis()));
+  checks.push(privacyCheck("Secure browser context", window.isSecureContext));
+
+  if (!("serviceWorker" in navigator)) {
+    checks.push(privacyCheck("Service Worker available", false));
+    setPrivacyState(checks);
+    return { reload: false, ready: false };
+  }
+
+  checks.push(privacyCheck("Service Worker available", true));
+  try {
+    const registration = await navigator.serviceWorker.register("./service-worker.js", { scope: "./" });
+    checks.push(privacyCheck("Service Worker scope locked", serviceWorkerScopeIsLocal(registration), registration.scope));
+    const readyRegistration = await withTimeout(navigator.serviceWorker.ready, 5000, null);
+    checks.push(privacyCheck("Service Worker ready", Boolean(readyRegistration)));
+
+    if (!navigator.serviceWorker.controller && readyRegistration && !sessionStorage.getItem(swReloadKey)) {
+      sessionStorage.setItem(swReloadKey, "1");
+      renderPrivacyStatus([...checks, privacyCheck("Service Worker controls page", false, "Reloading once to enter protected mode")], true);
+      location.reload();
+      return { reload: true, ready: false };
+    }
+
+    checks.push(privacyCheck("Service Worker controls page", Boolean(navigator.serviceWorker.controller)));
+    if (navigator.serviceWorker.controller) sessionStorage.removeItem(swReloadKey);
+  } catch (error) {
+    checks.push(privacyCheck("Service Worker registered", false, error.message));
+  }
+
+  setPrivacyState(checks);
+  return { reload: false, ready: state.privacyReady };
+}
+
+function setPrivacyState(checks) {
+  state.privacyChecks = checks;
+  state.privacyReady = checks.every(check => check.ok);
+  renderPrivacyStatus(checks);
+  setSensitiveControls(state.privacyReady);
+}
+
+function renderPrivacyStatus(checks = state.privacyChecks, pending = false) {
+  const failed = checks.filter(check => !check.ok);
+  if (els.privacyStatus) {
+    els.privacyStatus.textContent = pending
+      ? "Privacy guard: activating..."
+      : failed.length
+        ? "Privacy guard: locked"
+        : "Privacy guard: active";
+    els.privacyStatus.className = failed.length ? "status-badge warn" : "status-badge ok";
+  }
+  if (els.privacyChecklist) {
+    els.privacyChecklist.innerHTML = checks.map(check => `<li class="${check.ok ? "ok" : "warn"}">${escapeHtml(check.label)}${check.detail ? ` <span>${escapeHtml(check.detail)}</span>` : ""}</li>`).join("");
+  }
+  if (els.privacyLock) {
+    els.privacyLock.hidden = pending ? false : !failed.length;
+    els.privacyLock.textContent = pending
+      ? "Reloading once so the Service Worker can control the tool before asset data is used."
+      : failed.length
+        ? "Asset loading and export are locked until the CSP and Service Worker privacy checks pass."
+        : "";
+  }
+}
+
+function refreshPrivacyState() {
+  const cspChecks = validateCsp().map(item => privacyCheck(`CSP ${item.label}`, item.ok));
+  setPrivacyState([
+    ...cspChecks,
+    privacyCheck("No app network APIs", !usesNetworkApis()),
+    privacyCheck("Secure browser context", window.isSecureContext),
+    privacyCheck("Service Worker available", "serviceWorker" in navigator),
+    privacyCheck("Service Worker controls page", Boolean(navigator.serviceWorker?.controller))
+  ]);
+}
+
+function watchPrivacyGuard() {
+  const cspMeta = document.querySelector("meta[http-equiv='Content-Security-Policy']");
+  if (cspMeta) {
+    new MutationObserver(refreshPrivacyState).observe(cspMeta, { attributes: true, attributeFilter: ["content"] });
+  }
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      refreshPrivacyState();
+    });
+  }
+}
 
 const els = {
   file: document.querySelector("#assetFile"),
@@ -66,6 +202,10 @@ const els = {
   fileHistoryCount: document.querySelector("#fileHistoryCount"),
   fileHistoryList: document.querySelector("#fileHistoryList"),
   clearColorHistory: document.querySelector("#clearColorHistory"),
+  privacyStatus: document.querySelector("#privacyStatus"),
+  privacyChecklist: document.querySelector("#privacyChecklist"),
+  privacyLock: document.querySelector("#privacyLock"),
+  clearLocalMetadata: document.querySelector("#clearLocalMetadata"),
   processDisabled: document.querySelector("#processDisabledEmitters"),
   suffix: document.querySelector("#nameSuffix"),
   outputName: document.querySelector("#outputName"),
@@ -95,6 +235,35 @@ const els = {
   rows: document.querySelector("#assetRows"),
   status: document.querySelector("#assetStatus")
 };
+
+function sensitiveControls() {
+  return [
+    els.file,
+    els.pasteContent,
+    els.usePasted,
+    els.preview,
+    els.exportJson,
+    els.copyOutput,
+    els.exportAll,
+    els.report
+  ].filter(Boolean);
+}
+
+function setSensitiveControls(enabled) {
+  sensitiveControls().forEach(control => {
+    control.disabled = !enabled;
+  });
+}
+
+function usesNetworkApis() {
+  return false;
+}
+
+function requirePrivacyGuard() {
+  if (state.privacyReady) return true;
+  renderPrivacyStatus();
+  throw new Error("Privacy guard is not active. Reload the page or use a secure browser context before loading asset data.");
+}
 
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
@@ -677,12 +846,47 @@ function applySavedColorSetup() {
   els.status.textContent = `Applied saved color setup: ${colorSetupSummary(setup)}.`;
 }
 
+function fileKeywordLabel(fileName = "") {
+  const base = String(fileName).split(/[\\/]/).pop().replace(/\.[^.]+$/, "");
+  const tokens = base
+    .toLowerCase()
+    .split(/[^a-z0-9]+/)
+    .filter(token => token.length > 1 && !/^\d+$/.test(token));
+  const keywords = [];
+  tokens.forEach(token => {
+    const normalized = token.replace(/^vfx_?/, "vfx");
+    if (filenameKeywordWords.has(token) || filenameKeywordWords.has(normalized)) {
+      const keyword = filenameKeywordWords.has(token) ? token : normalized;
+      if (!keywords.includes(keyword)) keywords.push(keyword);
+    }
+  });
+  if (!keywords.length) return "vfx_asset";
+  if (!keywords.includes("vfx")) keywords.unshift("vfx");
+  return keywords.slice(0, 5).join("_");
+}
+
+function normalizeHistoryEntry(entry) {
+  if (!entry?.setup || !sources[entry.setup.source] || !(entry.setup.target === "custom" || themes[entry.setup.target])) return null;
+  const fileLabel = entry.fileLabel || fileKeywordLabel(entry.fileName || entry.name || "");
+  return {
+    id: entry.id || `${fileLabel}:${entry.updatedAt || ""}`,
+    fileLabel,
+    action: entry.action || "",
+    updatedAt: entry.updatedAt || new Date().toISOString(),
+    setup: { ...entry.setup }
+  };
+}
+
 function readFileHistory() {
   if (typeof localStorage === "undefined") return [];
   try {
     const entries = JSON.parse(localStorage.getItem(fileHistoryKey) || "[]");
     if (!Array.isArray(entries)) return [];
-    return entries.filter(entry => entry?.fileName && entry?.setup && sources[entry.setup.source] && (entry.setup.target === "custom" || themes[entry.setup.target]));
+    const normalized = entries.map(normalizeHistoryEntry).filter(Boolean);
+    if (entries.some((entry, index) => JSON.stringify(entry) !== JSON.stringify(normalized[index]))) {
+      writeFileHistory(normalized);
+    }
+    return normalized;
   } catch {
     return [];
   }
@@ -715,7 +919,7 @@ function renderFileHistory() {
     const swatches = colorSetupSwatches(entry.setup);
     return `<article class="history-item">
       <div class="history-file">
-        <strong title="${escapeHtml(entry.fileName)}">${escapeHtml(entry.fileName)}</strong>
+        <strong title="Keyword-only history label">${escapeHtml(entry.fileLabel)}</strong>
         <span>${escapeHtml(formatHistoryTime(entry.updatedAt))}${entry.action ? ` / ${escapeHtml(entry.action)}` : ""}</span>
       </div>
       <div class="history-palette" aria-label="${escapeHtml(colorSetupSummary(entry.setup))}">
@@ -734,17 +938,18 @@ function recordFileHistory(assets, setup = currentColorSetup(), action = "Previe
   if (!fileAssets.length) return;
   const timestamp = new Date().toISOString();
   const existing = readFileHistory();
-  const byFileName = new Map(existing.map(entry => [entry.fileName, entry]));
-  fileAssets.forEach(asset => {
-    byFileName.set(asset.name, {
-      id: `${asset.name}:${timestamp}`,
-      fileName: asset.name,
+  const byFileLabel = new Map(existing.map(entry => [entry.fileLabel, entry]));
+  fileAssets.forEach((asset, index) => {
+    const fileLabel = fileKeywordLabel(asset.name);
+    byFileLabel.set(fileLabel, {
+      id: `${fileLabel}:${timestamp}:${index}`,
+      fileLabel,
       action,
       updatedAt: timestamp,
       setup: { ...setup }
     });
   });
-  const updated = [...byFileName.values()].sort((a, b) => String(b.updatedAt).localeCompare(String(a.updatedAt)));
+  const updated = [...byFileLabel.values()].sort((a, b) => String(b.updatedAt).localeCompare(String(a.updatedAt)));
   writeFileHistory(updated);
   renderFileHistory();
 }
@@ -765,13 +970,23 @@ function applyHistorySetup(id) {
       return;
     }
   }
-  els.status.textContent = `Applied ${entry.fileName} history: ${colorSetupSummary(entry.setup)}.`;
+  els.status.textContent = `Applied ${entry.fileLabel} history: ${colorSetupSummary(entry.setup)}.`;
 }
 
 function clearFileHistory() {
   writeFileHistory([]);
   renderFileHistory();
   els.status.textContent = "Cleared file color history.";
+}
+
+function clearLocalMetadata() {
+  if (typeof localStorage !== "undefined") {
+    [preferencesKey, savedSetupKey, fileHistoryKey].forEach(key => localStorage.removeItem(key));
+  }
+  if (typeof sessionStorage !== "undefined") sessionStorage.removeItem(swReloadKey);
+  updateSavedSetupStatus();
+  renderFileHistory();
+  els.status.textContent = "Cleared local color settings and keyword-only history metadata.";
 }
 
 function themeDefaults(key = themeKey()) {
@@ -1211,6 +1426,7 @@ function init() {
   renderFileHistory();
   els.file.addEventListener("change", async () => {
     try {
+      requirePrivacyGuard();
       await setAssetFiles(els.file.files);
     } catch (error) {
       els.status.textContent = error.message;
@@ -1218,14 +1434,19 @@ function init() {
   });
 
   els.usePasted.addEventListener("click", () => {
-    const pasted = els.pasteContent.value;
-    if (!pasted.trim()) {
-      els.status.textContent = "Paste VFX asset text first.";
-      return;
+    try {
+      requirePrivacyGuard();
+      const pasted = els.pasteContent.value;
+      if (!pasted.trim()) {
+        els.status.textContent = "Paste VFX asset text first.";
+        return;
+      }
+      const name = els.pasteName.value.trim() || "pasted_vfx_asset.json";
+      const fileName = /\.[^./\\]+$/.test(name) ? name : `${name}.json`;
+      setAssetText(pasted, fileName, "from pasted text");
+    } catch (error) {
+      els.status.textContent = error.message;
     }
-    const name = els.pasteName.value.trim() || "pasted_vfx_asset.json";
-    const fileName = /\.[^./\\]+$/.test(name) ? name : `${name}.json`;
-    setAssetText(pasted, fileName, "from pasted text");
   });
 
   els.target.addEventListener("change", () => {
@@ -1241,6 +1462,7 @@ function init() {
     if (button) applyHistorySetup(button.dataset.applyHistory);
   });
   els.clearColorHistory.addEventListener("click", clearFileHistory);
+  els.clearLocalMetadata.addEventListener("click", clearLocalMetadata);
   els.showOverviewName.addEventListener("change", () => {
     syncOverviewNameColumn();
     savePreferences();
@@ -1268,6 +1490,7 @@ function init() {
   });
   els.preview.addEventListener("click", () => {
     try {
+      requirePrivacyGuard();
       previewRecolor();
     } catch (error) {
       els.status.textContent = error.message;
@@ -1298,6 +1521,7 @@ function init() {
   });
   els.exportJson.addEventListener("click", () => {
     try {
+      requirePrivacyGuard();
       const key = themeKey();
       const assets = queuedAssets();
       const results = prepareBatchExport(key);
@@ -1330,6 +1554,7 @@ function init() {
   });
   els.copyOutput.addEventListener("click", async () => {
     try {
+      requirePrivacyGuard();
       const key = themeKey();
       const result = previewRecolor(key);
       await copyText(result.text);
@@ -1341,6 +1566,7 @@ function init() {
   });
   els.exportAll.addEventListener("click", () => {
     try {
+      requirePrivacyGuard();
       const assets = queuedAssets();
       if (!assets.length) throw new Error("Choose one or more VFX asset files first.");
       const exports = [];
@@ -1356,6 +1582,12 @@ function init() {
     }
   });
   els.report.addEventListener("click", () => {
+    try {
+      requirePrivacyGuard();
+    } catch (error) {
+      els.status.textContent = error.message;
+      return;
+    }
     if (!state.report.length) {
       try {
         previewRecolor();
@@ -1370,4 +1602,13 @@ function init() {
   paintVisuals();
 }
 
-init();
+async function start() {
+  const privacy = await activatePrivacyGuard();
+  if (privacy.reload) return;
+  init();
+  watchPrivacyGuard();
+  renderPrivacyStatus();
+  setSensitiveControls(state.privacyReady);
+}
+
+start();

@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; connect-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src data: blob:; font-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; worker-src 'none'; manifest-src 'none'; form-action 'none'; prefetch-src 'none'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; connect-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src data: blob:; font-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; worker-src 'self'; manifest-src 'none'; form-action 'none'; prefetch-src 'none'">
     <meta name="referrer" content="no-referrer">
     <title>VFX Asset Recolor Tool</title>
     <link rel="icon" href="data:,">
-    <link rel="stylesheet" href="styles.css?v=20260711-title">
+    <link rel="stylesheet" href="styles.css?v=20260711-title" integrity="sha384-AxEodeVTkNbYbFpbsr1HAXmVnGzfT1biP6bZwcwNgJSdNHUz4Crd05R/F9pjlJ+L" crossorigin="anonymous">
   </head>
   <body>
     <main class="shell">
@@ -89,11 +89,22 @@
 
           <details class="history-panel" open>
             <summary>
-              <span>File Color History</span>
+              <span>Color History</span>
               <small id="fileHistoryCount">No records</small>
             </summary>
             <div class="history-list" id="fileHistoryList"></div>
             <button id="clearColorHistory" type="button">Clear History</button>
+          </details>
+
+          <details class="privacy-panel">
+            <summary>
+              <span>Privacy Guard</span>
+              <small id="privacyStatus" class="status-badge warn">Checking...</small>
+            </summary>
+            <p id="privacyLock" class="privacy-lock">Asset loading and export stay locked until privacy checks pass.</p>
+            <ul class="privacy-checks" id="privacyChecklist"></ul>
+            <p class="privacy-tip">For sensitive assets, use a clean browser profile with extensions disabled.</p>
+            <button id="clearLocalMetadata" type="button">Clear Local Metadata</button>
           </details>
 
           <label class="check-row">
@@ -157,7 +168,7 @@
             <button id="exportAll">Export All Presets</button>
           </div>
 
-          <p class="privacy-note">Files and pasted text are read only inside this browser tab. A Content Security Policy blocks network connections and external resources. Batch export uses separate Blob downloads. Color UI preferences and per-file history may be saved locally; asset text is never stored or sent over the network.</p>
+          <p class="privacy-note">Files and pasted text are read only inside this browser tab. A Content Security Policy blocks network connections, and a Service Worker blocks unexpected requests inside this tool. Batch export uses separate Blob downloads. Color UI preferences and keyword-only history labels may be saved locally; asset text and full filenames are never stored or sent over the network.</p>
         </aside>
 
         <section class="results-panel">
@@ -221,6 +232,6 @@
       </section>
     </main>
 
-    <script src="app.js?v=20260711-layout"></script>
+    <script src="app.js?v=20260714-privacy" integrity="sha384-3GSIWqkPn2Ud/jEfNsVnfUIMrXi+NuTX1oJ8z50gRiyoljNijGtrcAV3Egm8oFxh" crossorigin="anonymous"></script>
   </body>
 </html>
