@@ -14,13 +14,14 @@
     @media(max-width:820px){.layout{grid-template-columns:1fr}.inspector{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}.inspector .panel:first-child{grid-row:span 2}.stage{height:250px}.charts.comparing{grid-template-columns:1fr 1fr}}
     @media(max-width:560px){.app{padding:0 12px 20px}.topbar{height:56px}.top-meta{font-size:8px;gap:7px}.brand{font-size:12px}.brand small{display:none}.layout{padding-top:14px}.study-heading h1{font-size:18px}.study-heading .head-right{gap:5px}.duration-chip{font-size:10px;padding:6px 8px}.button.small{font-size:10px;padding:7px 8px}.preview-grid.comparing{grid-template-columns:1fr}.preview-grid.comparing .stage{height:190px}.stage{height:225px}.charts.comparing{grid-template-columns:1fr}.phase-line{margin-left:9%;margin-right:2%}.phase-segment{font-size:8px}.inspector{grid-template-columns:1fr 1fr;gap:8px}.inspector .panel{padding:12px}.inspector .panel:first-child{grid-column:1 / -1;grid-row:auto}.graph-card{padding:12px 9px}.graph-meta .hint{display:none}.footer-note{font-size:8px}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+    @media(max-width:560px){.frequency-lab-link{display:none}}
   </style>
 </head>
 <body>
   <div class="app" id="app">
     <header class="topbar">
       <div class="brand"><span class="brand-mark" aria-hidden="true"></span> VFX Rhythm <small>Visualizer</small></div>
-      <div class="top-meta"><span class="status-dot" aria-hidden="true"></span> Timing study <span>·</span> Normalized time <a class="button small" id="libraryBackLink" href="./">Library</a><button class="button small" id="saveReferenceRhythm" hidden>Save rhythm</button></div>
+      <div class="top-meta"><span class="status-dot" aria-hidden="true"></span> Timing study <span>·</span> Normalized time <a class="button small" id="libraryBackLink" href="./">Library</a><a class="button small frequency-lab-link" href="frequency-lab.html">Frequency Lab</a><button class="button small" id="saveReferenceRhythm" hidden>Save rhythm</button></div>
     </header>
     <main class="layout">
       <section class="study-column" aria-label="Rhythm study workspace">

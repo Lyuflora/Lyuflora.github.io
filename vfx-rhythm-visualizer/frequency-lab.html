@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111217">
+  <meta name="description" content="Explore how particle spawn rate and random delay shape particle frequency patterns.">
+  <title>Particle Frequency Lab · VFX Pattern Library</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='15' fill='%238dc6b1'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="frequency-lab.css">
+</head>
+<body>
+  <div class="frequency-app">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="VFX Pattern Library home"><span class="brand-mark" aria-hidden="true"></span><span>VFX <b>Pattern Library</b></span></a>
+      <div class="topbar-actions">
+        <a class="button subtle" href="./">Library</a>
+        <a class="button subtle" href="analyzer.html">Rhythm Analyzer</a>
+      </div>
+    </header>
+
+    <main class="frequency-main">
+      <section class="frequency-hero">
+        <div>
+          <div class="eyebrow"><span class="frequency-pip"></span> PARTICLE SYSTEM STUDY <span class="eyebrow-line"></span> 01</div>
+          <h1>Particle Frequency Lab</h1>
+          <p>See how spawn rate and random delay shape cadence, gaps, and clusters.</p>
+        </div>
+        <div class="hero-tag"><span>∿</span> SPAWN DISTRIBUTION</div>
+      </section>
+
+      <div class="frequency-layout">
+        <aside class="control-column" aria-label="Frequency settings">
+          <section class="frequency-card preset-card">
+            <div class="section-heading"><div><span class="section-kicker">START WITH A SHAPE</span><h2>Presets</h2></div></div>
+            <div class="preset-grid" id="presetGrid">
+              <button class="preset-chip active" data-preset="steady-embers" type="button"><span>Steady embers</span><i>··· ···</i></button>
+              <button class="preset-chip" data-preset="sparse-embers" type="button"><span>Sparse embers</span><i>·    ·</i></button>
+              <button class="preset-chip" data-preset="falling-leaves" type="button"><span>Falling leaves</span><i>·  · ·</i></button>
+              <button class="preset-chip" data-preset="water-drops" type="button"><span>Water drops</span><i>· ·  ·</i></button>
+              <button class="preset-chip" data-preset="blowing-sand" type="button"><span>Blowing sand</span><i>······</i></button>
+              <button class="preset-chip" data-preset="irregular-dust" type="button"><span>Irregular dust</span><i>··  ···</i></button>
+            </div>
+          </section>
+
+          <section class="frequency-card settings-card">
+            <div class="section-heading"><div><span class="section-kicker">EMISSION CONTROLS</span><h2>Shape the spacing</h2></div><span class="live-dot" title="Updates as you adjust"></span></div>
+
+            <div class="range-group">
+              <div class="range-title"><div><h3>Spawn rate</h3><p>Particles per second</p></div><span class="range-value" id="rateSummary">4.5–6.5 /s</span></div>
+              <div class="range-band" id="rateBand" aria-hidden="true"><span></span><i></i><b></b></div>
+              <label class="range-control"><span>Min</span><output id="rateMinValue">4.5 /s</output><input class="lab-range" type="range" id="rateMin" min="0.2" max="32" step="0.1" value="4.5"></label>
+              <label class="range-control"><span>Max</span><output id="rateMaxValue">6.5 /s</output><input class="lab-range" type="range" id="rateMax" min="0.2" max="32" step="0.1" value="6.5"></label>
+              <div class="range-hint"><span>Narrow range</span><span>More variation</span></div>
+            </div>
+
+            <div class="range-group delay-group">
+              <div class="range-title"><div><h3>Particle delay</h3><p>Added after each rate interval</p></div><span class="range-value warm" id="delaySummary">0.00–0.07 s</span></div>
+              <div class="range-band warm-band" id="delayBand" aria-hidden="true"><span></span><i></i><b></b></div>
+              <label class="range-control"><span>Min</span><output id="delayMinValue">0.00 s</output><input class="lab-range warm-range" type="range" id="delayMin" min="0" max="1.5" step="0.01" value="0"></label>
+              <label class="range-control"><span>Max</span><output id="delayMaxValue">0.07 s</output><input class="lab-range warm-range" type="range" id="delayMax" min="0" max="1.5" step="0.01" value="0.07"></label>
+              <div class="range-hint"><span>No added gap</span><span>Longer pauses</span></div>
+            </div>
+
+            <div class="simple-control duration-control">
+              <label for="durationInput"><span><b>Simulation duration</b><small>Timeline length</small></span><output id="durationValue">8 sec</output></label>
+              <input class="lab-range" type="range" id="durationInput" min="2" max="20" step="1" value="8">
+            </div>
+
+            <div class="simple-control seed-control">
+              <label for="seedInput"><span><b>Random seed</b><small>Same seed = same result</small></span><span class="seed-mark">#</span></label>
+              <input type="number" id="seedInput" min="1" max="4294967295" step="1" value="42817" inputmode="numeric">
+            </div>
+
+            <div class="simple-control max-control">
+              <label for="maxParticlesInput"><span><b>Max particles <em>optional</em></b><small>Stored for later comparison</small></span></label>
+              <input type="number" id="maxParticlesInput" min="0" max="100000" step="1" value="0" placeholder="Not set">
+              <p class="constraint-note"><span>ⓘ</span> V1 shows spawn events only. A particle cap needs lifetime data to estimate how many are alive.</p>
+            </div>
+
+            <div class="mode-control">
+              <div class="mode-heading"><span>Particle preview</span><span>Display mode</span></div>
+              <div class="mode-options" role="group" aria-label="Particle preview mode">
+                <button class="mode-btn active" id="pointMode" type="button" aria-pressed="true">Point</button>
+                <button class="mode-btn" id="streakMode" type="button" aria-pressed="false">Streak</button>
+              </div>
+            </div>
+          </section>
+        </aside>
+
+        <div class="visual-column">
+          <section class="frequency-card transport-card" aria-label="Simulation playback">
+            <div class="transport-status"><span class="transport-orb" id="transportOrb"></span><div><span class="section-kicker">SIMULATION</span><strong id="playState">READY TO PLAY</strong></div></div>
+            <div class="transport-controls">
+              <button class="button primary play-button" id="playButton" type="button"><span id="playGlyph">▶</span><span id="playLabel">Play</span></button>
+              <button class="button" id="restartButton" type="button" title="Restart from zero">↺ <span>Restart</span></button>
+              <button class="button regenerate-button" id="regenerateButton" type="button">⟳ <span>Regenerate</span></button>
+            </div>
+            <div class="time-readout"><span id="timeReadout">0.00</span><span class="time-divider">/</span><span id="durationReadout">8.00 sec</span></div>
+          </section>
+
+          <section class="metric-row" aria-label="Spawn summary">
+            <article class="metric-card"><span>AVERAGE FREQUENCY</span><strong id="metricFrequency">—</strong><small>spawns / sec</small></article>
+            <article class="metric-card"><span>AVERAGE GAP</span><strong id="metricAverageGap">—</strong><small>between spawns</small></article>
+            <article class="metric-card"><span>SHORTEST GAP</span><strong id="metricShortestGap">—</strong><small>quietest spacing</small></article>
+            <article class="metric-card"><span>LONGEST GAP</span><strong id="metricLongestGap">—</strong><small>largest pause</small></article>
+            <article class="metric-card"><span>SPAWN COUNT</span><strong id="metricSpawnCount">0</strong><small>in this simulation</small></article>
+            <article class="metric-card variation-metric"><span>VARIATION</span><strong id="metricVariation">—</strong><small id="metricVariationNote">interval consistency</small></article>
+          </section>
+
+          <section class="frequency-card preview-card">
+            <div class="panel-heading"><div><span class="section-kicker">LIVE PREVIEW</span><h2>One spawn, one particle</h2></div><span class="preview-note"><span class="preview-key"></span><span>Short visual trail · not particle lifetime</span></span></div>
+            <div class="particle-stage" id="particleStage"><canvas id="particleCanvas" aria-label="Animated preview of particle spawns"></canvas><div class="stage-center-mark" aria-hidden="true"></div><div class="stage-scanline" aria-hidden="true"></div><div class="stage-axis"><span>EMITTER</span><span>FLOW DIRECTION</span></div><div class="stage-time-marker" id="stageTimeMarker">T + 0.00</div></div>
+            <div class="preview-footer"><span><i class="legend-dot mint-dot"></i>Spawn event</span><span id="previewModeNote">POINT MODE · 1.4 SEC VISUAL TRAIL</span></div>
+          </section>
+
+          <section class="frequency-card signature-card">
+            <div class="panel-heading"><div><span class="section-kicker">PRIMARY VIEW</span><h2>Spawn signature</h2></div><div class="signature-legend"><span><i class="legend-dot mint-dot"></i>Each marker is one spawn</span><b id="signatureCount">0 EVENTS</b></div></div>
+            <div class="signature-wrap"><svg id="signatureSvg" viewBox="0 0 1000 132" role="img" aria-label="Particle spawn signature timeline"></svg></div>
+            <div class="formula-note"><span class="formula-icon">ƒ</span><span>V1 spacing model</span><code>gap = (1 ÷ sampled spawn rate) + sampled delay</code><span class="formula-tail">Rate sets cadence · delay adds gaps</span></div>
+          </section>
+
+          <div class="analysis-grid">
+            <section class="frequency-card density-card">
+              <div class="panel-heading"><div><span class="section-kicker">LOCAL DENSITY</span><h2>Where events cluster</h2></div><span class="panel-unit">0.8 sec rolling window</span></div>
+              <div class="density-wrap"><svg id="densitySvg" viewBox="0 0 1000 170" role="img" aria-label="Rolling particle spawn density graph"></svg></div>
+              <div class="graph-axis"><span>0 sec</span><span id="densityPeak">Peak density —</span><span id="densityEnd">8 sec</span></div>
+            </section>
+
+            <section class="frequency-card interval-card">
+              <div class="panel-heading"><div><span class="section-kicker">INTERVAL VIEW</span><h2>What makes each gap?</h2></div><span class="panel-unit">Between consecutive spawns</span></div>
+              <div class="interval-legend"><span><i class="legend-swatch rate-swatch"></i>Base spacing · 1 ÷ rate</span><span><i class="legend-swatch delay-swatch"></i>Added delay</span></div>
+              <div class="interval-list" id="intervalList"></div>
+            </section>
+          </div>
+
+          <section class="frequency-card outcomes-card">
+            <div class="panel-heading"><div><span class="section-kicker">RANDOM OUTCOMES</span><h2>Same settings, different rolls</h2></div><span class="panel-unit">Three alternate seeds</span></div>
+            <div class="outcome-list" id="outcomeList"></div>
+            <div class="outcome-foot"><span>Change the min–max ranges to compare how wide the outcomes spread.</span><button class="text-button" id="rerollOutcomes" type="button">Reroll outcomes ↗</button></div>
+          </section>
+
+          <footer class="frequency-foot"><span>SpawnSimulator · deterministic from seed</span><span>Educational model · tune for your engine</span></footer>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script type="module" src="frequency-lab.js"></script>
+</body>
+</html>
