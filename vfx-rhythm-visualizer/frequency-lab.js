@@ -1,4 +1,5 @@
 import {SpawnSimulator, createOutcomeSeeds} from "./frequency-simulator.js";
+import {deriveEmitterSettings, inferSimpleTuning} from "./frequency-tuning.js";
 
 const PRESETS = {
   "steady-embers": {rateMin:4.5,rateMax:6.5,delayMin:0,delayMax:0.07,duration:8},
@@ -13,6 +14,8 @@ const state = {
   config:{spawnRateMin:4.5,spawnRateMax:6.5,particleDelayMin:0,particleDelayMax:0.07,duration:8,seed:42817,maxParticles:0},
   simulation:null,
   outcomes:[],
+  tuning:{density:48,regularity:16},
+  editMode:"simple",
   playhead:0,
   playing:false,
   frame:0,
@@ -22,7 +25,8 @@ const state = {
 
 const refs = {
   rateMin:$("#rateMin"),rateMax:$("#rateMax"),delayMin:$("#delayMin"),delayMax:$("#delayMax"),
-  duration:$("#durationInput"),seed:$("#seedInput"),maxParticles:$("#maxParticlesInput"),canvas:$("#particleCanvas")
+  duration:$("#durationInput"),seed:$("#seedInput"),maxParticles:$("#maxParticlesInput"),canvas:$("#particleCanvas"),
+  densityTuning:$("#densityTuning"),regularityTuning:$("#regularityTuning")
 };
 const context = refs.canvas.getContext("2d");
 
@@ -60,6 +64,83 @@ function updateControlLabels() {
   $("#densityEnd").textContent = refs.duration.value + " sec";
   updateSpread($("#rateBand"),rateMin,rateMax,32);
   updateSpread($("#delayBand"),delayMin,delayMax,1.5);
+  updateTuningPresentation();
+}
+function densityLabel(value) {
+  if (value < 18) return "Sparse";
+  if (value < 38) return "Light";
+  if (value < 62) return "Balanced";
+  if (value < 82) return "Frequent";
+  return "Very frequent";
+}
+function regularityLabel(value) {
+  if (value < 20) return "Very regular";
+  if (value < 45) return "Mostly regular";
+  if (value < 72) return "Variable";
+  return "Random";
+}
+function updateTuningPresentation() {
+  const density = Number(refs.densityTuning.value);
+  const regularity = Number(refs.regularityTuning.value);
+  const derived = deriveEmitterSettings({density:density,regularity:regularity});
+  const centerRate = (derived.spawnRateMin+derived.spawnRateMax)/2;
+  const effectiveRate = 1/(1/centerRate+derived.particleDelayMax/2);
+  const regularityText = regularityLabel(regularity);
+  $("#densityTuningValue").textContent = densityLabel(density);
+  $("#regularityTuningValue").textContent = regularityText;
+  $("#tuningSummary").textContent = effectiveRate.toFixed(1)+" spawns / sec · "+regularityText.toLowerCase();
+  $("#densityTag").textContent = densityLabel(density)+" density";
+  $("#regularityTag").textContent = regularityText;
+
+  let title = "A gently shifting rhythm";
+  let description = "The stream has a clear pace, with enough timing movement to feel less mechanical.";
+  if (density < 25 && regularity > 70) {
+    title = "Slow, uneven bursts";
+    description = "Events are far apart and the pauses vary widely, creating occasional loose clusters.";
+  } else if (density < 28) {
+    title = "Widely spaced events";
+    description = "The low event rate leaves open space between spawns, giving each particle room to read.";
+  } else if (density > 78 && regularity > 68) {
+    title = "Dense, irregular flow";
+    description = "Frequent events combine with wide timing variation, so clusters may form alongside short gaps.";
+  } else if (density > 78) {
+    title = "Fast, steady stream";
+    description = "Events arrive frequently and keep a fairly even rhythm across the simulation.";
+  } else if (regularity > 76) {
+    title = "Loose, natural scatter";
+    description = "The rate and added delay can shift from event to event, producing uneven spacing and small clusters.";
+  } else if (regularity < 20) {
+    title = "A steady stream";
+    description = "Spawns follow a consistent cadence with very little timing drift.";
+  }
+  $("#interpretationTitle").textContent = title;
+  $("#interpretationText").textContent = description;
+  let tip = "Compare the signature with the alternate outcomes to see how the same ranges can produce different patterns.";
+  if (density < 28) tip = "Raise density to bring events closer together, or keep the open spacing for isolated particles.";
+  else if (density > 78) tip = "At high density, a small amount of randomness can keep neighboring spawn markers readable.";
+  else if (regularity < 20) tip = "Add a little randomness to soften the mechanical rhythm without changing the overall pace much.";
+  else if (regularity > 76) tip = "Lower randomness if the long pauses and clusters feel less controlled than you want.";
+  $("#tuningTip").textContent = tip;
+}
+function syncSimpleTuningFromAdvanced() {
+  state.tuning = inferSimpleTuning({
+    spawnRateMin:refs.rateMin.value,
+    spawnRateMax:refs.rateMax.value,
+    particleDelayMin:refs.delayMin.value,
+    particleDelayMax:refs.delayMax.value
+  });
+  refs.densityTuning.value = String(state.tuning.density);
+  refs.regularityTuning.value = String(state.tuning.regularity);
+}
+function applySimpleTuning() {
+  state.tuning = {density:Number(refs.densityTuning.value),regularity:Number(refs.regularityTuning.value)};
+  const derived = deriveEmitterSettings(state.tuning);
+  refs.rateMin.value = String(derived.spawnRateMin);
+  refs.rateMax.value = String(derived.spawnRateMax);
+  refs.delayMin.value = String(derived.particleDelayMin);
+  refs.delayMax.value = String(derived.particleDelayMax);
+  $$(".preset-chip").forEach(function(button) { button.classList.remove("active"); });
+  rebuild();
 }
 function createSimulation(settings) {
   return SpawnSimulator.simulate({
@@ -319,6 +400,7 @@ function setPreset(name) {
   refs.delayMin.value = String(preset.delayMin);
   refs.delayMax.value = String(preset.delayMax);
   refs.duration.value = String(preset.duration);
+  syncSimpleTuningFromAdvanced();
   $$(".preset-chip").forEach(function(button) { button.classList.toggle("active",button.dataset.preset===name); });
   rebuild();
 }
@@ -333,6 +415,7 @@ function pairRange(minInput,maxInput,minValue,maxValue,keep) {
         if (index === 0) maxInput.value = minInput.value;
         else minInput.value = maxInput.value;
       }
+      syncSimpleTuningFromAdvanced();
       $$(".preset-chip").forEach(function(button) { button.classList.remove("active"); });
       rebuild();
     });
@@ -350,6 +433,10 @@ function bindControls() {
   refs.maxParticles.addEventListener("input",function() {
     state.config.maxParticles = clamp(Number(refs.maxParticles.value)||0,0,100000);
   });
+  refs.densityTuning.addEventListener("input",applySimpleTuning);
+  refs.regularityTuning.addEventListener("input",applySimpleTuning);
+  $("#simpleMode").addEventListener("click",function() { setEditMode("simple"); });
+  $("#advancedMode").addEventListener("click",function() { setEditMode("advanced"); });
   $("#playButton").addEventListener("click",play);
   $("#restartButton").addEventListener("click",restart);
   $("#regenerateButton").addEventListener("click",function() {
@@ -367,6 +454,15 @@ function bindControls() {
   window.addEventListener("resize",drawPreview,{passive:true});
   document.addEventListener("visibilitychange",function() { if (document.hidden && state.playing) pause(true); });
 }
+function setEditMode(mode) {
+  state.editMode = mode;
+  const advanced = mode === "advanced";
+  $("#advancedControls").open = advanced;
+  $("#simpleMode").classList.toggle("active",!advanced);
+  $("#advancedMode").classList.toggle("active",advanced);
+  $("#simpleMode").setAttribute("aria-pressed",String(!advanced));
+  $("#advancedMode").setAttribute("aria-pressed",String(advanced));
+}
 function setMode(mode) {
   state.mode = mode;
   $("#pointMode").classList.toggle("active",mode === "point");
@@ -378,4 +474,5 @@ function setMode(mode) {
 }
 
 bindControls();
+syncSimpleTuningFromAdvanced();
 rebuild();
