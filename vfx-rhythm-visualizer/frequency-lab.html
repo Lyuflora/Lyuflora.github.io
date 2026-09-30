@@ -8,7 +8,7 @@
   <title>Particle Frequency Lab · VFX Pattern Library</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='15' fill='%238dc6b1'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="frequency-lab.css?v=2">
+  <link rel="stylesheet" href="frequency-lab.css?v=3">
 </head>
 <body>
   <div class="frequency-app">
@@ -72,15 +72,31 @@
               <div class="range-group">
                 <div class="range-title"><div><h3>Spawn rate</h3><p>Particles per second</p></div><span class="range-value" id="rateSummary">4.5–6.5 /s</span></div>
                 <div class="range-band" id="rateBand" aria-hidden="true"><span></span><i></i><b></b></div>
-                <label class="range-control"><span>Min</span><output id="rateMinValue">4.5 /s</output><input class="lab-range" type="range" id="rateMin" min="0.2" max="32" step="0.1" value="4.5"></label>
-                <label class="range-control"><span>Max</span><output id="rateMaxValue">6.5 /s</output><input class="lab-range" type="range" id="rateMax" min="0.2" max="32" step="0.1" value="6.5"></label>
+                <div class="range-control">
+                  <div class="range-control-heading"><label for="rateMinNumber">Min rate</label><span>per second</span></div>
+                  <input class="lab-range" type="range" id="rateMin" min="0.2" max="32" step="0.1" value="4.5" aria-label="Minimum spawn rate slider">
+                  <div class="step-entry"><button class="step-adjust" type="button" data-target="rateMinNumber" data-delta="-1" aria-label="Decrease minimum spawn rate by 1">−1</button><input class="parameter-number" type="number" id="rateMinNumber" min="0.2" max="32" step="0.1" data-precision="1" value="4.5" aria-label="Minimum spawn rate, per second"><button class="step-adjust" type="button" data-target="rateMinNumber" data-delta="1" aria-label="Increase minimum spawn rate by 1">+1</button><span class="number-unit">/s</span></div>
+                </div>
+                <div class="range-control">
+                  <div class="range-control-heading"><label for="rateMaxNumber">Max rate</label><span>per second</span></div>
+                  <input class="lab-range" type="range" id="rateMax" min="0.2" max="32" step="0.1" value="6.5" aria-label="Maximum spawn rate slider">
+                  <div class="step-entry"><button class="step-adjust" type="button" data-target="rateMaxNumber" data-delta="-1" aria-label="Decrease maximum spawn rate by 1">−1</button><input class="parameter-number" type="number" id="rateMaxNumber" min="0.2" max="32" step="0.1" data-precision="1" value="6.5" aria-label="Maximum spawn rate, per second"><button class="step-adjust" type="button" data-target="rateMaxNumber" data-delta="1" aria-label="Increase maximum spawn rate by 1">+1</button><span class="number-unit">/s</span></div>
+                </div>
                 <div class="range-hint"><span>Narrow range</span><span>More variation</span></div>
               </div>
               <div class="range-group delay-group">
                 <div class="range-title"><div><h3>Particle delay</h3><p>Added after each rate interval</p></div><span class="range-value warm" id="delaySummary">0.00–0.07 s</span></div>
                 <div class="range-band warm-band" id="delayBand" aria-hidden="true"><span></span><i></i><b></b></div>
-                <label class="range-control"><span>Min</span><output id="delayMinValue">0.00 s</output><input class="lab-range warm-range" type="range" id="delayMin" min="0" max="1.5" step="0.01" value="0"></label>
-                <label class="range-control"><span>Max</span><output id="delayMaxValue">0.07 s</output><input class="lab-range warm-range" type="range" id="delayMax" min="0" max="1.5" step="0.01" value="0.07"></label>
+                <div class="range-control">
+                  <div class="range-control-heading"><label for="delayMinNumber">Min delay</label><span>seconds</span></div>
+                  <input class="lab-range warm-range" type="range" id="delayMin" min="0" max="1.5" step="0.01" value="0" aria-label="Minimum particle delay slider">
+                  <div class="step-entry warm-step-entry"><button class="step-adjust" type="button" data-target="delayMinNumber" data-delta="-1" aria-label="Decrease minimum particle delay by 1 second">−1</button><input class="parameter-number" type="number" id="delayMinNumber" min="0" max="1.5" step="0.01" data-precision="2" value="0" aria-label="Minimum particle delay, seconds"><button class="step-adjust" type="button" data-target="delayMinNumber" data-delta="1" aria-label="Increase minimum particle delay by 1 second">+1</button><span class="number-unit">s</span></div>
+                </div>
+                <div class="range-control">
+                  <div class="range-control-heading"><label for="delayMaxNumber">Max delay</label><span>seconds</span></div>
+                  <input class="lab-range warm-range" type="range" id="delayMax" min="0" max="1.5" step="0.01" value="0.07" aria-label="Maximum particle delay slider">
+                  <div class="step-entry warm-step-entry"><button class="step-adjust" type="button" data-target="delayMaxNumber" data-delta="-1" aria-label="Decrease maximum particle delay by 1 second">−1</button><input class="parameter-number" type="number" id="delayMaxNumber" min="0" max="1.5" step="0.01" data-precision="2" value="0.07" aria-label="Maximum particle delay, seconds"><button class="step-adjust" type="button" data-target="delayMaxNumber" data-delta="1" aria-label="Increase maximum particle delay by 1 second">+1</button><span class="number-unit">s</span></div>
+                </div>
                 <div class="range-hint"><span>No added gap</span><span>Longer pauses</span></div>
               </div>
               <div class="simple-control duration-control">
@@ -175,6 +191,6 @@
       </div>
     </main>
   </div>
-  <script type="module" src="frequency-lab.js?v=2"></script>
+  <script type="module" src="frequency-lab.js?v=3"></script>
 </body>
 </html>

@@ -25,6 +25,7 @@ const state = {
 
 const refs = {
   rateMin:$("#rateMin"),rateMax:$("#rateMax"),delayMin:$("#delayMin"),delayMax:$("#delayMax"),
+  rateMinNumber:$("#rateMinNumber"),rateMaxNumber:$("#rateMaxNumber"),delayMinNumber:$("#delayMinNumber"),delayMaxNumber:$("#delayMaxNumber"),
   duration:$("#durationInput"),seed:$("#seedInput"),maxParticles:$("#maxParticlesInput"),canvas:$("#particleCanvas"),
   densityTuning:$("#densityTuning"),regularityTuning:$("#regularityTuning")
 };
@@ -53,11 +54,11 @@ function updateControlLabels() {
   const rateMax = Number(refs.rateMax.value);
   const delayMin = Number(refs.delayMin.value);
   const delayMax = Number(refs.delayMax.value);
-  $("#rateMinValue").textContent = formatRate(rateMin) + " /s";
-  $("#rateMaxValue").textContent = formatRate(rateMax) + " /s";
+  refs.rateMinNumber.value = rateMin.toFixed(1);
+  refs.rateMaxNumber.value = rateMax.toFixed(1);
+  refs.delayMinNumber.value = delayMin.toFixed(2);
+  refs.delayMaxNumber.value = delayMax.toFixed(2);
   $("#rateSummary").textContent = formatRate(rateMin) + "–" + formatRate(rateMax) + " /s";
-  $("#delayMinValue").textContent = formatSeconds(delayMin);
-  $("#delayMaxValue").textContent = formatSeconds(delayMax);
   $("#delaySummary").textContent = formatSeconds(delayMin) + "–" + formatSeconds(delayMax);
   $("#durationValue").textContent = refs.duration.value + " sec";
   $("#durationReadout").textContent = Number(refs.duration.value).toFixed(2) + " sec";
@@ -406,24 +407,60 @@ function setPreset(name) {
 }
 function $(selector) { return document.querySelector(selector); }
 function $$(selector) { return Array.from(document.querySelectorAll(selector)); }
-function pairRange(minInput,maxInput,minValue,maxValue,keep) {
-  const inputs = [minInput,maxInput];
-  inputs.forEach(function(input,index) {
-    input.addEventListener("input",function() {
-      const min = Number(minInput.value), max = Number(maxInput.value);
-      if (min > max) {
-        if (index === 0) maxInput.value = minInput.value;
-        else minInput.value = maxInput.value;
-      }
-      syncSimpleTuningFromAdvanced();
-      $$(".preset-chip").forEach(function(button) { button.classList.remove("active"); });
-      rebuild();
-    });
+function commitPairValue(minRange,maxRange,minNumber,maxNumber,index,rawValue) {
+  const range = index === 0 ? minRange : maxRange;
+  const field = index === 0 ? minNumber : maxNumber;
+  const precision = Number(field.dataset.precision);
+  const step = Math.pow(10,precision);
+  const fallback = Number(range.value);
+  const parsed = Number(rawValue);
+  const bounded = clamp(Number.isFinite(parsed) ? parsed : fallback,Number(range.min),Number(range.max));
+  const value = Math.round(bounded*step)/step;
+  let min = Number(minRange.value);
+  let max = Number(maxRange.value);
+  if (index === 0) {
+    min = value;
+    if (min > max) max = min;
+  } else {
+    max = value;
+    if (max < min) min = max;
+  }
+  minRange.value = min.toFixed(precision);
+  maxRange.value = max.toFixed(precision);
+  minNumber.value = min.toFixed(precision);
+  maxNumber.value = max.toFixed(precision);
+  syncSimpleTuningFromAdvanced();
+  $$(".preset-chip").forEach(function(button) { button.classList.remove("active"); });
+  rebuild();
+}
+function pairRange(minRange,maxRange,minNumber,maxNumber) {
+  minRange.addEventListener("input",function() {
+    commitPairValue(minRange,maxRange,minNumber,maxNumber,0,minRange.value);
+  });
+  maxRange.addEventListener("input",function() {
+    commitPairValue(minRange,maxRange,minNumber,maxNumber,1,maxRange.value);
+  });
+  minNumber.addEventListener("change",function() {
+    commitPairValue(minRange,maxRange,minNumber,maxNumber,0,minNumber.value);
+  });
+  maxNumber.addEventListener("change",function() {
+    commitPairValue(minRange,maxRange,minNumber,maxNumber,1,maxNumber.value);
   });
 }
 function bindControls() {
-  pairRange(refs.rateMin,refs.rateMax);
-  pairRange(refs.delayMin,refs.delayMax);
+  pairRange(refs.rateMin,refs.rateMax,refs.rateMinNumber,refs.rateMaxNumber);
+  pairRange(refs.delayMin,refs.delayMax,refs.delayMinNumber,refs.delayMaxNumber);
+  $$(".step-adjust").forEach(function(button) {
+    button.addEventListener("click",function() {
+      const field = $("#"+button.dataset.target);
+      const precision = Number(field.dataset.precision);
+      const scale = Math.pow(10,precision);
+      const current = Number(field.value);
+      const next = clamp((Number.isFinite(current) ? current : Number(field.min))+Number(button.dataset.delta),Number(field.min),Number(field.max));
+      field.value = (Math.round(next*scale)/scale).toFixed(precision);
+      field.dispatchEvent(new Event("change",{bubbles:true}));
+    });
+  });
   refs.duration.addEventListener("input",rebuild);
   refs.seed.addEventListener("change",function() {
     const value = clamp(Math.floor(Number(refs.seed.value)||1),1,4294967295);
