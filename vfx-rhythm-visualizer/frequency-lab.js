@@ -17,6 +17,8 @@ const state = {
   tuning:{density:48,regularity:16},
   editMode:"simple",
   playhead:0,
+  elapsedTime:0,
+  loopPlayback:false,
   playing:false,
   frame:0,
   lastFrame:0,
@@ -26,7 +28,7 @@ const state = {
 const refs = {
   rateMin:$("#rateMin"),rateMax:$("#rateMax"),delayMin:$("#delayMin"),delayMax:$("#delayMax"),
   rateMinNumber:$("#rateMinNumber"),rateMaxNumber:$("#rateMaxNumber"),delayMinNumber:$("#delayMinNumber"),delayMaxNumber:$("#delayMaxNumber"),
-  duration:$("#durationInput"),seed:$("#seedInput"),maxParticles:$("#maxParticlesInput"),canvas:$("#particleCanvas"),
+  duration:$("#durationInput"),loopPlayback:$("#loopPlaybackInput"),seed:$("#seedInput"),maxParticles:$("#maxParticlesInput"),canvas:$("#particleCanvas"),
   densityTuning:$("#densityTuning"),regularityTuning:$("#regularityTuning")
 };
 const context = refs.canvas.getContext("2d");
@@ -65,7 +67,7 @@ function updateControlLabels() {
   $("#rateSummary").textContent = formatRate(rateMin) + "–" + formatRate(rateMax) + " /s";
   $("#delaySummary").textContent = formatSeconds(delayMin) + "–" + formatSeconds(delayMax);
   $("#durationValue").textContent = refs.duration.value + " sec";
-  $("#durationReadout").textContent = Number(refs.duration.value).toFixed(2) + " sec";
+  $("#durationReadout").textContent = state.loopPlayback ? "∞" : Number(refs.duration.value).toFixed(2) + " sec";
   $("#densityEnd").textContent = refs.duration.value + " sec";
   updateSpread($("#rateBand"),rateMin,rateMax,32);
   updateSpread($("#delayBand"),delayMin,delayMax,1.5);
@@ -162,7 +164,8 @@ function updatePlayState(label) {
   $("#transportOrb").classList.toggle("is-playing",state.playing);
   $("#playButton").setAttribute("aria-label",state.playing ? "Pause simulation" : "Play simulation");
   $("#playGlyph").textContent = state.playing ? "Ⅱ" : "▶";
-  $("#playLabel").textContent = state.playing ? "Pause" : (state.playhead > 0 ? "Resume" : "Play");
+  const hasProgress = state.loopPlayback ? state.elapsedTime > 0 : state.playhead > 0;
+  $("#playLabel").textContent = state.playing ? "Pause" : (hasProgress ? "Resume" : "Play");
 }
 function rebuild() {
   pause(false);
@@ -173,9 +176,11 @@ function rebuild() {
     return createSimulation(Object.assign({},state.config,{seed:seed}));
   });
   state.playhead = 0;
+  state.elapsedTime = 0;
   renderAll();
+  updateTimelinePlayhead();
   drawPreview();
-  updatePlayState("READY TO PLAY");
+  updatePlayState(state.loopPlayback ? "READY TO LOOP" : "READY TO PLAY");
 }
 function eventIntervals(events) {
   return events.slice(1).map(function(event,index) {
@@ -301,8 +306,10 @@ function updateTimelinePlayhead() {
   line.setAttribute("x1",x.toFixed(2));
   line.setAttribute("x2",x.toFixed(2));
   cap.setAttribute("cx",x.toFixed(2));
-  $("#timeReadout").textContent = state.playhead.toFixed(2);
-  $("#stageTimeMarker").textContent = "T + "+state.playhead.toFixed(2);
+  const readoutTime = state.loopPlayback ? state.elapsedTime : state.playhead;
+  $("#timeReadout").textContent = readoutTime.toFixed(2);
+  $("#durationReadout").textContent = state.loopPlayback ? "∞" : state.config.duration.toFixed(2) + " sec";
+  $("#stageTimeMarker").textContent = "T + "+readoutTime.toFixed(2);
 }
 function resizeCanvas() {
   const rect = refs.canvas.getBoundingClientRect();
@@ -354,10 +361,15 @@ function animate(now) {
   if (!state.playing) return;
   const delta = Math.min(0.08,(now-state.lastFrame)/1000);
   state.lastFrame = now;
-  state.playhead = Math.min(state.config.duration,state.playhead+delta);
+  state.elapsedTime += delta;
+  if (state.loopPlayback) {
+    state.playhead = (state.playhead+delta)%state.config.duration;
+  } else {
+    state.playhead = Math.min(state.config.duration,state.playhead+delta);
+  }
   updateTimelinePlayhead();
   drawPreview();
-  if (state.playhead >= state.config.duration) {
+  if (!state.loopPlayback && state.playhead >= state.config.duration) {
     state.playing = false;
     updatePlayState("SIMULATION COMPLETE");
     drawPreview();
@@ -370,24 +382,29 @@ function play() {
     pause(true);
     return;
   }
-  if (state.playhead >= state.config.duration) state.playhead = 0;
+  if (state.playhead >= state.config.duration) {
+    state.playhead = 0;
+    state.elapsedTime = 0;
+  }
   state.playing = true;
   state.lastFrame = performance.now();
-  updatePlayState("SIMULATION PLAYING");
+  updatePlayState(state.loopPlayback ? "SIMULATION LOOPING" : "SIMULATION PLAYING");
   state.frame = window.requestAnimationFrame(animate);
 }
 function pause(updateLabel) {
   state.playing = false;
   if (state.frame) window.cancelAnimationFrame(state.frame);
   state.frame = 0;
-  if (updateLabel !== false) updatePlayState(state.playhead > 0 ? "SIMULATION PAUSED" : "READY TO PLAY");
+  const hasProgress = state.loopPlayback ? state.elapsedTime > 0 : state.playhead > 0;
+  if (updateLabel !== false) updatePlayState(hasProgress ? "SIMULATION PAUSED" : (state.loopPlayback ? "READY TO LOOP" : "READY TO PLAY"));
 }
 function restart() {
   pause(false);
   state.playhead = 0;
+  state.elapsedTime = 0;
   updateTimelinePlayhead();
   drawPreview();
-  updatePlayState("READY TO PLAY");
+  updatePlayState(state.loopPlayback ? "READY TO LOOP" : "READY TO PLAY");
 }
 function randomSeed() {
   if (window.crypto && window.crypto.getRandomValues) {
@@ -466,6 +483,17 @@ function bindControls() {
     });
   });
   refs.duration.addEventListener("input",rebuild);
+  refs.loopPlayback.addEventListener("change",function() {
+    state.loopPlayback = refs.loopPlayback.checked;
+    updateTimelinePlayhead();
+    if (state.playing) {
+      updatePlayState(state.loopPlayback ? "SIMULATION LOOPING" : "SIMULATION PLAYING");
+    } else if (state.loopPlayback && state.playhead >= state.config.duration) {
+      updatePlayState("READY TO LOOP");
+    } else {
+      updatePlayState(state.loopPlayback ? "READY TO LOOP" : (state.playhead > 0 ? "SIMULATION PAUSED" : "READY TO PLAY"));
+    }
+  });
   refs.seed.addEventListener("change",function() {
     const value = clamp(Math.floor(Number(refs.seed.value)||1),1,4294967295);
     refs.seed.value = String(value);

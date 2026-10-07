@@ -8,7 +8,7 @@
   <title>Particle Frequency Lab · VFX Pattern Library</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='15' fill='%238dc6b1'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="frequency-lab.css?v=4">
+  <link rel="stylesheet" href="frequency-lab.css?v=5">
 </head>
 <body>
   <div class="frequency-app">
@@ -100,8 +100,12 @@
                 <div class="range-hint"><span>No added gap</span><span>Longer pauses</span></div>
               </div>
               <div class="simple-control duration-control">
-                <label for="durationInput"><span><b>Simulation duration</b><small>Timeline length</small></span><output id="durationValue">8 sec</output></label>
+                <label for="durationInput"><span><b>Simulation duration</b><small>Timeline and loop length</small></span><output id="durationValue">8 sec</output></label>
                 <input class="lab-range" type="range" id="durationInput" min="2" max="20" step="1" value="8">
+                <div class="duration-loop-setting">
+                  <label for="loopPlaybackInput"><input type="checkbox" id="loopPlaybackInput"><span><b>Play infinitely</b><small>Repeat this timeline until paused</small></span></label>
+                  <span class="duration-loop-mark" aria-hidden="true">∞</span>
+                </div>
               </div>
               <div class="simple-control seed-control">
                 <label for="seedInput"><span><b>Random seed</b><small>Same seed = same result</small></span><span class="seed-mark">#</span></label>
@@ -191,6 +195,6 @@
       </div>
     </main>
   </div>
-  <script type="module" src="frequency-lab.js?v=4"></script>
+  <script type="module" src="frequency-lab.js?v=5"></script>
 </body>
 </html>

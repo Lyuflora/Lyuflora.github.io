@@ -105,3 +105,10 @@
 .warm-step-entry .step-adjust{color:#dec09f}
 .warm-step-entry .step-adjust:hover{border-color:#92704f;background:#30271f;color:#fae1c4}
 .number-unit{color:#858993;font-size:9px;text-align:left}
+.duration-loop-setting{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px;padding-top:10px;border-top:1px solid #292b34}
+.duration-loop-setting label{display:flex;align-items:center;gap:8px;color:#d0d2d8;font-size:9px;cursor:pointer}
+.duration-loop-setting input{width:13px;height:13px;margin:0;accent-color:var(--freq)}
+.duration-loop-setting label span{display:flex;flex-direction:column;gap:3px}
+.duration-loop-setting b{font-weight:570}
+.duration-loop-setting small{color:#747783;font-size:8px}
+.duration-loop-mark{color:var(--freq);font-size:14px}
