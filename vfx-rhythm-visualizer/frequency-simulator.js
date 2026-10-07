@@ -31,8 +31,8 @@ export function deriveSpawnInterval(sampledSpawnRate, sampledDelay) {
 export class SpawnSimulator {
   static simulate(settings) {
     const config = {
-      spawnRateMin: Math.max(0.2, Number(settings.spawnRateMin) || 0.2),
-      spawnRateMax: Math.max(0.2, Number(settings.spawnRateMax) || 0.2),
+      spawnRateMin: Math.max(0.01, Number(settings.spawnRateMin) || 0.01),
+      spawnRateMax: Math.max(0.01, Number(settings.spawnRateMax) || 0.01),
       particleDelayMin: Math.max(0, Number(settings.particleDelayMin) || 0),
       particleDelayMax: Math.max(0, Number(settings.particleDelayMax) || 0),
       duration: Math.min(20, Math.max(2, Number(settings.duration) || 8)),

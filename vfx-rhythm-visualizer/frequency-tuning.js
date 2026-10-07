@@ -29,7 +29,7 @@ export function deriveEmitterSettings(tuning) {
 
 /** Estimate the easy-tuner values represented by directly edited emitter ranges. */
 export function inferSimpleTuning(settings) {
-  const rateMin = Math.max(0.2,Number(settings.spawnRateMin)||0.2);
+  const rateMin = Math.max(0.01,Number(settings.spawnRateMin)||0.01);
   const rateMax = Math.max(rateMin,Number(settings.spawnRateMax)||rateMin);
   const delayMin = Math.max(0,Number(settings.particleDelayMin)||0);
   const delayMax = Math.max(delayMin,Number(settings.particleDelayMax)||0);

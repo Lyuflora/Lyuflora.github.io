@@ -8,7 +8,7 @@
   <title>Particle Frequency Lab · VFX Pattern Library</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='15' fill='%238dc6b1'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="frequency-lab.css?v=3">
+  <link rel="stylesheet" href="frequency-lab.css?v=4">
 </head>
 <body>
   <div class="frequency-app">
@@ -74,13 +74,13 @@
                 <div class="range-band" id="rateBand" aria-hidden="true"><span></span><i></i><b></b></div>
                 <div class="range-control">
                   <div class="range-control-heading"><label for="rateMinNumber">Min rate</label><span>per second</span></div>
-                  <input class="lab-range" type="range" id="rateMin" min="0.2" max="32" step="0.1" value="4.5" aria-label="Minimum spawn rate slider">
-                  <div class="step-entry"><button class="step-adjust" type="button" data-target="rateMinNumber" data-delta="-1" aria-label="Decrease minimum spawn rate by 1">−1</button><input class="parameter-number" type="number" id="rateMinNumber" min="0.2" max="32" step="0.1" data-precision="1" value="4.5" aria-label="Minimum spawn rate, per second"><button class="step-adjust" type="button" data-target="rateMinNumber" data-delta="1" aria-label="Increase minimum spawn rate by 1">+1</button><span class="number-unit">/s</span></div>
+                  <input class="lab-range" type="range" id="rateMin" min="0.01" max="32" step="0.01" value="4.5" aria-label="Minimum spawn rate slider">
+                  <div class="step-entry"><button class="step-adjust" type="button" data-target="rateMinNumber" data-delta="-1" aria-label="Decrease minimum spawn rate by 1">−1</button><input class="parameter-number" type="number" id="rateMinNumber" min="0.01" max="32" step="0.01" data-precision="2" value="4.5" aria-label="Minimum spawn rate, per second"><button class="step-adjust" type="button" data-target="rateMinNumber" data-delta="1" aria-label="Increase minimum spawn rate by 1">+1</button><span class="number-unit">/s</span></div>
                 </div>
                 <div class="range-control">
                   <div class="range-control-heading"><label for="rateMaxNumber">Max rate</label><span>per second</span></div>
-                  <input class="lab-range" type="range" id="rateMax" min="0.2" max="32" step="0.1" value="6.5" aria-label="Maximum spawn rate slider">
-                  <div class="step-entry"><button class="step-adjust" type="button" data-target="rateMaxNumber" data-delta="-1" aria-label="Decrease maximum spawn rate by 1">−1</button><input class="parameter-number" type="number" id="rateMaxNumber" min="0.2" max="32" step="0.1" data-precision="1" value="6.5" aria-label="Maximum spawn rate, per second"><button class="step-adjust" type="button" data-target="rateMaxNumber" data-delta="1" aria-label="Increase maximum spawn rate by 1">+1</button><span class="number-unit">/s</span></div>
+                  <input class="lab-range" type="range" id="rateMax" min="0.01" max="32" step="0.01" value="6.5" aria-label="Maximum spawn rate slider">
+                  <div class="step-entry"><button class="step-adjust" type="button" data-target="rateMaxNumber" data-delta="-1" aria-label="Decrease maximum spawn rate by 1">−1</button><input class="parameter-number" type="number" id="rateMaxNumber" min="0.01" max="32" step="0.01" data-precision="2" value="6.5" aria-label="Maximum spawn rate, per second"><button class="step-adjust" type="button" data-target="rateMaxNumber" data-delta="1" aria-label="Increase maximum spawn rate by 1">+1</button><span class="number-unit">/s</span></div>
                 </div>
                 <div class="range-hint"><span>Narrow range</span><span>More variation</span></div>
               </div>
@@ -191,6 +191,6 @@
       </div>
     </main>
   </div>
-  <script type="module" src="frequency-lab.js?v=3"></script>
+  <script type="module" src="frequency-lab.js?v=4"></script>
 </body>
 </html>

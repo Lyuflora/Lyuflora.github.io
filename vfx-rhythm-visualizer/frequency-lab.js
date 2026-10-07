@@ -33,7 +33,11 @@ const context = refs.canvas.getContext("2d");
 
 function clamp(value,min,max) { return Math.min(max,Math.max(min,value)); }
 function formatSeconds(value,digits) { return Number(value).toFixed(digits === undefined ? 2 : digits) + " s"; }
-function formatRate(value) { return Number(value).toFixed(1); }
+function formatRate(value) {
+  const number = Number(value);
+  const precise = number.toFixed(2);
+  return precise.endsWith("0") ? number.toFixed(1) : precise;
+}
 function readControls() {
   state.config.spawnRateMin = Number(refs.rateMin.value);
   state.config.spawnRateMax = Number(refs.rateMax.value);
@@ -54,8 +58,8 @@ function updateControlLabels() {
   const rateMax = Number(refs.rateMax.value);
   const delayMin = Number(refs.delayMin.value);
   const delayMax = Number(refs.delayMax.value);
-  refs.rateMinNumber.value = rateMin.toFixed(1);
-  refs.rateMaxNumber.value = rateMax.toFixed(1);
+  refs.rateMinNumber.value = rateMin.toFixed(2);
+  refs.rateMaxNumber.value = rateMax.toFixed(2);
   refs.delayMinNumber.value = delayMin.toFixed(2);
   refs.delayMaxNumber.value = delayMax.toFixed(2);
   $("#rateSummary").textContent = formatRate(rateMin) + "–" + formatRate(rateMax) + " /s";
