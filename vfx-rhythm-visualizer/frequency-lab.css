@@ -112,3 +112,68 @@
 .duration-loop-setting b{font-weight:570}
 .duration-loop-setting small{color:#747783;font-size:8px}
 .duration-loop-mark{color:var(--freq);font-size:14px}
+
+/* Keep the two controls that define the particle rhythm visible and easy to scan. */
+.frequency-layout{grid-template-columns:minmax(290px,320px) minmax(420px,1fr) minmax(264px,285px);gap:16px}
+.primary-parameter-card{padding:16px;border-color:#4b6c5e;background:radial-gradient(ellipse at 10% 0%,#26362e 0%,transparent 54%),linear-gradient(150deg,#1c2421,#171a20);box-shadow:0 14px 36px #8dc6b116,inset 0 1px #b9eadb12}
+.primary-parameter-card .section-heading{align-items:flex-start;margin-bottom:14px}
+.primary-parameter-card .section-heading h2{margin-top:5px;color:#f0f4f1;font-size:18px;letter-spacing:-.035em}
+.parameter-description{margin:5px 0 0;color:#9aa69f;font-size:10px;line-height:1.45}
+.parameter-live{padding:5px 7px;border:1px solid #456557;border-radius:99px;background:#213129;color:#bde8d6;font-size:7px;font-weight:700;letter-spacing:.1em}
+.primary-parameter-card .range-group{margin:0;padding:13px 12px;border:1px solid #39483f;border-radius:10px;background:linear-gradient(130deg,#1b211e,#191b20)}
+.primary-parameter-card .range-group+.range-group{margin-top:10px}
+.primary-parameter-card .range-group.delay-group{border-color:#524334;background:linear-gradient(130deg,#25211c,#1c1b1e)}
+.primary-parameter-card .range-title{align-items:center;margin-bottom:12px}
+.primary-parameter-card .range-title h3{color:#edf2ee;font-size:13px}
+.primary-parameter-card .range-title p{margin-top:4px;font-size:9px}
+.primary-parameter-card .range-value{padding:6px 8px;border:1px solid #3a5549;border-radius:7px;background:#1d2a24;color:#c3ecdc;font-size:12px;font-weight:620}
+.primary-parameter-card .range-value.warm{border-color:#594633;background:#2a241e;color:#f0c99e}
+.primary-parameter-card .range-band{height:4px;margin:1px 3px 13px;background:#343a38}
+.primary-parameter-card .range-band:before{height:4px}
+.primary-parameter-card .range-control{margin-top:11px}
+.primary-parameter-card .range-control-heading label{color:#dce4df;font-size:10px;font-weight:570}
+.primary-parameter-card .range-control-heading>span{font-size:8px}
+.primary-parameter-card .lab-range{height:5px;margin:7px 0 7px;background:#3c4642}
+.primary-parameter-card .lab-range::-webkit-slider-thumb{width:14px;height:14px}
+.primary-parameter-card .lab-range::-moz-range-thumb{width:12px;height:12px}
+.primary-parameter-card .warm-range{background:#493b2d}
+.primary-parameter-card .step-entry{grid-template-columns:42px minmax(70px,1fr) 42px 23px;gap:6px}
+.primary-parameter-card .parameter-number{height:38px;border-color:#53695f;background:#121916;color:#f3f7f4;font-size:15px;font-weight:620;text-align:center}
+.primary-parameter-card .warm-step-entry .parameter-number{border-color:#6b5843;background:#1a1714}
+.primary-parameter-card .step-adjust{height:38px;border-color:#43544a;background:#222a25;color:#d4e8dd;font-size:10px;font-weight:650}
+.primary-parameter-card .warm-step-entry .step-adjust{border-color:#594a38;background:#2a241d}
+.primary-parameter-card .number-unit{color:#a4b5ac;font-size:10px;font-weight:600}
+.primary-parameter-card .range-hint{margin-top:9px;font-size:8px}
+.tuner-card{padding:0 14px;border-color:#30343b;background:#191b21;box-shadow:none}
+.quick-tuner>summary,.advanced-controls>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:52px;list-style:none;cursor:pointer}
+.quick-tuner>summary::-webkit-details-marker{display:none}
+.quick-tuner>summary>span:first-child,.advanced-controls>summary>span:first-child{display:flex;flex-direction:column;gap:4px}
+.quick-tuner>summary b,.advanced-controls>summary b{color:#d8d9df;font-size:10px;font-weight:570}
+.quick-tuner-body{padding:0 0 12px;border-top:1px solid #292b34}
+.quick-tuner .tuner-intro{margin:11px 0 2px}
+.quick-tuner .tuning-control{padding:11px 0 9px}
+.advanced-controls{padding:0 14px}
+.advanced-body{padding-bottom:5px}
+.advanced-body .range-control{display:flex;flex-direction:column;align-items:stretch;gap:5px;margin-top:12px;color:#888b96;font-size:9px}
+.advanced-body .range-control>.lab-range{width:100%;margin:3px 0 5px}
+.transport-card{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:9px 12px}
+.transport-card .section-heading{grid-column:1/-1;grid-row:1;margin:0}
+.transport-card .transport-status{grid-column:1;grid-row:2;order:0;justify-content:flex-start}
+.transport-card .time-readout{grid-column:2;grid-row:2;order:0;margin:0}
+.transport-card .transport-controls{grid-column:1/-1;grid-row:3;order:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.transport-card .play-button{grid-column:auto}
+.transport-card .transport-controls .button{min-width:0;min-height:37px;justify-content:center;gap:4px;padding:6px 5px}
+.transport-card .mode-control{grid-column:1/-1;grid-row:4;order:0;margin:0}
+.transport-card .mode-heading{gap:8px}
+@media(max-width:1180px){.frequency-layout{grid-template-columns:minmax(250px,275px) minmax(0,1fr)}.primary-parameter-card{padding:14px}.primary-parameter-card .range-group{padding:12px 10px}}
+@media(max-width:820px){.frequency-layout{grid-template-columns:1fr}.control-column{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}.primary-parameter-card,.preset-card,.transport-card{grid-column:1/-1}.quick-tuner{grid-column:1}.advanced-controls{grid-column:2;grid-row:auto}.transport-card{grid-row:auto}.insight-column{grid-column:auto}}
+@media(max-width:560px){.control-column{grid-template-columns:1fr}.primary-parameter-card,.preset-card,.quick-tuner,.advanced-controls,.transport-card{grid-column:auto;grid-row:auto}.primary-parameter-card{padding:13px}.primary-parameter-card .section-heading h2{font-size:17px}.primary-parameter-card .range-group{padding:12px 9px}.primary-parameter-card .step-entry{grid-template-columns:38px minmax(70px,1fr) 38px 22px;gap:5px}.transport-card{grid-template-columns:minmax(0,1fr) auto;flex-wrap:nowrap}.transport-card .transport-controls{width:auto}.transport-card .time-readout{margin:0}.transport-card .transport-controls .button{min-height:36px;padding:5px 3px;font-size:8px}.transport-card .transport-controls .button span{font-size:8px}}
+.frequency-main>.primary-parameter-card{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 14px;margin-bottom:16px}
+.frequency-main>.primary-parameter-card>.section-heading{grid-column:1/-1}
+.frequency-main>.primary-parameter-card>.range-group{min-width:0;margin:0;padding:14px 15px}
+.frequency-main>.primary-parameter-card>.range-group+.range-group{margin:0}
+.frequency-main>.primary-parameter-card .range-control{margin-top:10px}
+.frequency-main>.primary-parameter-card .step-entry{grid-template-columns:42px minmax(84px,1fr) 42px 25px}
+.frequency-main>.primary-parameter-card .parameter-number{height:40px;font-size:16px}
+.frequency-main>.primary-parameter-card .step-adjust{height:40px}
+@media(max-width:650px){.frequency-main>.primary-parameter-card{grid-template-columns:1fr;gap:0}.frequency-main>.primary-parameter-card>.section-heading{grid-column:auto}.frequency-main>.primary-parameter-card>.range-group+.range-group{margin-top:10px}.frequency-main>.primary-parameter-card>.range-group{padding:12px 10px}}

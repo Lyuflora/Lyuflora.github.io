@@ -15,7 +15,6 @@ const state = {
   simulation:null,
   outcomes:[],
   tuning:{density:48,regularity:16},
-  editMode:"simple",
   playhead:0,
   elapsedTime:0,
   loopPlayback:false,
@@ -504,8 +503,6 @@ function bindControls() {
   });
   refs.densityTuning.addEventListener("input",applySimpleTuning);
   refs.regularityTuning.addEventListener("input",applySimpleTuning);
-  $("#simpleMode").addEventListener("click",function() { setEditMode("simple"); });
-  $("#advancedMode").addEventListener("click",function() { setEditMode("advanced"); });
   $("#playButton").addEventListener("click",play);
   $("#restartButton").addEventListener("click",restart);
   $("#regenerateButton").addEventListener("click",function() {
@@ -522,15 +519,6 @@ function bindControls() {
   $("#streakMode").addEventListener("click",function() { setMode("streak"); });
   window.addEventListener("resize",drawPreview,{passive:true});
   document.addEventListener("visibilitychange",function() { if (document.hidden && state.playing) pause(true); });
-}
-function setEditMode(mode) {
-  state.editMode = mode;
-  const advanced = mode === "advanced";
-  $("#advancedControls").open = advanced;
-  $("#simpleMode").classList.toggle("active",!advanced);
-  $("#advancedMode").classList.toggle("active",advanced);
-  $("#simpleMode").setAttribute("aria-pressed",String(!advanced));
-  $("#advancedMode").setAttribute("aria-pressed",String(advanced));
 }
 function setMode(mode) {
   state.mode = mode;

@@ -8,7 +8,7 @@
   <title>Particle Frequency Lab · VFX Pattern Library</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='15' fill='%238dc6b1'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="frequency-lab.css?v=5">
+  <link rel="stylesheet" href="frequency-lab.css?v=6">
 </head>
 <body>
   <div class="frequency-app">
@@ -30,6 +30,40 @@
         <div class="hero-tag"><span>∿</span> SPAWN DISTRIBUTION</div>
       </section>
 
+      <section class="frequency-card primary-parameter-card" aria-labelledby="parameterTitle">
+        <div class="section-heading"><div><span class="section-kicker">CORE EMITTER CONTROLS</span><h2 id="parameterTitle">Spawn rhythm</h2><p class="parameter-description">Set the cadence, then add timing variation.</p></div><span class="parameter-live">LIVE</span></div>
+        <div class="range-group">
+          <div class="range-title"><div><h3>Spawn rate</h3><p>Particles per second</p></div><span class="range-value" id="rateSummary">4.5–6.5 /s</span></div>
+          <div class="range-band" id="rateBand" aria-hidden="true"><span></span><i></i><b></b></div>
+          <div class="range-control">
+            <div class="range-control-heading"><label for="rateMinNumber">Min rate</label><span>per second</span></div>
+            <input class="lab-range" type="range" id="rateMin" min="0.01" max="32" step="0.01" value="4.5" aria-label="Minimum spawn rate slider">
+            <div class="step-entry"><button class="step-adjust" type="button" data-target="rateMinNumber" data-delta="-1" aria-label="Decrease minimum spawn rate by 1">−1</button><input class="parameter-number" type="number" id="rateMinNumber" min="0.01" max="32" step="0.01" data-precision="2" value="4.5" aria-label="Minimum spawn rate, per second"><button class="step-adjust" type="button" data-target="rateMinNumber" data-delta="1" aria-label="Increase minimum spawn rate by 1">+1</button><span class="number-unit">/s</span></div>
+          </div>
+          <div class="range-control">
+            <div class="range-control-heading"><label for="rateMaxNumber">Max rate</label><span>per second</span></div>
+            <input class="lab-range" type="range" id="rateMax" min="0.01" max="32" step="0.01" value="6.5" aria-label="Maximum spawn rate slider">
+            <div class="step-entry"><button class="step-adjust" type="button" data-target="rateMaxNumber" data-delta="-1" aria-label="Decrease maximum spawn rate by 1">−1</button><input class="parameter-number" type="number" id="rateMaxNumber" min="0.01" max="32" step="0.01" data-precision="2" value="6.5" aria-label="Maximum spawn rate, per second"><button class="step-adjust" type="button" data-target="rateMaxNumber" data-delta="1" aria-label="Increase maximum spawn rate by 1">+1</button><span class="number-unit">/s</span></div>
+          </div>
+          <div class="range-hint"><span>Slower</span><span>Faster</span></div>
+        </div>
+        <div class="range-group delay-group">
+          <div class="range-title"><div><h3>Particle delay</h3><p>Added after each rate interval</p></div><span class="range-value warm" id="delaySummary">0.00–0.07 s</span></div>
+          <div class="range-band warm-band" id="delayBand" aria-hidden="true"><span></span><i></i><b></b></div>
+          <div class="range-control">
+            <div class="range-control-heading"><label for="delayMinNumber">Min delay</label><span>seconds</span></div>
+            <input class="lab-range warm-range" type="range" id="delayMin" min="0" max="1.5" step="0.01" value="0" aria-label="Minimum particle delay slider">
+            <div class="step-entry warm-step-entry"><button class="step-adjust" type="button" data-target="delayMinNumber" data-delta="-1" aria-label="Decrease minimum particle delay by 1 second">−1</button><input class="parameter-number" type="number" id="delayMinNumber" min="0" max="1.5" step="0.01" data-precision="2" value="0" aria-label="Minimum particle delay, seconds"><button class="step-adjust" type="button" data-target="delayMinNumber" data-delta="1" aria-label="Increase minimum particle delay by 1 second">+1</button><span class="number-unit">s</span></div>
+          </div>
+          <div class="range-control">
+            <div class="range-control-heading"><label for="delayMaxNumber">Max delay</label><span>seconds</span></div>
+            <input class="lab-range warm-range" type="range" id="delayMax" min="0" max="1.5" step="0.01" value="0.07" aria-label="Maximum particle delay slider">
+            <div class="step-entry warm-step-entry"><button class="step-adjust" type="button" data-target="delayMaxNumber" data-delta="-1" aria-label="Decrease maximum particle delay by 1 second">−1</button><input class="parameter-number" type="number" id="delayMaxNumber" min="0" max="1.5" step="0.01" data-precision="2" value="0.07" aria-label="Maximum particle delay, seconds"><button class="step-adjust" type="button" data-target="delayMaxNumber" data-delta="1" aria-label="Increase maximum particle delay by 1 second">+1</button><span class="number-unit">s</span></div>
+          </div>
+          <div class="range-hint"><span>No added delay</span><span>Longer pauses</span></div>
+        </div>
+      </section>
+
       <div class="frequency-layout">
         <aside class="control-column" aria-label="Frequency settings">
           <section class="frequency-card preset-card">
@@ -44,61 +78,29 @@
             </div>
           </section>
 
-          <section class="frequency-card tuner-card" aria-labelledby="tunerTitle">
-            <div class="section-heading"><div><span class="section-kicker">TUNE YOUR EMITTER</span><h2 id="tunerTitle">Easy tuner</h2></div><span class="live-dot" title="Updates as you adjust"></span></div>
-            <div class="tuning-mode" role="group" aria-label="Tuning mode">
-              <button class="tuning-mode-btn active" id="simpleMode" type="button" aria-pressed="true">Simple</button>
-              <button class="tuning-mode-btn" id="advancedMode" type="button" aria-pressed="false">Advanced</button>
+          <details class="frequency-card tuner-card quick-tuner">
+            <summary><span><span class="section-kicker">OPTIONAL SHORTCUT</span><b>Quick tune by feel</b></span><span class="advanced-chevron" aria-hidden="true">⌄</span></summary>
+            <div class="quick-tuner-body">
+              <p class="tuner-intro">Adjust the overall density and regularity. Values update the controls above.</p>
+              <label class="tuning-control" for="densityTuning">
+                <span class="tuning-control-heading"><b>Density</b><output id="densityTuningValue">Balanced</output></span>
+                <span class="tuning-ends"><span>Sparse</span><span>Frequent</span></span>
+                <input class="tuning-range" type="range" id="densityTuning" min="0" max="100" step="1" value="48" aria-describedby="densityTuningHelp">
+                <small id="densityTuningHelp">Controls the average time between spawns.</small>
+              </label>
+              <label class="tuning-control" for="regularityTuning">
+                <span class="tuning-control-heading"><b>Regularity</b><output id="regularityTuningValue">Mostly regular</output></span>
+                <span class="tuning-ends"><span>Regular</span><span>Random</span></span>
+                <input class="tuning-range regularity-range" type="range" id="regularityTuning" min="0" max="100" step="1" value="16" aria-describedby="regularityTuningHelp">
+                <small id="regularityTuningHelp">Controls how much each interval can vary.</small>
+              </label>
+              <div class="tuner-readout"><span>Current signature</span><strong id="tuningSummary">5.2 spawns / sec · mostly regular</strong></div>
             </div>
-            <p class="tuner-intro">Set the feel first. The lab translates it into emitter settings.</p>
-            <label class="tuning-control" for="densityTuning">
-              <span class="tuning-control-heading"><b>Density</b><output id="densityTuningValue">Balanced</output></span>
-              <span class="tuning-ends"><span>Sparse</span><span>Frequent</span></span>
-              <input class="tuning-range" type="range" id="densityTuning" min="0" max="100" step="1" value="48" aria-describedby="densityTuningHelp">
-              <small id="densityTuningHelp">Controls the average time between spawns.</small>
-            </label>
-            <label class="tuning-control" for="regularityTuning">
-              <span class="tuning-control-heading"><b>Regularity</b><output id="regularityTuningValue">Mostly regular</output></span>
-              <span class="tuning-ends"><span>Regular</span><span>Random</span></span>
-              <input class="tuning-range regularity-range" type="range" id="regularityTuning" min="0" max="100" step="1" value="16" aria-describedby="regularityTuningHelp">
-              <small id="regularityTuningHelp">Controls how much each interval can vary.</small>
-            </label>
-            <div class="tuner-readout"><span>Current signature</span><strong id="tuningSummary">5.2 spawns / sec · mostly regular</strong></div>
-          </section>
+          </details>
 
           <details class="frequency-card advanced-controls" id="advancedControls">
-            <summary><span><span class="section-kicker">PRECISE CONTROL</span><b>Advanced settings</b></span><span class="advanced-chevron" aria-hidden="true">⌄</span></summary>
+            <summary><span><span class="section-kicker">MORE SETTINGS</span><b>Timeline &amp; limits</b></span><span class="advanced-chevron" aria-hidden="true">⌄</span></summary>
             <div class="advanced-body">
-              <div class="range-group">
-                <div class="range-title"><div><h3>Spawn rate</h3><p>Particles per second</p></div><span class="range-value" id="rateSummary">4.5–6.5 /s</span></div>
-                <div class="range-band" id="rateBand" aria-hidden="true"><span></span><i></i><b></b></div>
-                <div class="range-control">
-                  <div class="range-control-heading"><label for="rateMinNumber">Min rate</label><span>per second</span></div>
-                  <input class="lab-range" type="range" id="rateMin" min="0.01" max="32" step="0.01" value="4.5" aria-label="Minimum spawn rate slider">
-                  <div class="step-entry"><button class="step-adjust" type="button" data-target="rateMinNumber" data-delta="-1" aria-label="Decrease minimum spawn rate by 1">−1</button><input class="parameter-number" type="number" id="rateMinNumber" min="0.01" max="32" step="0.01" data-precision="2" value="4.5" aria-label="Minimum spawn rate, per second"><button class="step-adjust" type="button" data-target="rateMinNumber" data-delta="1" aria-label="Increase minimum spawn rate by 1">+1</button><span class="number-unit">/s</span></div>
-                </div>
-                <div class="range-control">
-                  <div class="range-control-heading"><label for="rateMaxNumber">Max rate</label><span>per second</span></div>
-                  <input class="lab-range" type="range" id="rateMax" min="0.01" max="32" step="0.01" value="6.5" aria-label="Maximum spawn rate slider">
-                  <div class="step-entry"><button class="step-adjust" type="button" data-target="rateMaxNumber" data-delta="-1" aria-label="Decrease maximum spawn rate by 1">−1</button><input class="parameter-number" type="number" id="rateMaxNumber" min="0.01" max="32" step="0.01" data-precision="2" value="6.5" aria-label="Maximum spawn rate, per second"><button class="step-adjust" type="button" data-target="rateMaxNumber" data-delta="1" aria-label="Increase maximum spawn rate by 1">+1</button><span class="number-unit">/s</span></div>
-                </div>
-                <div class="range-hint"><span>Narrow range</span><span>More variation</span></div>
-              </div>
-              <div class="range-group delay-group">
-                <div class="range-title"><div><h3>Particle delay</h3><p>Added after each rate interval</p></div><span class="range-value warm" id="delaySummary">0.00–0.07 s</span></div>
-                <div class="range-band warm-band" id="delayBand" aria-hidden="true"><span></span><i></i><b></b></div>
-                <div class="range-control">
-                  <div class="range-control-heading"><label for="delayMinNumber">Min delay</label><span>seconds</span></div>
-                  <input class="lab-range warm-range" type="range" id="delayMin" min="0" max="1.5" step="0.01" value="0" aria-label="Minimum particle delay slider">
-                  <div class="step-entry warm-step-entry"><button class="step-adjust" type="button" data-target="delayMinNumber" data-delta="-1" aria-label="Decrease minimum particle delay by 1 second">−1</button><input class="parameter-number" type="number" id="delayMinNumber" min="0" max="1.5" step="0.01" data-precision="2" value="0" aria-label="Minimum particle delay, seconds"><button class="step-adjust" type="button" data-target="delayMinNumber" data-delta="1" aria-label="Increase minimum particle delay by 1 second">+1</button><span class="number-unit">s</span></div>
-                </div>
-                <div class="range-control">
-                  <div class="range-control-heading"><label for="delayMaxNumber">Max delay</label><span>seconds</span></div>
-                  <input class="lab-range warm-range" type="range" id="delayMax" min="0" max="1.5" step="0.01" value="0.07" aria-label="Maximum particle delay slider">
-                  <div class="step-entry warm-step-entry"><button class="step-adjust" type="button" data-target="delayMaxNumber" data-delta="-1" aria-label="Decrease maximum particle delay by 1 second">−1</button><input class="parameter-number" type="number" id="delayMaxNumber" min="0" max="1.5" step="0.01" data-precision="2" value="0.07" aria-label="Maximum particle delay, seconds"><button class="step-adjust" type="button" data-target="delayMaxNumber" data-delta="1" aria-label="Increase maximum particle delay by 1 second">+1</button><span class="number-unit">s</span></div>
-                </div>
-                <div class="range-hint"><span>No added gap</span><span>Longer pauses</span></div>
-              </div>
               <div class="simple-control duration-control">
                 <label for="durationInput"><span><b>Simulation duration</b><small>Timeline and loop length</small></span><output id="durationValue">8 sec</output></label>
                 <input class="lab-range" type="range" id="durationInput" min="2" max="20" step="1" value="8">
@@ -195,6 +197,6 @@
       </div>
     </main>
   </div>
-  <script type="module" src="frequency-lab.js?v=5"></script>
+  <script type="module" src="frequency-lab.js?v=6"></script>
 </body>
 </html>
