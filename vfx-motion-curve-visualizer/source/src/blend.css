@@ -1,0 +1,502 @@
+.blend-canvas-wrap {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+}
+.blend-canvas-wrap .blend-canvas {
+  position: relative;
+}
+.spatial-edit-tools {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  right: 12px;
+  z-index: 3;
+  display: flex;
+  gap: 10px;
+  pointer-events: none;
+}
+.spatial-edit-tools label {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #a9becf;
+  background: #152430e8;
+  padding: 4px 7px;
+  border-radius: 5px;
+}
+.spatial-edit-tools select {
+  font-size: 12px;
+  height: 28px;
+  max-width: 160px;
+}
+.spatial-edit-hint {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  padding: 5px 9px;
+  border-radius: 4px;
+  background: #152430d9;
+  font-size: 11px;
+  color: #b6cbda;
+  pointer-events: none;
+}
+.path-point-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  font-size: 12px;
+  font-weight: 600;
+  color: #b8d6e9;
+  background: #142735de;
+  border: 1px solid #618399;
+  border-radius: 4px;
+  padding: 1px 5px;
+  line-height: 18px;
+  z-index: 2;
+}
+.path-point-label.selected {
+  color: white;
+  background: #22628b;
+  border-color: #80d4ff;
+}
+.blend-canvas canvas {
+  cursor: grab;
+}
+@media (max-width: 1200px) {
+  .spatial-edit-tools {
+    gap: 4px;
+  }
+  .spatial-edit-tools label {
+    font-size: 0;
+    padding: 3px;
+  }
+  .spatial-edit-tools select {
+    max-width: 150px;
+    font-size: 11px;
+  }
+  .spatial-edit-hint {
+    font-size: 10px;
+  }
+}
+.blend-app {
+  height: 100dvh;
+  min-height: 650px;
+  background: #10171e;
+  color: #dce8f2;
+  font-size: 14px;
+}
+.blend-header {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 22px;
+  border-bottom: 1px solid #344350;
+  background: #1b2630;
+}
+.blend-header > strong {
+  font-size: 22px;
+}
+.blend-doc {
+  border-left: 1px solid #41505c;
+  margin-left: 12px;
+  padding-left: 24px;
+  font-size: 14px;
+}
+.blend-doc small {
+  display: block;
+  color: #a1b4c5;
+  font-size: 11px;
+  margin-top: 4px;
+}
+.blend-header-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+}
+.blend-workspace {
+  height: calc(100% - 64px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 310px;
+}
+.blend-main {
+  min-height: 0;
+  min-width: 0;
+  padding: 0 16px 16px;
+  display: grid;
+  grid-template-rows: 56px minmax(0, 1fr) 58px 70px;
+}
+.blend-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.blend-toolbar > div {
+  display: flex;
+  gap: 6px;
+}
+.blend-toolbar button[aria-pressed="true"],
+.blend-profile-switch button[aria-pressed="true"] {
+  background: #235170;
+  border-color: #51b7ec;
+}
+.blend-toolbar select {
+  max-width: 180px;
+}
+.blend-views {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(340px, 1fr);
+  gap: 12px;
+  min-height: 0;
+}
+.blend-views.curves-focus {
+  grid-template-columns: minmax(320px, 1fr) minmax(0, 1.4fr);
+}
+.blend-spatial,
+.blend-plots {
+  border: 1px solid #354756;
+  border-radius: 8px;
+  overflow: hidden;
+  min-width: 0;
+  min-height: 0;
+  background: #17232e;
+}
+.blend-spatial {
+  position: relative;
+  display: grid;
+  grid-template-rows: 48px minmax(0, 1fr) 40px;
+}
+.blend-view-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  gap: 8px;
+}
+.blend-view-heading strong {
+  font-size: 15px;
+}
+.blend-view-heading button {
+  padding: 6px;
+  background: none;
+}
+.blend-view-heading select {
+  font-size: 12px;
+  max-width: 120px;
+  height: 30px;
+}
+.blend-canvas {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  outline: none;
+}
+.blend-canvas canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+.blend-spatial-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  gap: 10px;
+  font-size: 11px;
+  color: #a4b9c9;
+}
+.blend-spatial-footer > span {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.blend-spatial-footer i {
+  display: inline-block;
+  width: 14px;
+  height: 2px;
+  background: #28e1ed;
+}
+.blend-spatial-footer i.second {
+  background: #ffc654;
+}
+.blend-spatial-footer i.sample {
+  background: white;
+}
+.blend-spatial-footer label {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.blend-plots {
+  display: flex;
+  flex-direction: column;
+}
+.blend-plots > svg {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  cursor: crosshair;
+}
+.blend-plots svg text {
+  fill: #9fb4c8;
+  font-size: 12px;
+  font-family: inherit;
+}
+.blend-graph-note {
+  height: 28px;
+  padding: 5px 15px;
+  color: #8fa7bc;
+  font-size: 11px;
+}
+.blend-inspector {
+  border-left: 1px solid #354756;
+  overflow: auto;
+  padding: 20px 18px;
+  background: #19242f;
+}
+.blend-inspector h2 {
+  font-size: 16px;
+  margin: 4px 0 20px;
+}
+.blend-inspector h3 {
+  font-size: 13px;
+  margin: 24px 0 12px;
+  color: #e2edf7;
+}
+.blend-profile-switch {
+  display: flex;
+  gap: 6px;
+}
+.blend-profile-switch button {
+  flex: 1;
+}
+.blend-inspector p {
+  font-size: 12px;
+  line-height: 1.55;
+  color: #a0b5c8;
+  margin: 12px 0;
+}
+.blend-xyz {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 12px 0;
+}
+.blend-xyz label {
+  font-size: 12px;
+}
+.blend-xyz input {
+  width: 100%;
+  height: 36px;
+  margin-top: 7px;
+  font-size: 14px;
+  padding: 5px;
+}
+.blend-inspector select {
+  width: 100%;
+  height: 34px;
+  font-size: 13px;
+}
+.blend-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 12px 0;
+  font-size: 13px;
+}
+.blend-row input[type="number"] {
+  width: 100px;
+  height: 34px;
+  font-size: 14px;
+}
+.blend-row select {
+  width: 110px;
+}
+.blend-row button:first-child {
+  flex: 1;
+}
+.blend-inspector input[type="range"] {
+  width: 100%;
+  accent-color: #40baf4;
+  margin: 8px 0;
+}
+.blend-inspector hr {
+  border: 0;
+  border-top: 1px solid #354756;
+  margin-top: 24px;
+}
+.blend-transport {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: 1px solid #354756;
+  border-radius: 7px;
+  background: #1b2733;
+}
+.blend-transport > input {
+  flex: 1;
+  min-width: 60px;
+  accent-color: #42b9f5;
+}
+.blend-transport strong {
+  font-size: 14px;
+  min-width: 105px;
+}
+.blend-transport > span {
+  min-width: 32px;
+  font-size: 12px;
+}
+.blend-metrics {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.4fr;
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: #21303e;
+  border: 1px solid #3b4b59;
+  border-radius: 7px;
+}
+.blend-metrics > span {
+  text-align: center;
+  font-size: 12px;
+  color: #a6bed1;
+}
+.blend-metrics > span + span {
+  border-left: 1px solid #455a6a;
+}
+.blend-metrics strong {
+  display: block;
+  color: #e4effa;
+  font-size: 19px;
+  margin-top: 6px;
+}
+.blend-metrics small {
+  font-size: 11px;
+  font-weight: 400;
+}
+.blend-key-list {
+  max-height: 230px;
+  overflow: auto;
+  padding-right: 4px;
+}
+.blend-message {
+  position: fixed;
+  bottom: 18px;
+  left: 24px;
+  max-width: 600px;
+  background: #283e50;
+  border: 1px solid #6095b8;
+  padding: 14px 18px;
+  border-radius: 7px;
+  z-index: 50;
+  box-shadow: 0 5px 25px #0006;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.blend-message button {
+  padding: 1px 7px;
+}
+.return-to-blend {
+  position: fixed;
+  bottom: 2px;
+  left: 8px;
+  z-index: 200;
+  font-size: 11px;
+  padding: 4px 10px;
+}
+button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+@media (min-width: 2200px) {
+  .blend-workspace {
+    grid-template-columns: minmax(0, 1fr) 350px;
+  }
+  .blend-inspector {
+    padding: 24px;
+  }
+  .blend-inspector h3,
+  .blend-row {
+    font-size: 15px;
+  }
+  .blend-plots svg text {
+    font-size: 13px;
+  }
+}
+@media (max-width: 1200px) {
+  .blend-workspace {
+    grid-template-columns: minmax(0, 1fr) 280px;
+  }
+  .blend-views,
+  .blend-views.curves-focus {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 1fr);
+  }
+  .blend-doc {
+    display: none;
+  }
+  .blend-spatial-footer > span {
+    font-size: 9px;
+    gap: 4px;
+  }
+  .blend-metrics strong {
+    font-size: 16px;
+  }
+}
+@media (max-width: 950px) {
+  .blend-app {
+    height: auto;
+    min-height: 100dvh;
+  }
+  .blend-header {
+    height: auto;
+    min-height: 64px;
+    flex-wrap: wrap;
+    padding: 12px;
+  }
+  .blend-header-actions button {
+    font-size: 12px;
+  }
+  .blend-workspace {
+    height: auto;
+    grid-template-columns: 1fr;
+  }
+  .blend-main {
+    grid-template-rows: 56px auto 58px 70px;
+    padding: 0 10px 10px;
+  }
+  .blend-views,
+  .blend-views.curves-focus {
+    grid-template-columns: 1fr;
+    grid-template-rows: 440px 520px;
+  }
+  .blend-inspector {
+    border-top: 1px solid #354756;
+    border-left: 0;
+  }
+  .blend-inspector > p {
+    max-width: 500px;
+  }
+  .blend-toolbar button {
+    padding: 7px;
+  }
+  .blend-transport {
+    gap: 6px;
+    padding: 6px;
+  }
+  .blend-transport strong {
+    min-width: 80px;
+    font-size: 12px;
+  }
+  .blend-metrics strong {
+    font-size: 14px;
+  }
+}
